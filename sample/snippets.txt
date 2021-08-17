@@ -1,0 +1,3046 @@
+{
+"accelerometers-mpf": {
+	"prefix": ["accelerometers"],
+	"body": [
+		"accelerometers:"
+		,"\tnumber: ${1: single|str|}"
+		,"\tplatform: ${2: single|str|None}"
+		,"\thit_limits: ${3: dict|float:str|None}"
+		,"\tlevel_limits: ${4: dict|float:str|None}"
+		,"\tlevel_x: ${5: single|int|0}"
+		,"\tlevel_y: ${6: single|int|0}"
+		,"\tlevel_z: ${7: single|int|1}"
+		,"\talpha: ${8: single|float|0.8}"
+		,"\tplatform_settings: ${9: dict|str:str|None}"
+		],
+	"description": "accelerometers"
+},
+"accruals-mpf": {
+	"prefix": ["accruals"],
+	"body": [
+		"accruals:"
+		,"\tevents: ${1: list|event_handler|}"
+		,"\tadvance_random_events: ${2: event_handler|event_handler:ms|None}"
+		],
+	"description": "accruals"
+},
+"achievement_groups-mpf": {
+	"prefix": ["achievement_groups"],
+	"body": [
+		"achievement_groups:"
+		,"\tachievements: ${1: list|machine(achievements)|}"
+		,"\tenable_events: ${2: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${3: event_handler|event_handler:ms|None}"
+		,"\tstart_selected_events: ${4: event_handler|event_handler:ms|None}"
+		,"\tselect_random_achievement_events: ${5: event_handler|event_handler:ms|None}"
+		,"\tallow_selection_change_while_disabled: ${6|true,false|}"
+		,"\tauto_select: ${7|true,false|}"
+		,"\tdisable_while_achievement_started: ${8|true,false|}"
+		,"\tenable_while_no_achievement_started: ${9|true,false|}"
+		,"\trotate_right_events: ${10: event_handler|event_handler:ms|None}"
+		,"\trotate_left_events: ${11: event_handler|event_handler:ms|None}"
+		,"\tevents_when_all_completed: ${12: list|event_posted|None}"
+		,"\tevents_when_no_more_enabled: ${13: list|event_posted|None}"
+		,"\tevents_when_enabled: ${14: list|event_posted|None}"
+		,"\tshow_tokens: ${15: dict|str:str|None}"
+		,"\tshow_when_enabled: ${16: single|machine(shows)|None}"
+		],
+	"description": "achievement_groups"
+},
+"achievements-mpf": {
+	"prefix": ["achievements"],
+	"body": [
+		"achievements:"
+		,"\tshow_tokens: ${1: dict|str:str|None}"
+		,"\trestart_after_stop_possible: ${2|true,false|}"
+		,"\trestart_on_next_ball_when_started: ${3|true,false|}"
+		,"\tenable_on_next_ball_when_enabled: ${4|true,false|}"
+		,"\tstart_enabled: ${5|true,false|}"
+		,"\tenable_events: ${6: event_handler|event_handler:ms|None}"
+		,"\tstart_events: ${7: event_handler|event_handler:ms|None}"
+		,"\tcomplete_events: ${8: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${9: event_handler|event_handler:ms|None}"
+		,"\tstop_events: ${10: event_handler|event_handler:ms|None}"
+		,"\treset_events: ${11: event_handler|event_handler:ms|None}"
+		,"\tselect_events: ${12: event_handler|event_handler:ms|None}"
+		,"\tunselect_events: ${13: event_handler|event_handler:ms|None}"
+		,"\tevents_when_enabled: ${14: list|event_posted|None}"
+		,"\tevents_when_started: ${15: list|event_posted|None}"
+		,"\tevents_when_completed: ${16: list|event_posted|None}"
+		,"\tevents_when_stopped: ${17: list|event_posted|None}"
+		,"\tevents_when_disabled: ${18: list|event_posted|None}"
+		,"\tevents_when_selected: ${19: list|event_posted|None}"
+		,"\tshow_when_enabled: ${20: single|machine(shows)|None}"
+		,"\tshow_when_started: ${21: single|machine(shows)|None}"
+		,"\tshow_when_completed: ${22: single|machine(shows)|None}"
+		,"\tshow_when_stopped: ${23: single|machine(shows)|None}"
+		,"\tshow_when_disabled: ${24: single|machine(shows)|None}"
+		,"\tshow_when_selected: ${25: single|machine(shows)|None}"
+		,"\tsync_ms: ${26: single|int|None}"
+		],
+	"description": "achievements"
+},
+"animations-mpf": {
+	"prefix": ["animations"],
+	"body": [
+		],
+	"description": "animations"
+},
+"assets-mpf": {
+	"prefix": ["assets"],
+	"body": [
+		"assets:"
+		,"\tcommon: ${1:}"
+			,"\tload: ${2: single|str|preload}"
+			,"\tfile: ${3: single|str|None}"
+			,"\tpriority: ${4: single|int|0}"
+		,"\tbitmap_fonts: ${5:}"
+			,"\tdescriptor: ${6: ignore}"
+		,"\timages: ${7: # no image-specific config items}"
+			,"\tpersist_frame: ${8|true,false|}"
+		,"\tshows: ${9: }"
+		,"\tsounds: ${10:}"
+		,"\tvideos: ${11:}"
+			,"\twidth: ${12: single|num|None}"
+			,"\theight: ${13: single|num|None}"
+			,"\tevents_when_played: ${14: list|event_posted|None}"
+			,"\tevents_when_stopped: ${15: list|event_posted|None}"
+		],
+	"description": "assets"
+},
+"auditor-mpf": {
+	"prefix": ["auditor"],
+	"body": [
+		"auditor:"
+		,"\tsave_events: ${1: event_handler|event_handler:ms|ball_ended}"
+		,"\taudit: ${2: list|str|None}"
+		,"\tevents: ${3: list|event_handler|None}"
+		,"\tplayer: ${4: list|str|None}"
+		,"\tnum_player_top_records: ${5: single|int|1}"
+		,"\treset_audit_events: ${6: list|event_handler|auditor_reset,factory_reset}"
+		],
+	"description": "auditor"
+},
+"autofire_coils-mpf": {
+	"prefix": ["autofire_coils"],
+	"body": [
+		"autofire_coils:"
+		,"\tcoil: ${1: single|machine(coils)|}"
+		,"\tswitch: ${2: single|machine(switches)|}"
+		,"\treverse_switch: ${3|true,false|}"
+		,"\tenable_events: ${4: event_handler|event_handler:ms|ball_started}"
+		,"\tdisable_events: ${5: event_handler|event_handler:ms|ball_will_end, service_mode_entered}"
+		,"\tcoil_overwrite: ${6: single|subconfig(coil_overwrites)|None}"
+		,"\tswitch_overwrite: ${7: dict|str:str|None}"
+		,"\tball_search_order: ${8: single|int|100}"
+		,"\tplayfield: ${9: single|machine(playfields)|playfield}"
+		,"\ttimeout_watch_time: ${10: single|ms|0}"
+		,"\ttimeout_max_hits: ${11: single|int|0}"
+		,"\ttimeout_disable_time: ${12: single|ms|0}"
+		,"\tcoil_pulse_delay: ${13: single|ms|0}"
+		],
+	"description": "autofire_coils"
+},
+"ball_device_counter_ball_switches-mpf": {
+	"prefix": ["ball_device_counter_ball_switches"],
+	"body": [
+		"ball_device_counter_ball_switches:"
+		,"\tclass: ${1: ignore}"
+		,"\tentrance_event_timeout: ${2: single|secs|5s}"
+		,"\texit_count_delay: ${3: single|ms|500ms}"
+		,"\tentrance_count_delay: ${4: single|ms|500ms}"
+		,"\tjam_switch: ${5: single|machine(switches)|None}"
+		,"\tball_switches: ${6: list|machine(switches)|None}"
+		],
+	"description": "ball_device_counter_ball_switches"
+},
+"ball_device_counter_entrance_switches-mpf": {
+	"prefix": ["ball_device_counter_entrance_switches"],
+	"body": [
+		"ball_device_counter_entrance_switches:"
+		,"\tclass: ${1: ignore}"
+		,"\tentrance_switch: ${2: list|machine(switches)|None}"
+		,"\tentrance_switch_ignore_window_ms: ${3: single|ms|0}"
+		,"\tentrance_switch_full_timeout: ${4: single|ms|0}"
+		,"\tsettle_time_ms: ${5: single|ms|2000}"
+		,"\tball_capacity: ${6: single|int|None}"
+		],
+	"description": "ball_device_counter_entrance_switches"
+},
+"ball_device_ejector_enable-mpf": {
+	"prefix": ["ball_device_ejector_enable"],
+	"body": [
+		"ball_device_ejector_enable:"
+		,"\tclass: ${1: ignore}"
+		,"\teject_coil: ${2: single|machine(coils)|None}"
+		,"\teject_coil_enable_time: ${3: list|ms|None}"
+		,"\teject_coil_max_wait_ms: ${4: single|ms|200ms}"
+		],
+	"description": "ball_device_ejector_enable"
+},
+"ball_device_ejector_event-mpf": {
+	"prefix": ["ball_device_ejector_event"],
+	"body": [
+		"ball_device_ejector_event:"
+		,"\tclass: ${1: ignore}"
+		,"\tevents_when_eject_try: ${2: list|event_posted|None}"
+		,"\tevents_when_reoder_balls: ${3: list|event_posted|None}"
+		,"\tevents_when_ball_search: ${4: list|event_posted|None}"
+		],
+	"description": "ball_device_ejector_event"
+},
+"ball_device_ejector_hold-mpf": {
+	"prefix": ["ball_device_ejector_hold"],
+	"body": [
+		"ball_device_ejector_hold:"
+		,"\tclass: ${1: ignore}"
+		,"\thold_coil: ${2: single|machine(coils)|None}"
+		,"\thold_coil_release_time: ${3: single|ms|1s}"
+		,"\thold_events: ${4: event_handler|event_handler:ms|None}"
+		,"\thold_switches: ${5: list|machine(switches)|None}"
+		],
+	"description": "ball_device_ejector_hold"
+},
+"ball_device_ejector_pulse-mpf": {
+	"prefix": ["ball_device_ejector_pulse"],
+	"body": [
+		"ball_device_ejector_pulse:"
+		,"\tclass: ${1: ignore}"
+		,"\teject_coil: ${2: single|machine(coils)|}"
+		,"\teject_times: ${3: list|ms|None}"
+		,"\teject_coil_jam_pulse: ${4: list|ms|None}"
+		,"\teject_coil_retry_pulse: ${5: list|ms|None}"
+		,"\teject_coil_reorder_pulse: ${6: single|ms|None}"
+		,"\teject_coil_max_wait_ms: ${7: single|ms|200ms}"
+		,"\tretries_before_increasing_pulse: ${8: single|int|4}"
+		],
+	"description": "ball_device_ejector_pulse"
+},
+"ball_devices-mpf": {
+	"prefix": ["ball_devices"],
+	"body": [
+		"ball_devices:"
+		,"\texit_count_delay: ${1: ignore                   }"
+		,"\tentrance_count_delay: ${2: ignore               }"
+		,"\teject_coil: ${3: ignore                         }"
+		,"\teject_coil_jam_pulse: ${4: ignore               }"
+		,"\teject_coil_retry_pulse: ${5: ignore             }"
+		,"\teject_coil_reorder_pulse: ${6: ignore           }"
+		,"\teject_coil_max_wait_ms: ${7: ignore             }"
+		,"\teject_coil_enable_time: ${8: ignore             }"
+		,"\tretries_before_increasing_pulse: ${9: ignore    }"
+		,"\thold_coil: ${10: ignore                          }"
+		,"\thold_coil_release_time: ${11: ignore             }"
+		,"\thold_events: ${12: ignore                        }"
+		,"\thold_switches: ${13: ignore                      }"
+		,"\tentrance_switch: ${14: ignore                    }"
+		,"\tentrance_switch_ignore_window_ms: ${15: ignore   }"
+		,"\tentrance_switch_full_timeout: ${16: ignore       }"
+		,"\tentrance_events: ${17: event_handler|event_handler:ms|None}"
+		,"\tentrance_event_timeout: ${18: ignore             }"
+		,"\tidle_missing_ball_timeout: ${19: single|secs|5s}"
+		,"\tjam_switch: ${20: ignore                         }"
+		,"\tconfirm_eject_type: ${21: single|enum(target,switch,event,fake)|target}"
+		,"\tcaptures_from: ${22: single|machine(playfields)|playfield}"
+		,"\teject_targets: ${23: list|machine(ball_devices)|playfield}"
+		,"\teject_timeouts: ${24: list|ms|None}"
+		,"\tball_missing_timeouts: ${25: list|ms|None}"
+		,"\tball_missing_target: ${26: single|machine(playfields)|playfield}"
+		,"\tconfirm_eject_switch: ${27: single|machine(switches)|None}"
+		,"\tconfirm_eject_event: ${28: single|event_handler|None}"
+		,"\tmax_eject_attempts: ${29: single|int|0}"
+		,"\tball_switches: ${30: ignore                      }"
+		,"\tball_capacity: ${31: ignore                      }"
+		,"\trequest_ball_events: ${32: event_handler|event_handler:ms|None}"
+		,"\teject_events: ${33: event_handler|event_handler:ms|None}"
+		,"\teject_all_events: ${34: event_handler|event_handler:ms|None}"
+		,"\tmechanical_eject: ${35|true,false|}"
+		,"\tplayer_controlled_eject_event: ${36: single|event_handler|None}"
+		,"\tball_search_order: ${37: single|int|200}"
+		,"\tauto_fire_on_unexpected_ball: ${38|true,false|}"
+		,"\ttarget_on_unexpected_ball: ${39: single|machine(ball_devices)|None}"
+		,"\tejector: ${40: ignore}"
+		,"\tcounter: ${41: ignore}"
+		],
+	"description": "ball_devices"
+},
+"ball_holds-mpf": {
+	"prefix": ["ball_holds"],
+	"body": [
+		"ball_holds:"
+		,"\tballs_to_hold: ${1: single|int|None}"
+		,"\thold_devices: ${2: list|machine(ball_devices)|}"
+		,"\tsource_playfield: ${3: single|machine(ball_devices)|playfield}"
+		,"\tenable_events: ${4: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${5: event_handler|event_handler:ms|None}"
+		,"\tpriority: ${6: single|int|0}"
+		,"\treset_events: ${7: event_handler|event_handler:ms|machine_reset_phase_3, ball_starting, ball_will_end, service_mode_entered}"
+		,"\trelease_one_events: ${8: event_handler|event_handler:ms|None}"
+		,"\trelease_all_events: ${9: event_handler|event_handler:ms|None}"
+		,"\trelease_one_if_full_events: ${10: event_handler|event_handler:ms|None}"
+		],
+	"description": "ball_holds"
+},
+"ball_routings-mpf": {
+	"prefix": ["ball_routings"],
+	"body": [
+		"ball_routings:"
+		,"\tsource_devices: ${1: list|machine(ball_devices)|}"
+		,"\ttarget_device: ${2: single|machine(ball_devices)|}"
+		,"\tenable_events: ${3: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${4: event_handler|event_handler:ms|None}"
+		],
+	"description": "ball_routings"
+},
+"ball_saves-mpf": {
+	"prefix": ["ball_saves"],
+	"body": [
+		"ball_saves:"
+		,"\tsource_playfield: ${1: single|machine(ball_devices)|playfield}"
+		,"\tactive_time: ${2: single|template_secs|0}"
+		,"\teject_delay: ${3: single|ms|0}"
+		,"\tonly_last_ball: ${4|true,false|}"
+		,"\thurry_up_time: ${5: single|ms|0}"
+		,"\tgrace_period: ${6: single|ms|0}"
+		,"\tauto_launch: ${7|true,false|}"
+		,"\tballs_to_save: ${8: single|int|1}"
+		,"\tenable_events: ${9: event_handler|event_handler:ms|None}"
+		,"\tearly_ball_save_events: ${10: event_handler|event_handler:ms|None}"
+		,"\tdelayed_eject_events: ${11: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${12: event_handler|event_handler:ms|ball_will_end, service_mode_entered}"
+		,"\ttimer_start_events: ${13: event_handler|event_handler:ms|None}"
+		],
+	"description": "ball_saves"
+},
+"bcp-mpf": {
+	"prefix": ["bcp"],
+	"body": [
+		"bcp:"
+		,"\tdebug: ${1|true,false|}"
+		,"\tconnections: ${2: list|subconfig(bcp_connection)|None}"
+		,"\tservers: ${3: list|subconfig(bcp_server)|None}"
+		],
+	"description": "bcp"
+},
+"bcp_connection-mpf": {
+	"prefix": ["bcp_connection"],
+	"body": [
+		"bcp_connection:"
+		,"\thost: ${1: single|str|None}"
+		,"\tport: ${2: single|int|5050}"
+		,"\ttype: ${3: single|str|}"
+		,"\trequired: ${4|true,false|}"
+		,"\texit_on_close: ${5|true,false|}"
+		],
+	"description": "bcp_connection"
+},
+"bcp_server-mpf": {
+	"prefix": ["bcp_server"],
+	"body": [
+		"bcp_server:"
+		,"\tip: ${1: single|str|None}"
+		,"\tport: ${2: single|int|5050}"
+		,"\ttype: ${3: single|str|}"
+		],
+	"description": "bcp_server"
+},
+"bitmap_fonts-mpf": {
+	"prefix": ["bitmap_fonts"],
+	"body": [
+		"bitmap_fonts:"
+		,"\tfile: ${1: single|str|None}"
+		,"\tload: ${2: single|str|None}"
+		,"\tdescriptor: ${3: ignore}"
+		],
+	"description": "bitmap_fonts"
+},
+"blocking-mpf": {
+	"prefix": ["blocking"],
+	"body": [
+		],
+	"description": "blocking"
+},
+"bonus_entries-mpf": {
+	"prefix": ["bonus_entries"],
+	"body": [
+		"bonus_entries:"
+		,"\tevent: ${1: single|event_posted|}"
+		,"\tscore: ${2: single|template_int|}"
+		,"\treset_player_score_entry: ${3|true,false|}"
+		,"\tplayer_score_entry: ${4: single|str|None}"
+		,"\tskip_if_zero: ${5|true,false|}"
+		,"\tskip_if_negative: ${6|true,false|}"
+		],
+	"description": "bonus_entries"
+},
+"bonus_mode_settings-mpf": {
+	"prefix": ["bonus_mode_settings"],
+	"body": [
+		"bonus_mode_settings:"
+		,"\tdisplay_delay_ms: ${1: single|ms|2000}"
+		,"\thurry_up_delay_ms: ${2: single|ms|500}"
+		,"\thurry_up_event: ${3: single|event_handler|flipper_cancel}"
+		,"\tend_bonus_event: ${4: single|event_handler|None}"
+		,"\tkeep_multiplier: ${5: single|template_bool|False}"
+		,"\tbonus_entries: ${6: list|subconfig(bonus_entries)|}"
+		],
+	"description": "bonus_mode_settings"
+},
+"coil_overwrites-mpf": {
+	"prefix": ["coil_overwrites"],
+	"body": [
+		"coil_overwrites:"
+		,"\trecycle: ${1|true,false|}"
+		,"\tpulse_ms: ${2: single|ms|None}"
+		,"\tpulse_power: ${3: single|float(0,1)|None}"
+		,"\thold_power: ${4: single|float(0,1)|None}"
+		],
+	"description": "coil_overwrites"
+},
+"coil_player-mpf": {
+	"prefix": ["coil_player"],
+	"body": [
+		"coil_player:"
+		,"\taction: ${1: single|enum(pulse,on,off,enable,disable)|pulse}"
+		,"\thold_power: ${2: single|float|None}"
+		,"\tpulse_power: ${3: single|float|None}"
+		,"\tpulse_ms: ${4: single|int|None}"
+		,"\tmax_wait_ms: ${5: single|int|None}"
+		],
+	"description": "coil_player"
+},
+"coils-mpf": {
+	"prefix": ["coils"],
+	"body": [
+		"coils:"
+		,"\tallow_enable: ${1|true,false|}"
+		,"\tnumber: ${2: single|str|}"
+		,"\tdefault_recycle: ${3|true,false|}"
+		,"\tdefault_pulse_ms: ${4: single|template_ms|None}"
+		,"\tdefault_pulse_power: ${5: single|float(0,1)|None}"
+		,"\tdefault_hold_power: ${6: single|float(0,1)|None}"
+		,"\tmax_pulse_ms: ${7: single|ms|None}"
+		,"\tmax_pulse_power: ${8: single|float(0,1)|1.0}"
+		,"\tmax_hold_power: ${9: single|float(0,1)|None}"
+		,"\tmax_hold_duration: ${10: single|secs|None}"
+		,"\tdisable_events: ${11: event_handler|event_handler:ms|None}"
+		,"\tenable_events: ${12: event_handler|event_handler:ms|None}"
+		,"\tpulse_events: ${13: event_handler|event_handler:ms|None}"
+		,"\tplatform_settings: ${14: single|dict|None}"
+		,"\tpsu: ${15: single|machine(psus)|default}"
+		,"\tplatform: ${16: single|str|None}"
+		],
+	"description": "coils"
+},
+"color_correction_profile-mpf": {
+	"prefix": ["color_correction_profile"],
+	"body": [
+		"color_correction_profile:"
+		,"\tgamma: ${1: single|float|2.5}"
+		,"\twhitepoint: ${2: list|float|1.0, 1.0, 1.0}"
+		,"\tlinear_slope: ${3: single|float|1.0}"
+		,"\tlinear_cutoff: ${4: single|float|0.0}"
+		],
+	"description": "color_correction_profile"
+},
+"combo_switches-mpf": {
+	"prefix": ["combo_switches"],
+	"body": [
+		"combo_switches:"
+		,"\ttag_1: ${1: list|str|None}"
+		,"\ttag_2: ${2: list|str|None}"
+		,"\tswitches_1: ${3: set|machine(switches)|None}"
+		,"\tswitches_2: ${4: set|machine(switches)|None}"
+		,"\tmax_offset_time: ${5: single|secs|-1}"
+		,"\thold_time: ${6: single|ms|0}"
+		,"\trelease_time: ${7: single|ms|0}"
+		,"\tevents_when_both: ${8: list|event_posted|None}"
+		,"\tevents_when_inactive: ${9: list|event_posted|None}"
+		,"\tevents_when_one: ${10: list|event_posted|None}"
+		,"\tevents_when_switches_1: ${11: list|event_posted|None}"
+		,"\tevents_when_switches_2: ${12: list|event_posted|None}"
+		],
+	"description": "combo_switches"
+},
+"config-mpf": {
+	"prefix": ["config"],
+	"body": [
+		],
+	"description": "config"
+},
+"config_player_common-mpf": {
+	"prefix": ["config_player_common"],
+	"body": [
+		"config_player_common:"
+		,"\tpriority: ${1: single|int|0}"
+		],
+	"description": "config_player_common"
+},
+"counter_control_events:  # subconfig for mode counter-mpf": {
+	"prefix": ["counter_control_events:  # subconfig for mode counter"],
+	"body": [
+		"counter_control_events:  # subconfig for mode counter:"
+		,"\taction: ${1: single|enum(add,subtract,jump)|}"
+		,"\tevent: ${2: single|event_handler|}"
+		,"\tvalue: ${3: single|template_int|None}"
+		],
+	"description": "counter_control_events:  # subconfig for mode counter"
+},
+"counters-mpf": {
+	"prefix": ["counters"],
+	"body": [
+		"counters:"
+		,"\tcount_events: ${1: event_handler|event_handler:ms|}"
+		,"\tcount_complete_value: ${2: single|template_int|None}"
+		,"\tmultiple_hit_window: ${3: single|ms|0}"
+		,"\tcount_interval: ${4: single|int|1}"
+		,"\tdirection: ${5: single|enum(up,down)|up}"
+		,"\tstarting_count: ${6: single|template_int|0}"
+		,"\tcontrol_events: ${7: list|subconfig(counter_control_events)|None}"
+		],
+	"description": "counters"
+},
+"credits-mpf": {
+	"prefix": ["credits"],
+	"body": [
+		"credits:"
+		,"\tmax_credits: ${1: single|template_int|0}"
+		,"\tfree_play: ${2|true,false|}"
+		,"\tcoin_inhibit_disable_output: ${3: single|machine(digital_outputs)|None}"
+		,"\tprice_tier_template: ${4: single|str|{credits} CREDITS ${price}}"
+		,"\tservice_credits_switch: ${5: list|machine(switches)|None}"
+		,"\tfractional_credit_expiration_time: ${6: single|ms|0}"
+		,"\tcredit_expiration_time: ${7: single|ms|0}"
+		,"\tpersist_credits_while_off_time: ${8: single|secs|1h}"
+		,"\tfree_play_string: ${9: single|str|FREE PLAY}"
+		,"\tcredits_string: ${10: single|str|CREDITS}"
+		,"\tswitches: ${11: list|subconfig(credits_switches)|None}"
+		,"\tevents: ${12: list|subconfig(credits_events)|None}"
+		,"\tpricing_tiers: ${13: list|subconfig(credits_pricing_tiers)|None}"
+		,"\treset_earnings_events: ${14: list|event_handler|earnings_reset,factory_reset}"
+		,"\treset_credits_events: ${15: list|event_handler|credits_reset,factory_reset}"
+		],
+	"description": "credits"
+},
+"credits_events-mpf": {
+	"prefix": ["credits_events"],
+	"body": [
+		"credits_events:"
+		,"\tevent: ${1: single|event_handler|None}"
+		,"\tcredits: ${2: single|template_float|0.25}"
+		,"\ttype: ${3: single|str|replay}"
+		],
+	"description": "credits_events"
+},
+"credits_pricing_tiers-mpf": {
+	"prefix": ["credits_pricing_tiers"],
+	"body": [
+		"credits_pricing_tiers:"
+		,"\tprice: ${1: single|template_float|.50}"
+		,"\tcredits: ${2: single|template_int|1}"
+		],
+	"description": "credits_pricing_tiers"
+},
+"credits_switches-mpf": {
+	"prefix": ["credits_switches"],
+	"body": [
+		"credits_switches:"
+		,"\tswitch: ${1: single|machine(switches)|None}"
+		,"\tvalue: ${2: single|template_float|0.25}"
+		,"\ttype: ${3: single|str|money}"
+		,"\tlabel: ${4: single|str|None}"
+		],
+	"description": "credits_switches"
+},
+"custom_code-mpf": {
+	"prefix": ["custom_code"],
+	"body": [
+		],
+	"description": "custom_code"
+},
+"device:     # base for all device-mpf": {
+	"prefix": ["device:     # base for all device"],
+	"body": [
+		"device:     # base for all device:"
+		,"\tlabel: ${1: single|str|%}"
+		,"\ttags: ${2: list|str|None}"
+		,"\tdebug: ${3|true,false|}"
+		,"\tconsole_log: ${4: single|enum(none,basic,full)|basic}"
+		,"\tfile_log: ${5: single|enum(none,basic,full)|basic}"
+		],
+	"description": "device:     # base for all device"
+},
+"digital_outputs-mpf": {
+	"prefix": ["digital_outputs"],
+	"body": [
+		"digital_outputs:"
+		,"\tnumber: ${1: single|str|}"
+		,"\tdisable_events: ${2: event_handler|event_handler:ms|None}"
+		,"\tenable_events: ${3: event_handler|event_handler:ms|None}"
+		,"\tplatform: ${4: single|str|None}"
+		,"\tplatform_settings: ${5: single|dict|None}"
+		,"\ttype: ${6: single|enum(light,driver)|}"
+		,"\tlight_subtype: ${7: single|str|None}"
+		],
+	"description": "digital_outputs"
+},
+"digital_score_reel_frame-mpf": {
+	"prefix": ["digital_score_reel_frame"],
+	"body": [
+		"digital_score_reel_frame:"
+		,"\tcharacter: ${1: single|str|None}"
+		,"\tframe: ${2: single|int|None}"
+		],
+	"description": "digital_score_reel_frame"
+},
+"digital_score_reels-mpf": {
+	"prefix": ["digital_score_reels"],
+	"body": [
+		"digital_score_reels:"
+		,"\treel_count: ${1: single|num|0}"
+		,"\tstart_value: ${2: single|str|0}"
+		,"\tframes: ${3: list|subconfig(digital_score_reel_frame)|None}"
+		,"\tinclude_player_number: ${4|true,false|}"
+		],
+	"description": "digital_score_reels"
+},
+"display_light_player-mpf": {
+	"prefix": ["display_light_player"],
+	"body": [
+		"display_light_player:"
+		,"\taction: ${1: single|enum(play,stop)|play}"
+		,"\tlights: ${2: list|str|None}"
+		,"\tbcp_connection: ${3: single|str|local_display}"
+		,"\tmin_x: ${4: single|int|0}"
+		,"\tmax_x: ${5: single|int|None}"
+		,"\tmin_y: ${6: single|int|0}"
+		,"\tmax_y: ${7: single|int|None}"
+		],
+	"description": "display_light_player"
+},
+"displays-mpf": {
+	"prefix": ["displays"],
+	"body": [
+		"displays:"
+		,"\twidth: ${1: single|int|800}"
+		,"\theight: ${2: single|int|600}"
+		,"\tdefault: ${3|true,false|}"
+		,"\tround_anchor_x: ${4: single|str|center}"
+		,"\tround_anchor_y: ${5: single|str|middle}"
+		,"\tenabled: ${6|true,false|}"
+		],
+	"description": "displays"
+},
+"diverters-mpf": {
+	"prefix": ["diverters"],
+	"body": [
+		"diverters:"
+		,"\tactivate_events: ${1: event_handler|event_handler:ms|None}"
+		,"\tactivation_coil: ${2: single|machine(coils)|None}"
+		,"\tactivation_time: ${3: single|ms|0}"
+		,"\tactivation_switches: ${4: list|machine(switches)|None}"
+		,"\tallow_multiple_concurrent_ejects_to_same_side: ${5|true,false|}"
+		,"\tcool_down_time: ${6: single|ms|0}"
+		,"\tdeactivate_events: ${7: event_handler|event_handler:ms|None}"
+		,"\tdeactivation_switches: ${8: list|machine(switches)|None}"
+		,"\tdeactivation_coil: ${9: single|machine(coils)|None}"
+		,"\tdisable_events: ${10: event_handler|event_handler:ms|None}"
+		,"\tdisable_switches: ${11: list|machine(switches)|None}"
+		,"\tenable_events: ${12: event_handler|event_handler:ms|None}"
+		,"\tfeeder_devices: ${13: list|machine(ball_devices)|playfield}"
+		,"\treset_events: ${14: event_handler|event_handler:ms|machine_reset_phase_3}"
+		,"\ttargets_when_active: ${15: list|machine(ball_devices)|playfield}"
+		,"\ttargets_when_inactive: ${16: list|machine(ball_devices)|playfield}"
+		,"\ttype: ${17: single|enum(hold,pulse)|hold}"
+		,"\tball_search_order: ${18: single|int|100}"
+		,"\tball_search_hold_time: ${19: single|ms|1s}"
+		,"\tplayfield: ${20: single|machine(playfields)|playfield}"
+		],
+	"description": "diverters"
+},
+"dmds-mpf": {
+	"prefix": ["dmds"],
+	"body": [
+		"dmds:"
+		,"\tplatform: ${1: single|str|None}"
+		,"\tshades: ${2: single|pow2|16}"
+		,"\tfps: ${3: single|int|30}"
+		,"\tsource_display: ${4: single|str|dmd}"
+		,"\tluminosity: ${5: list|float|.299, .587, .114}"
+		,"\tbrightness: ${6: single|float|1.0}"
+		,"\tgamma: ${7: single|float|1.0}"
+		,"\tonly_send_changes: ${8|true,false|}"
+		],
+	"description": "dmds"
+},
+"drop_target_banks-mpf": {
+	"prefix": ["drop_target_banks"],
+	"body": [
+		"drop_target_banks:"
+		,"\tdrop_targets: ${1: list|machine(drop_targets)|}"
+		,"\treset_on_complete: ${2: single|ms|None}"
+		,"\treset_coil: ${3: single|machine(coils)|None}"
+		,"\treset_coils: ${4: list|machine(coils)|None}"
+		,"\treset_coil_max_wait_ms: ${5: single|ms|100ms}"
+		,"\treset_events: ${6: event_handler|event_handler:ms|machine_reset_phase_3, ball_starting}"
+		,"\tignore_switch_ms: ${7: single|ms|500ms}"
+		],
+	"description": "drop_target_banks"
+},
+"drop_targets-mpf": {
+	"prefix": ["drop_targets"],
+	"body": [
+		"drop_targets:"
+		,"\tswitch: ${1: single|machine(switches)|}"
+		,"\treset_coil: ${2: single|machine(coils)|None}"
+		,"\tknockdown_coil: ${3: single|machine(coils)|None}"
+		,"\treset_events: ${4: event_handler|event_handler:ms|ball_starting, machine_reset_phase_3}"
+		,"\tknockdown_events: ${5: event_handler|event_handler:ms|None}"
+		,"\tenable_keep_up_events: ${6: event_handler|event_handler:ms|None}"
+		,"\tdisable_keep_up_events: ${7: event_handler|event_handler:ms|None}"
+		,"\tball_search_order: ${8: single|int|100}"
+		,"\treset_coil_max_wait_ms: ${9: single|ms|100ms}"
+		,"\tknockdown_coil_max_wait_ms: ${10: single|ms|100ms}"
+		,"\tignore_switch_ms: ${11: single|ms|500ms}"
+		,"\tplayfield: ${12: single|machine(playfields)|playfield}"
+		],
+	"description": "drop_targets"
+},
+"dual_wound_coils-mpf": {
+	"prefix": ["dual_wound_coils"],
+	"body": [
+		"dual_wound_coils:"
+		,"\tmain_coil: ${1: single|machine(coils)|}"
+		,"\thold_coil: ${2: single|machine(coils)|}"
+		,"\teos_switch: ${3: single|machine(switches)|None}"
+		],
+	"description": "dual_wound_coils"
+},
+"effects-mpf": {
+	"prefix": ["effects"],
+	"body": [
+		"effects:"
+		,"\tcommon: ${1:}"
+			,"\ttype: ${2: single|str|}"
+		,"\tanti_aliasing: ${3:}"
+			,"\tnone: ${4: ignore}"
+		,"\tglow: ${5:}"
+			,"\tblur_size: ${6: single|float|5}"
+			,"\tintensity: ${7: single|float|.5}"
+			,"\tglow_speed: ${8: single|float|1.0}"
+			,"\tglow_amplitude: ${9: single|float|.1}"
+		,"\tcolor_channel_mix: ${10:}"
+			,"\torder: ${11: list|int|1, 2, 0}"
+		,"\tcolor_dmd: ${12:}"
+			,"\tdot_filter: ${13|true,false|}"
+			,"\tdots_x: ${14: single|int|128}"
+			,"\tdots_y: ${15: single|int|32}"
+			,"\tblur: ${16: single|float|0.1}"
+			,"\tdot_size: ${17: single|float|0.7}"
+			,"\tbackground_color: ${18: single|kivycolor|191919ff}"
+			,"\tgain: ${19: single|float|1.0}"
+			,"\tshades: ${20: single|int|0}"
+		,"\tcolorize: ${21:}"
+			,"\ttint_color: ${22: single|kivycolor|ff66ff00}"
+		,"\tdmd: ${23:}"
+			,"\tdot_filter: ${24|true,false|}"
+			,"\tdots_x: ${25: single|int|128}"
+			,"\tdots_y: ${26: single|int|32}"
+			,"\tblur: ${27: single|float|0.1}"
+			,"\tdot_size: ${28: single|float|0.7}"
+			,"\tbackground_color: ${29: single|kivycolor|191919ff}"
+			,"\tgain: ${30: single|float|1.0}"
+			,"\tshades: ${31: single|int|16}"
+			,"\tluminosity: ${32: list|float|.299, .587, .114}"
+			,"\tdot_color: ${33: single|kivycolor|ff5500 }"
+		,"\tdot_filter: ${34:}"
+			,"\tdots_x: ${35: single|int|128}"
+			,"\tdots_y: ${36: single|int|32}"
+			,"\tblur: ${37: single|float|0.1}"
+			,"\tdot_size: ${38: single|float|0.7}"
+			,"\tbackground_color: ${39: single|kivycolor|191919ff}"
+		,"\tflip_vertical: ${40:}"
+			,"\tnone: ${41: ignore}"
+		,"\tgain: ${42:}"
+			,"\tgain: ${43: single|float|1.0}"
+		,"\tgamma: ${44:}"
+			,"\tgamma: ${45: single|float|1.0}"
+		,"\thorizontal_blur: ${46:}"
+			,"\tsize: ${47: single|float|4.0}"
+		,"\tinvert_colors: ${48:}"
+			,"\tnone: ${49: ignore}"
+		,"\tmonochrome: ${50:}"
+			,"\tluminosity: ${51: list|float|.299, .587, .114}"
+		,"\tpixelate: ${52:}"
+			,"\tpixel_size: ${53: single|int|10}"
+		,"\treduce: ${54:}"
+			,"\tshades: ${55: single|int|16}"
+		,"\tscanlines: ${56:}"
+			,"\tnone: ${57: ignore}"
+		,"\tvertical_blur: ${58:}"
+			,"\tsize: ${59: single|float|4.0}"
+		],
+	"description": "effects"
+},
+"event_player-mpf": {
+	"prefix": ["event_player"],
+	"body": [
+		],
+	"description": "event_player"
+},
+"extra_ball_groups-mpf": {
+	"prefix": ["extra_ball_groups"],
+	"body": [
+		"extra_ball_groups:"
+		,"\tenabled: ${1|true,false|}"
+		,"\tlight_events: ${2: event_handler|event_handler:ms|None}"
+		,"\taward_events: ${3: event_handler|event_handler:ms|None}"
+		,"\taward_lit_events: ${4: event_handler|event_handler:ms|None}"
+		,"\tmax_per_game: ${5: single|int|None}"
+		,"\tmax_per_ball: ${6: single|int|None}"
+		,"\tmax_lit: ${7: single|int|None}"
+		,"\tlit_memory: ${8|true,false|}"
+		],
+	"description": "extra_ball_groups"
+},
+"extra_balls-mpf": {
+	"prefix": ["extra_balls"],
+	"body": [
+		"extra_balls:"
+		,"\tenabled: ${1|true,false|}"
+		,"\tgroup: ${2: single|machine(extra_ball_groups)|None}"
+		,"\taward_events: ${3: event_handler|event_handler:ms|None}"
+		,"\tlight_events: ${4: event_handler|event_handler:ms|None}"
+		,"\tmax_per_game: ${5: single|int|1}"
+		],
+	"description": "extra_balls"
+},
+"fadecandy-mpf": {
+	"prefix": ["fadecandy"],
+	"body": [
+		"fadecandy:"
+		,"\tgamma: ${1: single|float|2.5}"
+		,"\twhitepoint: ${2: list|float|1.0, 1.0, 1.0}"
+		,"\tlinear_slope: ${3: single|float|1.0}"
+		,"\tlinear_cutoff: ${4: single|float|0.0}"
+		,"\tkeyframe_interpolation: ${5|true,false|}"
+		,"\tdithering: ${6|true,false|}"
+		,"\tconsole_log: ${7: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${8: single|enum(none,basic,full)|basic}"
+		],
+	"description": "fadecandy"
+},
+"fast-mpf": {
+	"prefix": ["fast"],
+	"body": [
+		"fast:"
+		,"\tdriverboards: ${1: single|enum(fast,wpc,None)|None}"
+		,"\tports: ${2: list|str|}"
+		,"\tbaud: ${3: list|int|921600}"
+		,"\twatchdog: ${4: single|ms|1000}"
+		,"\tdefault_quick_debounce_open: ${5: single|ms|}"
+		,"\tdefault_quick_debounce_close: ${6: single|ms|}"
+		,"\tdefault_normal_debounce_open: ${7: single|ms|}"
+		,"\tdefault_normal_debounce_close: ${8: single|ms|}"
+		,"\thardware_led_fade_time: ${9: single|ms|0}"
+		,"\tdebug: ${10|true,false|}"
+		,"\tnet_buffer: ${11: single|int|10}"
+		,"\trgb_buffer: ${12: single|int|3}"
+		,"\tdmd_buffer: ${13: single|int|3}"
+		,"\tsegment_buffer: ${14: single|int|4}"
+		,"\tconsole_log: ${15: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${16: single|enum(none,basic,full)|basic}"
+		,"\tfirmware_updates: ${17: list|subconfig(fast_firmware_update)|None}"
+		,"\tignore_rgb_crash: ${18|true,false|}"
+		],
+	"description": "fast"
+},
+"fast_coils-mpf": {
+	"prefix": ["fast_coils"],
+	"body": [
+		"fast_coils:"
+		,"\tconnection: ${1: single|enum(network,local,auto)|auto}"
+		,"\trecycle_ms: ${2: single|ms|None}"
+		,"\thold_pwm_patter: ${3: single|str|None}"
+		],
+	"description": "fast_coils"
+},
+"fast_firmware_update-mpf": {
+	"prefix": ["fast_firmware_update"],
+	"body": [
+		"fast_firmware_update:"
+		,"\ttype: ${1: single|enum(net,rgb)|}"
+		,"\tfile: ${2: single|str|}"
+		,"\tversion: ${3: single|str|}"
+		],
+	"description": "fast_firmware_update"
+},
+"fast_switches-mpf": {
+	"prefix": ["fast_switches"],
+	"body": [
+		"fast_switches:"
+		,"\tdebounce_open: ${1: single|str|None}"
+		,"\tdebounce_close: ${2: single|str|None}"
+		],
+	"description": "fast_switches"
+},
+"file_shows-mpf": {
+	"prefix": ["file_shows"],
+	"body": [
+		],
+	"description": "file_shows"
+},
+"flasher_player-mpf": {
+	"prefix": ["flasher_player"],
+	"body": [
+		"flasher_player:"
+		,"\tms: ${1: single|ms_or_token|100ms}"
+		,"\tcolor: ${2: single|str|on}"
+		],
+	"description": "flasher_player"
+},
+"flippers-mpf": {
+	"prefix": ["flippers"],
+	"body": [
+		"flippers:"
+		,"\tmain_coil: ${1: single|machine(coils)|}"
+		,"\thold_coil: ${2: single|machine(coils)|None}"
+		,"\tactivation_switch: ${3: single|machine(switches)|None}"
+		,"\teos_switch: ${4: single|machine(switches)|None}"
+		,"\tuse_eos: ${5|true,false|}"
+		,"\tenable_events: ${6: event_handler|event_handler:ms|ball_started}"
+		,"\tdisable_events: ${7: event_handler|event_handler:ms|ball_will_end, service_mode_entered}"
+		,"\tsw_flip_events: ${8: event_handler|event_handler:ms|None}"
+		,"\tsw_release_events: ${9: event_handler|event_handler:ms|None}"
+		,"\tmain_coil_overwrite: ${10: single|subconfig(coil_overwrites)|None}"
+		,"\thold_coil_overwrite: ${11: single|subconfig(coil_overwrites)|None}"
+		,"\tswitch_overwrite: ${12: dict|str:str|None}"
+		,"\teos_switch_overwrite: ${13: dict|str:str|None}"
+		,"\tpower_setting_name: ${14: single|str|None}"
+		,"\tinclude_in_ball_search: ${15|true,false|}"
+		,"\tball_search_order: ${16: single|int|100}"
+		,"\tball_search_hold_time: ${17: single|ms|1s}"
+		,"\tplayfield: ${18: single|machine(playfields)|playfield}"
+		,"\trepulse_on_eos_open: ${19|true,false|}"
+		,"\teos_active_ms_before_repulse: ${20: single|ms|500}"
+		],
+	"description": "flippers"
+},
+"game-mpf": {
+	"prefix": ["game"],
+	"body": [
+		"game:"
+		,"\tballs_per_game: ${1: single|template_int|3}"
+		,"\tmax_players: ${2: single|template_int|4}"
+		,"\tstart_game_switch_tag: ${3: single|str|start}"
+		,"\tstart_game_event: ${4: single|event_handler|None}"
+		,"\tadd_player_switch_tag: ${5: single|str|start}"
+		,"\tadd_player_event: ${6: single|event_handler|None}"
+		,"\tallow_start_with_loose_balls: ${7|true,false|}"
+		,"\tallow_start_with_ball_in_drain: ${8|true,false|}"
+		,"\tend_game_event: ${9: single|event_handler|end_game}"
+		,"\tend_ball_event: ${10: single|event_handler|end_ball}"
+		],
+	"description": "game"
+},
+"hardware-mpf": {
+	"prefix": ["hardware"],
+	"body": [
+		"hardware:"
+		,"\tplatform: ${1: list|str|virtual}"
+		,"\tcoils: ${2: list|str|default}"
+		,"\tsegment_displays: ${3: list|str|default}"
+		,"\tswitches: ${4: list|str|default}"
+		,"\tlights: ${5: list|str|default}"
+		,"\tdmd: ${6: list|str|default}"
+		,"\trgb_dmd: ${7: list|str|default}"
+		,"\tdriverboards: ${8: single|str|None}"
+		,"\tservo_controllers: ${9: list|str|default}"
+		,"\taccelerometers: ${10: list|str|default}"
+		,"\ti2c: ${11: list|str|default}"
+		,"\tstepper_controllers: ${12: list|str|default}"
+		,"\thardware_sound_system: ${13: list|str|default}"
+		],
+	"description": "hardware"
+},
+"hardware_benchmark-mpf": {
+	"prefix": ["hardware_benchmark"],
+	"body": [
+		"hardware_benchmark:"
+		,"\tswitch1: ${1: single|machine(switches)|None}"
+		,"\tswitch2: ${2: single|machine(switches)|None}"
+		,"\tcoil1: ${3: single|machine(coils)|}"
+		,"\tcoil2: ${4: single|machine(coils)|}"
+		,"\tflipper: ${5: single|machine(flippers)|}"
+		],
+	"description": "hardware_benchmark"
+},
+"hardware_sound_player-mpf": {
+	"prefix": ["hardware_sound_player"],
+	"body": [
+		"hardware_sound_player:"
+		,"\taction: ${1: single|enum(play,play_file,text_to_speech,set_volume,increase_volume,decrease_volume,stop)|play}"
+		,"\ttrack: ${2: single|int|1}"
+		,"\tvalue: ${3: single|str|None}"
+		,"\tplatform_options: ${4: single|dict|None}"
+		,"\tsound_system: ${5: single|machine(hardware_sound_systems)|default}"
+		],
+	"description": "hardware_sound_player"
+},
+"hardware_sound_systems-mpf": {
+	"prefix": ["hardware_sound_systems"],
+	"body": [
+		"hardware_sound_systems:"
+		,"\tplatform: ${1: single|str|None}"
+		],
+	"description": "hardware_sound_systems"
+},
+"high_score-mpf": {
+	"prefix": ["high_score"],
+	"body": [
+		"high_score:"
+		,"\taward_slide_display_time: ${1: single|ms|4s}"
+		,"\tcategories: ${2: omap|str:list|}"
+		,"\tdefaults: ${3: dict|str:list|None}"
+		,"\tenter_initials_timeout: ${4: single|secs|20s}"
+		,"\treverse_sort: ${5: list|str|None}"
+		,"\treset_high_scores_events: ${6: list|event_handler|high_scores_reset,factory_reset}"
+		],
+	"description": "high_score"
+},
+"image_pools-mpf": {
+	"prefix": ["image_pools"],
+	"body": [
+		],
+	"description": "image_pools"
+},
+"image_templates-mpf": {
+	"prefix": ["image_templates"],
+	"body": [
+		],
+	"description": "image_templates"
+},
+"images-mpf": {
+	"prefix": ["images"],
+	"body": [
+		"images:"
+		,"\tfile: ${1: single|str|None}"
+		,"\tframe_skips: ${2: list|subconfig(images_frame_skips)|None}"
+		,"\timage_template: ${3: single|subconfig(images,device)|None}"
+		,"\tload: ${4: single|str|None}"
+		],
+	"description": "images"
+},
+"images_frame_skips-mpf": {
+	"prefix": ["images_frame_skips"],
+	"body": [
+		"images_frame_skips:"
+		,"\tfrom: ${1: single|int|None}"
+		,"\tto: ${2: single|int|None}"
+		],
+	"description": "images_frame_skips"
+},
+"info_lights-mpf": {
+	"prefix": ["info_lights"],
+	"body": [
+		],
+	"description": "info_lights"
+},
+"keyboard-mpf": {
+	"prefix": ["keyboard"],
+	"body": [
+		"keyboard:"
+		,"\tswitch: ${1: single|machine(switches)|None}"
+		,"\tevent: ${2: single|event_posted|None}"
+		,"\tmc_event: ${3: single|event_posted|None}"
+		,"\ttoggle: ${4|true,false|}"
+		,"\tinvert: ${5|true,false|}"
+		,"\tparams: ${6: dict|str:str|None}"
+		,"\tdebug: ${7|true,false|}"
+		],
+	"description": "keyboard"
+},
+"kickbacks-mpf": {
+	"prefix": ["kickbacks"],
+	"body": [
+		"kickbacks:"
+		,"\tcoil: ${1: single|machine(coils)|}"
+		,"\tswitch: ${2: single|machine(switches)|}"
+		,"\treverse_switch: ${3|true,false|}"
+		,"\tenable_events: ${4: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${5: event_handler|event_handler:ms|ball_will_end, service_mode_entered}"
+		,"\tcoil_overwrite: ${6: single|subconfig(coil_overwrites)|None}"
+		,"\tswitch_overwrite: ${7: dict|str:str|None}"
+		,"\tball_search_order: ${8: single|int|100}"
+		,"\tplayfield: ${9: single|machine(playfields)|playfield}"
+		,"\ttimeout_watch_time: ${10: single|ms|0}"
+		,"\ttimeout_max_hits: ${11: single|int|0}"
+		,"\ttimeout_disable_time: ${12: single|ms|0}"
+		,"\tcoil_pulse_delay: ${13: single|ms|0}"
+		],
+	"description": "kickbacks"
+},
+"kivy_config-mpf": {
+	"prefix": ["kivy_config"],
+	"body": [
+		],
+	"description": "kivy_config"
+},
+"light_channels-mpf": {
+	"prefix": ["light_channels"],
+	"body": [
+		"light_channels:"
+		,"\tnumber: ${1: single|str|}"
+		,"\tsubtype: ${2: single|str|None}"
+		,"\tplatform: ${3: single|str|None}"
+		,"\tplatform_settings: ${4: single|dict|None}"
+		],
+	"description": "light_channels"
+},
+"light_player-mpf": {
+	"prefix": ["light_player"],
+	"body": [
+		"light_player:"
+		,"\tcolor: ${1: single|str|white}"
+		,"\tfade: ${2: single|ms_or_token|None}"
+		,"\tpriority: ${3: single|int_or_token|0}"
+		],
+	"description": "light_player"
+},
+"light_rings-mpf": {
+	"prefix": ["light_rings"],
+	"body": [
+		"light_rings:"
+		,"\tnumber_start: ${1: single|int|0}"
+		,"\tstart_channel: ${2: single|str|None}"
+		,"\tnumber_template: ${3: single|str|None}"
+		,"\tcenter_x: ${4: single|float|None}"
+		,"\tcenter_y: ${5: single|float|None}"
+		,"\tstart_angle: ${6: single|float|0}"
+		,"\tradius: ${7: single|float|None}"
+		,"\tcount: ${8: single|int|}"
+		,"\tlight_template: ${9: single|subconfig(lights,device)|}"
+		],
+	"description": "light_rings"
+},
+"light_segment_displays-mpf": {
+	"prefix": ["light_segment_displays"],
+	"body": [
+		"light_segment_displays:"
+		,"\tdisplay_flash_frequency: ${1: single|float|1.0}"
+		],
+	"description": "light_segment_displays"
+},
+"light_segment_displays_device-mpf": {
+	"prefix": ["light_segment_displays_device"],
+	"body": [
+		"light_segment_displays_device:"
+		,"\tlights: ${1: list|dict(str:machine(lights))|}"
+		,"\ttype: ${2: single|enum(7segment,bcd,8segment,14segment,16segment)|}"
+		],
+	"description": "light_segment_displays_device"
+},
+"light_settings-mpf": {
+	"prefix": ["light_settings"],
+	"body": [
+		"light_settings:"
+		,"\tcolor_correction_profiles: ${1: dict|str:subconfig(color_correction_profile)|None}"
+		,"\tdefault_color_correction_profile: ${2: single|str|None}"
+		,"\tdefault_fade_ms: ${3: single|int|0}"
+		],
+	"description": "light_settings"
+},
+"light_stripes-mpf": {
+	"prefix": ["light_stripes"],
+	"body": [
+		"light_stripes:"
+		,"\tnumber_start: ${1: single|int|0}"
+		,"\tstart_channel: ${2: single|str|None}"
+		,"\tnumber_template: ${3: single|str|None}"
+		,"\tstart_x: ${4: single|float|None}"
+		,"\tstart_y: ${5: single|float|None}"
+		,"\tdirection: ${6: single|float|None}"
+		,"\tdistance: ${7: single|float|None}"
+		,"\tcount: ${8: single|int|}"
+		,"\tlight_template: ${9: single|subconfig(lights,device)|}"
+		],
+	"description": "light_stripes"
+},
+"lights-mpf": {
+	"prefix": ["lights"],
+	"body": [
+		"lights:"
+		,"\tnumber: ${1: single|str|None}"
+		,"\tprevious: ${2: single|machine(lights)|None}"
+		,"\tstart_channel: ${3: single|str|None}"
+		,"\ttype: ${4: single|str|None}"
+		,"\tsubtype: ${5: single|str|None}"
+		,"\tplatform: ${6: single|str|None}"
+		,"\tplatform_settings: ${7: single|dict|None}"
+		,"\tfade_ms: ${8: single|ms|None}"
+		,"\tcolor_correction_profile: ${9: single|str|None}"
+		,"\tdefault_on_color: ${10: single|color|ffffff}"
+		,"\tchannels: ${11: single|dict|None}"
+		,"\tx: ${12: single|float|None}"
+		,"\ty: ${13: single|float|None}"
+		,"\tz: ${14: single|float|None}"
+		],
+	"description": "lights"
+},
+"lisy-mpf": {
+	"prefix": ["lisy"],
+	"body": [
+		"lisy:"
+		,"\tbaud: ${1: single|int|None}"
+		,"\tdebug: ${2|true,false|}"
+		,"\tdisplay_flash_frequency: ${3: single|float|1.0}"
+		,"\tdisable_dtr: ${4|true,false|}"
+		,"\tconnection: ${5: single|enum(network,serial)|network}"
+		,"\tconsole_log: ${6: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${7: single|enum(none,basic,full)|basic}"
+		,"\tmax_led_batch_size: ${8: single|int|12}"
+		,"\tnetwork_host: ${9: single|str|None}"
+		,"\tnetwork_port: ${10: single|int|None}"
+		,"\tpoll_hz: ${11: single|int|100}"
+		,"\tport: ${12: single|str|None}"
+		,"\tsend_length_after_command: ${13|true,false|}"
+		],
+	"description": "lisy"
+},
+"logging-mpf": {
+	"prefix": ["logging"],
+	"body": [
+		],
+	"description": "logging"
+},
+"logic_blocks_common-mpf": {
+	"prefix": ["logic_blocks_common"],
+	"body": [
+		"logic_blocks_common:"
+		,"\tenable_events: ${1: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${2: event_handler|event_handler:ms|None}"
+		,"\treset_events: ${3: event_handler|event_handler:ms|None}"
+		,"\trestart_events: ${4: event_handler|event_handler:ms|None}"
+		,"\treset_on_complete: ${5|true,false|}"
+		,"\tdisable_on_complete: ${6|true,false|}"
+		,"\tpersist_state: ${7|true,false|}"
+		,"\tstart_enabled: ${8|true,false|}"
+		,"\tevents_when_complete: ${9: list|event_posted|None}"
+		,"\tevents_when_hit: ${10: list|event_posted|None}"
+		,"\tlogic_block_timeout: ${11: single|ms|0}"
+		],
+	"description": "logic_blocks_common"
+},
+"machine-mpf": {
+	"prefix": ["machine"],
+	"body": [
+		"machine:"
+		,"\tballs_installed: ${1: single|int|1}"
+		,"\tmin_balls: ${2: single|int|1}"
+		],
+	"description": "machine"
+},
+"machine_vars-mpf": {
+	"prefix": ["machine_vars"],
+	"body": [
+		"machine_vars:"
+		,"\tinitial_value: ${1: single|str|}"
+		,"\tvalue_type: ${2: single|enum(str,float,int)|int}"
+		,"\tpersist: ${3|true,false|}"
+		],
+	"description": "machine_vars"
+},
+"magnets-mpf": {
+	"prefix": ["magnets"],
+	"body": [
+		"magnets:"
+		,"\tmagnet_coil: ${1: single|machine(coils)|}"
+		,"\tgrab_switch: ${2: single|machine(switches)|None}"
+		,"\tgrab_time: ${3: single|ms|1.5s}"
+		,"\trelease_time: ${4: single|ms|500ms}"
+		,"\tfling_drop_time: ${5: single|ms|250ms}"
+		,"\tfling_regrab_time: ${6: single|ms|50ms}"
+		,"\tplayfield: ${7: single|machine(playfields)|playfield}"
+		,"\tenable_events: ${8: event_handler|event_handler:ms|ball_started}"
+		,"\tdisable_events: ${9: event_handler|event_handler:ms|ball_will_end, service_mode_entered}"
+		,"\treset_events: ${10: event_handler|event_handler:ms|machine_reset_phase_3, ball_starting}"
+		,"\tgrab_ball_events: ${11: event_handler|event_handler:ms|None}"
+		,"\trelease_ball_events: ${12: event_handler|event_handler:ms|None}"
+		,"\tfling_ball_events: ${13: event_handler|event_handler:ms|None}"
+		],
+	"description": "magnets"
+},
+"mc_custom_code-mpf": {
+	"prefix": ["mc_custom_code"],
+	"body": [
+		],
+	"description": "mc_custom_code"
+},
+"mc_scriptlets-mpf": {
+	"prefix": ["mc_scriptlets"],
+	"body": [
+		],
+	"description": "mc_scriptlets"
+},
+"mma8451_accelerometer-mpf": {
+	"prefix": ["mma8451_accelerometer"],
+	"body": [
+		"mma8451_accelerometer:"
+		,"\ti2c_platform: ${1: single|str|None}"
+		],
+	"description": "mma8451_accelerometer"
+},
+"mode-mpf": {
+	"prefix": ["mode"],
+	"body": [
+		"mode:"
+		,"\tpriority: ${1: single|int|100}"
+		,"\tstart_events: ${2: event_handler|event_handler:ms|None}"
+		,"\tstop_events: ${3: event_handler|event_handler:ms|None}"
+		,"\tevents_when_stopped: ${4: list|event_posted|None}"
+		,"\tevents_when_started: ${5: list|event_posted|None}"
+		,"\tstart_priority: ${6: single|int|0}"
+		,"\tstop_priority: ${7: single|int|0}"
+		,"\tgame_mode: ${8|true,false|}"
+		,"\tuse_wait_queue: ${9|true,false|}"
+		,"\tcode: ${10: single|str|None}"
+		,"\tstop_on_ball_end: ${11|true,false|}"
+		,"\trestart_on_next_ball: ${12|true,false|}"
+		,"\tconsole_log: ${13: single|enum(none,basic,full)|basic}"
+		,"\tfile_log: ${14: single|enum(none,basic,full)|basic}"
+		,"\tasset_paths: ${15: list|str|None}"
+		,"\tpath: ${16: single|str|None}"
+		],
+	"description": "mode"
+},
+"mode_settings-mpf": {
+	"prefix": ["mode_settings"],
+	"body": [
+		],
+	"description": "mode_settings"
+},
+"modes-mpf": {
+	"prefix": ["modes"],
+	"body": [
+		],
+	"description": "modes"
+},
+"motors-mpf": {
+	"prefix": ["motors"],
+	"body": [
+		"motors:"
+		,"\tposition_switches: ${1: omap|str:machine(switches)|}"
+		,"\treset_position: ${2: single|str|}"
+		,"\treset_events: ${3: event_handler|event_handler:ms|machine_reset_phase_3, ball_starting}"
+		,"\tgo_to_position: ${4: dict|str:str|None}"
+		,"\tmotor_left_output: ${5: single|machine(digital_outputs)|None}"
+		,"\tmotor_right_output: ${6: single|machine(digital_outputs)|None}"
+		,"\tinclude_in_ball_search: ${7|true,false|}"
+		],
+	"description": "motors"
+},
+"mpf-mpf": {
+	"prefix": ["mpf"],
+	"body": [
+		"mpf:"
+		,"\tdefault_pulse_ms: ${1: single|int|10}"
+		,"\tdefault_ball_search: ${2|true,false|}"
+		,"\tdefault_light_hw_update_hz: ${3: single|int|50}"
+		,"\tauto_create_switch_events: ${4|true,false|}"
+		,"\tswitch_event_active: ${5: single|str|%_active}"
+		,"\tswitch_event_inactive: ${6: single|str|%_inactive}"
+		,"\tswitch_tag_event: ${7: single|str|sw_%}"
+		,"\tallow_invalid_config_sections: ${8|true,false|}"
+		,"\tsave_machine_vars_to_disk: ${9|true,false|}"
+		,"\tdefault_show_sync_ms: ${10: single|int|0}"
+		,"\tdefault_platform_hz: ${11: single|float|100}"
+		,"\tcore_modules: ${12: ignore}"
+		,"\tconfig_players: ${13: ignore}"
+		,"\tdevice_modules: ${14: ignore}"
+		,"\tplugins: ${15: ignore}"
+		,"\tplatforms: ${16: ignore}"
+		,"\tpaths: ${17: ignore}"
+		,"\treport_crashes: ${18: single|enum(ask,never,always)|ask}"
+		],
+	"description": "mpf"
+},
+"mpf-mc-mpf": {
+	"prefix": ["mpf-mc"],
+	"body": [
+		],
+	"description": "mpf-mc"
+},
+"multiball_locks-mpf": {
+	"prefix": ["multiball_locks"],
+	"body": [
+		"multiball_locks:"
+		,"\tballs_to_lock: ${1: single|int|}"
+		,"\tballs_to_replace: ${2: single|int|-1}"
+		,"\tlock_devices: ${3: list|machine(ball_devices)|}"
+		,"\tsource_devices: ${4: list|machine(ball_devices)|None}"
+		,"\tsource_playfield: ${5: single|machine(ball_devices)|playfield}"
+		,"\tenable_events: ${6: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${7: event_handler|event_handler:ms|None}"
+		,"\tlocked_ball_counting_strategy: ${8: single|enum(virtual_only,min_virtual_physical,physical_only,no_virtual)|virtual_only}"
+		,"\tpriority: ${9: single|int|1}"
+		,"\treset_all_counts_events: ${10: event_handler|event_handler:ms|None}"
+		,"\treset_count_for_current_player_events: ${11: event_handler|event_handler:ms|None}"
+		],
+	"description": "multiball_locks"
+},
+"multiballs-mpf": {
+	"prefix": ["multiballs"],
+	"body": [
+		"multiballs:"
+		,"\tball_count: ${1: single|template_int|}"
+		,"\tball_count_type: ${2: single|enum(add,total)|total}"
+		,"\treplace_balls_in_play: ${3|true,false|}"
+		,"\tsource_playfield: ${4: single|machine(ball_devices)|playfield}"
+		,"\tshoot_again: ${5: single|template_ms|10s}"
+		,"\tball_locks: ${6: list|machine(ball_devices)|None}"
+		,"\tenable_events: ${7: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${8: event_handler|event_handler:ms|None}"
+		,"\treset_events: ${9: event_handler|event_handler:ms|machine_reset_phase_3, ball_starting}"
+		,"\tstart_events: ${10: event_handler|event_handler:ms|None}"
+		,"\tstop_events: ${11: event_handler|event_handler:ms|None}"
+		,"\tadd_a_ball_events: ${12: event_handler|event_handler:ms|None}"
+		,"\tstart_or_add_a_ball_events: ${13: event_handler|event_handler:ms|None}"
+		],
+	"description": "multiballs"
+},
+"mypinballs-mpf": {
+	"prefix": ["mypinballs"],
+	"body": [
+		"mypinballs:"
+		,"\tport: ${1: single|str|}"
+		,"\tbaud: ${2: single|int|115200}"
+		,"\tdebug: ${3|true,false|}"
+		],
+	"description": "mypinballs"
+},
+"named_colors-mpf": {
+	"prefix": ["named_colors"],
+	"body": [
+		],
+	"description": "named_colors"
+},
+"open_pixel_control-mpf": {
+	"prefix": ["open_pixel_control"],
+	"body": [
+		"open_pixel_control:"
+		,"\thost: ${1: single|str|localhost}"
+		,"\tport: ${2: single|int|7890}"
+		,"\tdebug: ${3|true,false|}"
+		,"\tconsole_log: ${4: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${5: single|enum(none,basic,full)|basic}"
+		],
+	"description": "open_pixel_control"
+},
+"opp-mpf": {
+	"prefix": ["opp"],
+	"body": [
+		"opp:"
+		,"\tdriverboards: ${1: single|enum(gen2)|gen2}"
+		,"\tports: ${2: list|str|}"
+		,"\tbaud: ${3: single|int|115200}"
+		,"\tdebug: ${4|true,false|}"
+		,"\tchains: ${5: dict|str:str|None}"
+		,"\tconsole_log: ${6: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${7: single|enum(none,basic,full)|basic}"
+		,"\tpoll_hz: ${8: single|int|100}"
+		,"\tincand_update_hz: ${9: single|int|25}"
+		],
+	"description": "opp"
+},
+"opp_coils-mpf": {
+	"prefix": ["opp_coils"],
+	"body": [
+		"opp_coils:"
+		,"\trecycle_factor: ${1: single|int|None}"
+		],
+	"description": "opp_coils"
+},
+"osc-mpf": {
+	"prefix": ["osc"],
+	"body": [
+		"osc:"
+		,"\tremote_ip: ${1: single|str|127.0.0.1}"
+		,"\tremote_port: ${2: single|int|8000}"
+		,"\tlisten_ip: ${3: single|str|127.0.0.1}"
+		,"\tlisten_port: ${4: single|int|9000}"
+		,"\tevents_to_send: ${5: list|event_handler|None}"
+		],
+	"description": "osc"
+},
+"p_roc-mpf": {
+	"prefix": ["p_roc"],
+	"body": [
+		"p_roc:"
+		,"\tdriverboards: ${1: single|enum(wpc,wpcAlphanumeric,wpc95,sternSAM,sternWhitestar,pdb,custom,None)|None}"
+		,"\tlamp_matrix_strobe_time: ${2: single|ms|100ms}"
+		,"\twatchdog_time: ${3: single|ms|1s}"
+		,"\tuse_watchdog: ${4|true,false|}"
+		,"\tdmd_timing_cycles: ${5: list|int|None}"
+		,"\tdmd_update_interval: ${6: single|ms|33ms}"
+		,"\tdisplay_flash_frequency: ${7: single|float|1.0}"
+		,"\tdebug: ${8|true,false|}"
+		,"\tconsole_log: ${9: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${10: single|enum(none,basic,full)|basic}"
+		,"\tpd_led_boards: ${11: dict|int:subconfig(pd_led_boards)|none}"
+		,"\tuse_separate_thread: ${12|true,false|}"
+		,"\ttrace_bus: ${13|true,false|}"
+		],
+	"description": "p_roc"
+},
+"p_roc_coils-mpf": {
+	"prefix": ["p_roc_coils"],
+	"body": [
+		"p_roc_coils:"
+		,"\tpolarity: ${1|true,false|}"
+		],
+	"description": "p_roc_coils"
+},
+"p3_roc-mpf": {
+	"prefix": ["p3_roc"],
+	"body": [
+		"p3_roc:"
+		,"\tdriverboards: ${1: single|enum(pdb,custom,None)|None}"
+		,"\tlamp_matrix_strobe_time: ${2: single|ms|100ms}"
+		,"\twatchdog_time: ${3: single|ms|1s}"
+		,"\tuse_watchdog: ${4|true,false|}"
+		,"\tdebug: ${5|true,false|}"
+		,"\tconsole_log: ${6: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${7: single|enum(none,basic,full)|basic}"
+		,"\tburst_us_per_half_pulse: ${8: single|int(0,63)|12}"
+		,"\tburst_number_of_pulses_to_drive_output: ${9: single|int(0,31)|5}"
+		,"\tburst_number_of_idle_pulses_before_next: ${10: single|int(0,63)|8}"
+		,"\tburst_number_of_burst_pulses_before_check: ${11: single|int(0,63)|10}"
+		,"\tburst_ms_between_scans: ${12: single|int(1,64)|1}"
+		,"\tpd_led_boards: ${13: dict|int:subconfig(pd_led_boards)|none}"
+		,"\tuse_separate_thread: ${14|true,false|}"
+		,"\ttrace_bus: ${15|true,false|}"
+		,"\tgpio_poll_frequency: ${16: single|int|50}"
+		,"\tgpio_map: ${17: dict|int:enum(input,output)|None}"
+		],
+	"description": "p3_roc"
+},
+"pd_led_boards-mpf": {
+	"prefix": ["pd_led_boards"],
+	"body": [
+		"pd_led_boards:"
+		,"\tuse_ws281x_0: ${1|true,false|}"
+		,"\tuse_ws281x_1: ${2|true,false|}"
+		,"\tuse_ws281x_2: ${3|true,false|}"
+		,"\tuse_lpd880x_0: ${4|true,false|}"
+		,"\tuse_lpd880x_1: ${5|true,false|}"
+		,"\tuse_lpd880x_2: ${6|true,false|}"
+		,"\tws281x_0_first_address: ${7: single|int|100}"
+		,"\tws281x_0_last_address: ${8: single|int|249}"
+		,"\tws281x_1_first_address: ${9: single|int|250}"
+		,"\tws281x_1_last_address: ${10: single|int|399}"
+		,"\tws281x_2_first_address: ${11: single|int|400}"
+		,"\tws281x_2_last_address: ${12: single|int|599}"
+		,"\tws281x_low_bit_time: ${13: single|int|13}"
+		,"\tws281x_high_bit_time: ${14: single|int|24}"
+		,"\tws281x_end_bit_time: ${15: single|int|40}"
+		,"\tws281x_reset_bit_time: ${16: single|int|1603}"
+		,"\tlpd880x_0_first_address: ${17: single|int|100}"
+		,"\tlpd880x_0_last_address: ${18: single|int|249}"
+		,"\tlpd880x_1_first_address: ${19: single|int|250}"
+		,"\tlpd880x_1_last_address: ${20: single|int|399}"
+		,"\tlpd880x_2_first_address: ${21: single|int|400}"
+		,"\tlpd880x_2_last_address: ${22: single|int|599}"
+		,"\tuse_servo_0: ${23|true,false|}"
+		,"\tuse_servo_1: ${24|true,false|}"
+		,"\tuse_servo_2: ${25|true,false|}"
+		,"\tuse_servo_3: ${26|true,false|}"
+		,"\tuse_servo_4: ${27|true,false|}"
+		,"\tuse_servo_5: ${28|true,false|}"
+		,"\tuse_servo_6: ${29|true,false|}"
+		,"\tuse_servo_7: ${30|true,false|}"
+		,"\tuse_servo_8: ${31|true,false|}"
+		,"\tuse_servo_9: ${32|true,false|}"
+		,"\tuse_servo_10: ${33|true,false|}"
+		,"\tuse_servo_11: ${34|true,false|}"
+		,"\tmax_servo_value: ${35: single|int|300}"
+		,"\tmin_servo_value: ${36: single|int|127}"
+		,"\tuse_stepper_0: ${37|true,false|}"
+		,"\tuse_stepper_1: ${38|true,false|}"
+		,"\tstepper_speed: ${39: single|int|13524}"
+		],
+	"description": "pd_led_boards"
+},
+"pin2dmd-mpf": {
+	"prefix": ["pin2dmd"],
+	"body": [
+		"pin2dmd:"
+		,"\tdebug: ${1|true,false|}"
+		,"\tconsole_log: ${2: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${3: single|enum(none,basic,full)|basic}"
+		,"\tresolution: ${4: single|enum(128x32,192x64)|128x32}"
+		,"\tpanel: ${5: single|enum(rgb,rbg)|rgb}"
+		],
+	"description": "pin2dmd"
+},
+"pkone-mpf": {
+	"prefix": ["pkone"],
+	"body": [
+		"pkone:"
+		,"\tport: ${1: single|str|}"
+		,"\tbaud: ${2: single|int|115200}"
+		,"\twatchdog: ${3: single|ms|1000}"
+		,"\tdebug: ${4|true,false|}"
+		,"\tconsole_log: ${5: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${6: single|enum(none,basic,full)|basic}"
+		],
+	"description": "pkone"
+},
+"pkone_coils-mpf": {
+	"prefix": ["pkone_coils"],
+	"body": [
+		"pkone_coils:"
+		,"\trecycle_ms: ${1: single|ms|None}"
+		],
+	"description": "pkone_coils"
+},
+"player_vars-mpf": {
+	"prefix": ["player_vars"],
+	"body": [
+		"player_vars:"
+		,"\tinitial_value: ${1: single|str|}"
+		,"\tvalue_type: ${2: single|enum(str,float,int)|int}"
+		],
+	"description": "player_vars"
+},
+"playfield_transfers-mpf": {
+	"prefix": ["playfield_transfers"],
+	"body": [
+		"playfield_transfers:"
+		,"\tball_switch: ${1: single|machine(switches)|None}"
+		,"\ttransfer_events: ${2: event_handler|event_handler:ms|None}"
+		,"\teject_target: ${3: single|machine(ball_devices)|}"
+		,"\tcaptures_from: ${4: single|machine(ball_devices)|}"
+		],
+	"description": "playfield_transfers"
+},
+"playfields-mpf": {
+	"prefix": ["playfields"],
+	"body": [
+		"playfields:"
+		,"\tenable_ball_search: ${1|true,false|}"
+		,"\tball_search_timeout: ${2: single|ms|15s}"
+		,"\tball_search_interval: ${3: single|ms|150ms}"
+		,"\tball_search_phase_1_searches: ${4: single|int|3}"
+		,"\tball_search_phase_2_searches: ${5: single|int|3}"
+		,"\tball_search_phase_3_searches: ${6: single|int|4}"
+		,"\tball_search_failed_action: ${7: single|str|new_ball}"
+		,"\tball_search_wait_after_iteration: ${8: single|ms|5s}"
+		,"\tball_search_block_events: ${9: event_handler|event_handler:ms|flipper_cradle}"
+		,"\tball_search_unblock_events: ${10: event_handler|event_handler:ms|flipper_cradle_release}"
+		,"\tball_search_enable_events: ${11: event_handler|event_handler:ms|None}"
+		,"\tball_search_disable_events: ${12: event_handler|event_handler:ms|None}"
+		,"\tdefault_source_device: ${13: single|machine(ball_devices)|}"
+		],
+	"description": "playfields"
+},
+"playlist_player-mpf": {
+	"prefix": ["playlist_player"],
+	"body": [
+		"playlist_player:"
+		,"\taction: ${1: single|enum(play,stop,advance,set_repeat)|play}"
+		],
+	"description": "playlist_player"
+},
+"playlist_player_actions-mpf": {
+	"prefix": ["playlist_player_actions"],
+	"body": [
+		"playlist_player_actions:"
+		,"\tplay: ${1:}"
+			,"\taction: ${2: ignore}"
+			,"\tplaylist: ${3: single|str|}"
+			,"\tvolume: ${4: single|gain|None}"
+			,"\tcrossfade_mode: ${5: single|enum(use_track_setting,override,use_playlist_setting)|use_playlist_setting}"
+			,"\tcrossfade_time: ${6: single|secs|None}"
+			,"\tshuffle: ${7|true,false|}"
+			,"\trepeat: ${8|true,false|}"
+			,"\tscope: ${9: single|enum(machine,player,use_playlist_setting)|use_playlist_setting}"
+			,"\tevents_when_played: ${10: list|event_posted|use_playlist_setting}"
+			,"\tevents_when_stopped: ${11: list|event_posted|use_playlist_setting}"
+			,"\tevents_when_looping: ${12: list|event_posted|use_playlist_setting}"
+			,"\tevents_when_sound_changed: ${13: list|event_posted|use_playlist_setting}"
+			,"\tevents_when_sound_stopped: ${14: list|event_posted|use_playlist_setting}"
+		,"\tstop: ${15:}"
+			,"\taction: ${16: ignore}"
+			,"\tfade_out: ${17: single|secs|0}"
+		,"\tadvance: ${18:}"
+			,"\taction: ${19: ignore}"
+			,"\tnone: ${20: ignore}"
+		,"\tset_repeat: ${21:}"
+			,"\taction: ${22: ignore}"
+			,"\trepeat: ${23|true,false|}"
+		],
+	"description": "playlist_player_actions"
+},
+"playlists-mpf": {
+	"prefix": ["playlists"],
+	"body": [
+		"playlists:"
+		,"\tcrossfade_mode: ${1: single|enum(use_track_setting,override)|use_track_setting}"
+		,"\tcrossfade_time: ${2: single|secs|0}"
+		,"\tshuffle: ${3|true,false|}"
+		,"\trepeat: ${4|true,false|}"
+		,"\tscope: ${5: single|enum(machine,player)|machine}"
+		,"\tsounds: ${6: list|str|}"
+		,"\tevents_when_played: ${7: list|event_posted|None}"
+		,"\tevents_when_stopped: ${8: list|event_posted|None}"
+		,"\tevents_when_looping: ${9: list|event_posted|None}"
+		,"\tevents_when_sound_changed: ${10: list|event_posted|None}"
+		,"\tevents_when_sound_stopped: ${11: list|event_posted|None}"
+		],
+	"description": "playlists"
+},
+"plugins-mpf": {
+	"prefix": ["plugins"],
+	"body": [
+		],
+	"description": "plugins"
+},
+"pololu_maestro-mpf": {
+	"prefix": ["pololu_maestro"],
+	"body": [
+		"pololu_maestro:"
+		,"\tport: ${1: single|str|}"
+		,"\tservo_min: ${2: single|int|3000}"
+		,"\tservo_max: ${3: single|int|9000}"
+		,"\tconsole_log: ${4: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${5: single|enum(none,basic,full)|basic}"
+		,"\tdebug: ${6|true,false|}"
+		],
+	"description": "pololu_maestro"
+},
+"pololu_tic-mpf": {
+	"prefix": ["pololu_tic"],
+	"body": [
+		"pololu_tic:"
+		,"\tdebug: ${1|true,false|}"
+		,"\tconsole_log: ${2: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${3: single|enum(none,basic,full)|basic}"
+		],
+	"description": "pololu_tic"
+},
+"psus-mpf": {
+	"prefix": ["psus"],
+	"body": [
+		"psus:"
+		,"\tvoltage: ${1: single|int|None}"
+		,"\tmax_amps: ${2: single|int|None}"
+		,"\trelease_wait_ms: ${3: single|ms|10}"
+		],
+	"description": "psus"
+},
+"queue_event_player-mpf": {
+	"prefix": ["queue_event_player"],
+	"body": [
+		"queue_event_player:"
+		,"\targs: ${1: dict|str:str|None}"
+		,"\tqueue_event: ${2: single|event_handler|}"
+		,"\tevents_when_finished: ${3: single|event_posted|None}"
+		],
+	"description": "queue_event_player"
+},
+"queue_relay_player-mpf": {
+	"prefix": ["queue_relay_player"],
+	"body": [
+		"queue_relay_player:"
+		,"\targs: ${1: dict|str:str|None}"
+		,"\tpost: ${2: single|str|}"
+		,"\twait_for: ${3: single|str|}"
+		,"\tpass_args: ${4|true,false|}"
+		],
+	"description": "queue_relay_player"
+},
+"random_event_player-mpf": {
+	"prefix": ["random_event_player"],
+	"body": [
+		"random_event_player:"
+		,"\tevents: ${1: ignore}"
+		,"\tfallback_event: ${2: single|str|None}"
+		,"\tforce_different: ${3|true,false|}"
+		,"\tforce_all: ${4|true,false|}"
+		,"\tdisable_random: ${5|true,false|}"
+		,"\tscope: ${6: single|enum(player,machine)|player}"
+		],
+	"description": "random_event_player"
+},
+"raspberry_pi-mpf": {
+	"prefix": ["raspberry_pi"],
+	"body": [
+		"raspberry_pi:"
+		,"\tip: ${1: single|str|}"
+		,"\tport: ${2: single|int|8888}"
+		,"\tdebug: ${3|true,false|}"
+		,"\tconsole_log: ${4: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${5: single|enum(none,basic,full)|basic}"
+		],
+	"description": "raspberry_pi"
+},
+"rgb_dmds-mpf": {
+	"prefix": ["rgb_dmds"],
+	"body": [
+		"rgb_dmds:"
+		,"\tplatform: ${1: single|str|None}"
+		,"\tfps: ${2: single|int|30}"
+		,"\tsource_display: ${3: single|str|dmd}"
+		,"\tonly_send_changes: ${4|true,false|}"
+		,"\tbrightness: ${5: single|float|1.0}"
+		,"\tchannel_order: ${6: single|lstr|rgb}"
+		,"\tgamma: ${7: single|float|2.2}"
+		,"\thardware_brightness: ${8: single|template_float|1.0}"
+		],
+	"description": "rgb_dmds"
+},
+"rpi_dmd-mpf": {
+	"prefix": ["rpi_dmd"],
+	"body": [
+		"rpi_dmd:"
+		,"\thardware_mapping: ${1:   single|enum(regular,adafruit-hat,adafruit-hat-pwm)|regular}"
+		,"\trows: ${2:               single|int|32}"
+		,"\tcols: ${3:               single|int|32}"
+		,"\tchain_length: ${4:       single|int|1}"
+		,"\tparallel: ${5:           single|int|1}"
+		,"\tpwm_bits: ${6:           single|int|11}"
+		,"\tpwm_lsb_nanoseconds: ${7: single|int|130}"
+		,"\tbrightness: ${8:         single|int|100}"
+		,"\tscan_mode: ${9:          single|int|0}"
+		,"\tmultiplexing: ${10:       single|int|0}"
+		,"\trow_address_type: ${11:   single|int|0}"
+		,"\tdisable_hardware_pulsing: ${12|true,false|}"
+		,"\tshow_refresh_rate: ${13|true,false|}"
+		,"\tinverse_colors: ${14|true,false|}"
+		,"\tled_rgb_sequence: ${15:   single|str|RGB}"
+		,"\tpixel_mapper_config: ${16: single|str|""}"
+		,"\tgpio_slowdown: ${17:      single|int|1}"
+		,"\tdaemon: ${18|true,false|}"
+		,"\tdrop_privileges: ${19|true,false|}"
+		],
+	"description": "rpi_dmd"
+},
+"score_queue_player-mpf": {
+	"prefix": ["score_queue_player"],
+	"body": [
+		"score_queue_player:"
+		,"\tint: ${1: single|template_int|None}"
+		],
+	"description": "score_queue_player"
+},
+"score_queues-mpf": {
+	"prefix": ["score_queues"],
+	"body": [
+		"score_queues:"
+		,"\tchimes: ${1: list|machine(coils)|}"
+		,"\tdelay: ${2: single|secs|200ms}"
+		],
+	"description": "score_queues"
+},
+"score_reel_groups-mpf": {
+	"prefix": ["score_reel_groups"],
+	"body": [
+		"score_reel_groups:"
+		,"\treels: ${1: list|machine(score_reels)|}"
+		,"\tchimes: ${2: list|machine(coils)|None}"
+		,"\tlights_tag: ${3: single|str|None}"
+		],
+	"description": "score_reel_groups"
+},
+"score_reels-mpf": {
+	"prefix": ["score_reels"],
+	"body": [
+		"score_reels:"
+		,"\tcoil_inc: ${1: single|machine(coils)|None}"
+		,"\tlimit_lo: ${2: single|int|0}"
+		,"\tlimit_hi: ${3: single|int|9}"
+		,"\trepeat_pulse_time: ${4: single|ms|200}"
+		,"\thw_confirm_time: ${5: single|ms|20}"
+		,"\tswitch_0: ${6: single|machine(switches)|None}"
+		,"\tswitch_1: ${7: single|machine(switches)|None}"
+		,"\tswitch_2: ${8: single|machine(switches)|None}"
+		,"\tswitch_3: ${9: single|machine(switches)|None}"
+		,"\tswitch_4: ${10: single|machine(switches)|None}"
+		,"\tswitch_5: ${11: single|machine(switches)|None}"
+		,"\tswitch_6: ${12: single|machine(switches)|None}"
+		,"\tswitch_7: ${13: single|machine(switches)|None}"
+		,"\tswitch_8: ${14: single|machine(switches)|None}"
+		,"\tswitch_9: ${15: single|machine(switches)|None}"
+		,"\tswitch_10: ${16: single|machine(switches)|None}"
+		,"\tswitch_11: ${17: single|machine(switches)|None}"
+		,"\tswitch_12: ${18: single|machine(switches)|None}"
+		],
+	"description": "score_reels"
+},
+"scriptlets-mpf": {
+	"prefix": ["scriptlets"],
+	"body": [
+		],
+	"description": "scriptlets"
+},
+"segment_display_player-mpf": {
+	"prefix": ["segment_display_player"],
+	"body": [
+		"segment_display_player:"
+		,"\tpriority: ${1: single|int_or_token|0}"
+		,"\ttext: ${2: single|str|None}"
+		,"\tcolor: ${3: list|color|None}"
+		,"\taction: ${4: single|enum(add,remove,flash,no_flash,flash_match,flash_mask,set_color)|add}"
+		,"\ttransition: ${5: ignore}"
+		,"\ttransition_out: ${6: ignore}"
+		,"\tflashing: ${7: single|enum(off,all,match,mask,not_set)|not_set}"
+		,"\tflash_mask: ${8: single|str|None}"
+		,"\tkey: ${9: single|str|None}"
+		,"\texpire: ${10: single|ms_or_token|None}"
+		],
+	"description": "segment_display_player"
+},
+"segment_display_transitions-mpf": {
+	"prefix": ["segment_display_transitions"],
+	"body": [
+		"segment_display_transitions:"
+		,"\tnone: ${1:}"
+			,"\ttype: ${2: single|str|}"
+		,"\tpush: ${3:}"
+			,"\ttype: ${4: single|str|}"
+			,"\tdirection: ${5: single|enum(right,left)|right}"
+			,"\ttext: ${6: single|str|None}"
+			,"\ttext_color: ${7: list|color|None}"
+		,"\tcover: ${8:}"
+			,"\ttype: ${9: single|str|}"
+			,"\tdirection: ${10: single|enum(right,left)|right}"
+			,"\ttext: ${11: single|str|None}"
+			,"\ttext_color: ${12: list|color|None}"
+		,"\tuncover: ${13:}"
+			,"\ttype: ${14: single|str|}"
+			,"\tdirection: ${15: single|enum(right,left)|right}"
+			,"\ttext: ${16: single|str|None}"
+			,"\ttext_color: ${17: list|color|None}"
+		,"\twipe: ${18:}"
+			,"\ttype: ${19: single|str|}"
+			,"\tdirection: ${20: single|enum(right,left)|right}"
+			,"\ttext: ${21: single|str|None}"
+			,"\ttext_color: ${22: list|color|None}"
+		,"\tsplit: ${23:}"
+			,"\ttype: ${24: single|str|}"
+			,"\tmode: ${25: single|enum(push,wipe)|push}"
+			,"\tdirection: ${26: single|enum(in,out)|out}"
+		],
+	"description": "segment_display_transitions"
+},
+"segment_displays-mpf": {
+	"prefix": ["segment_displays"],
+	"body": [
+		"segment_displays:"
+		,"\tnumber: ${1: single|str|}"
+		,"\tsize: ${2: single|int|7}"
+		,"\tintegrated_dots: ${3|true,false|}"
+		,"\tintegrated_commas: ${4|true,false|}"
+		,"\tdefault_color: ${5: list|color|white}"
+		,"\tdefault_transition_update_hz: ${6: single|float_or_token|30}"
+		,"\tplatform_settings: ${7: single|dict|None}"
+		,"\tplatform: ${8: single|str|None}"
+		],
+	"description": "segment_displays"
+},
+"sequence_shots-mpf": {
+	"prefix": ["sequence_shots"],
+	"body": [
+		"sequence_shots:"
+		,"\tswitch_sequence: ${1: list|machine(switches)|None}"
+		,"\tevent_sequence: ${2: list|event_handler|None}"
+		,"\tcancel_switches: ${3: list|machine(switches)|None}"
+		,"\tcancel_events: ${4: event_handler|event_handler:ms|None}"
+		,"\tdelay_switch_list: ${5: dict|machine(switches):ms|None}"
+		,"\tdelay_event_list: ${6: event_handler|event_handler:ms|None}"
+		,"\tsequence_timeout: ${7: single|ms|0}"
+		,"\tplayfield: ${8: single|machine(playfields)|playfield}"
+		],
+	"description": "sequence_shots"
+},
+"sequences-mpf": {
+	"prefix": ["sequences"],
+	"body": [
+		"sequences:"
+		,"\tevents: ${1: list|event_handler|}"
+		],
+	"description": "sequences"
+},
+"servo_controllers-mpf": {
+	"prefix": ["servo_controllers"],
+	"body": [
+		"servo_controllers:"
+		,"\tplatform: ${1: single|str|None}"
+		,"\tservo_min: ${2: single|int|150}"
+		,"\tservo_max: ${3: single|int|600}"
+		,"\tdebug: ${4|true,false|}"
+		,"\tconsole_log: ${5: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${6: single|enum(none,basic,full)|basic}"
+		],
+	"description": "servo_controllers"
+},
+"servos-mpf": {
+	"prefix": ["servos"],
+	"body": [
+		"servos:"
+		,"\tpositions: ${1: dict|float:str|None}"
+		,"\tservo_min: ${2: single|float|0.0}"
+		,"\tservo_max: ${3: single|float|1.0}"
+		,"\tball_search_min: ${4: single|float|0.0}"
+		,"\tball_search_max: ${5: single|float|1.0}"
+		,"\tspeed_limit: ${6: single|float|-1.0}"
+		,"\tacceleration_limit: ${7: single|float|-1.0}"
+		,"\tball_search_wait: ${8: single|ms|5s}"
+		,"\tinclude_in_ball_search: ${9|true,false|}"
+		,"\treset_position: ${10: single|float|0.5}"
+		,"\tstop_events: ${11: event_handler|event_handler:ms|None}"
+		,"\tstop_timeout_after_last_move: ${12: single|ms|None}"
+		,"\treset_events: ${13: event_handler|event_handler:ms|machine_reset_phase_3, ball_starting, ball_will_end, service_mode_entered}"
+		,"\tnumber: ${14: single|str|}"
+		,"\tplatform: ${15: single|str|None}"
+		],
+	"description": "servos"
+},
+"settings-mpf": {
+	"prefix": ["settings"],
+	"body": [
+		"settings:"
+		,"\tlabel: ${1: single|str|}"
+		,"\tsort: ${2: single|int|}"
+		,"\tvalues: ${3: dict|str:str|}"
+		,"\tkey_type: ${4: single|enum(str,float,int)|str}"
+		,"\tdefault: ${5: single|str|}"
+		,"\tmachine_var: ${6: single|str|None}"
+		,"\tsettingType: ${7: single|str|standard}"
+		],
+	"description": "settings"
+},
+"shot_groups-mpf": {
+	"prefix": ["shot_groups"],
+	"body": [
+		"shot_groups:"
+		,"\tshots: ${1: list|machine(shots)|None}"
+		,"\trotate_events: ${2: event_handler|event_handler:ms|None}"
+		,"\trotate_left_events: ${3: event_handler|event_handler:ms|None}"
+		,"\trotate_right_events: ${4: event_handler|event_handler:ms|None}"
+		,"\tenable_events: ${5: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${6: event_handler|event_handler:ms|None}"
+		,"\treset_events: ${7: event_handler|event_handler:ms|None}"
+		,"\trestart_events: ${8: event_handler|event_handler:ms|None}"
+		,"\tenable_rotation_events: ${9: event_handler|event_handler:ms|None}"
+		,"\tdisable_rotation_events: ${10: event_handler|event_handler:ms|None}"
+		],
+	"description": "shot_groups"
+},
+"shot_profile_states-mpf": {
+	"prefix": ["shot_profile_states"],
+	"body": [
+		"shot_profile_states:"
+		,"\tshow: ${1: single|str|None}"
+		,"\tname: ${2: single|str|}"
+		,"\tpriority: ${3: single|int|0}"
+		,"\tspeed: ${4: single|float|1}"
+		,"\tstart_step: ${5: single|int|None}"
+		,"\tloops: ${6: single|int|-1}"
+		,"\tsync_ms: ${7: single|int|None}"
+		,"\tmanual_advance: ${8|true,false|}"
+		,"\tshow_tokens: ${9: dict|str:template_str|None}"
+		],
+	"description": "shot_profile_states"
+},
+"shot_profiles-mpf": {
+	"prefix": ["shot_profiles"],
+	"body": [
+		"shot_profiles:"
+		,"\tloop: ${1|true,false|}"
+		,"\tshow: ${2: single|str|None}"
+		,"\tadvance_on_hit: ${3|true,false|}"
+		,"\tstate_names_to_not_rotate: ${4: list|str|None}"
+		,"\trotation_pattern: ${5: list|str|R}"
+		,"\tshow_when_disabled: ${6|true,false|}"
+		,"\tblock: ${7|true,false|}"
+		,"\tstates: ${8: list|subconfig(shot_profile_states)|}"
+		],
+	"description": "shot_profiles"
+},
+"shots-mpf": {
+	"prefix": ["shots"],
+	"body": [
+		"shots:"
+		,"\tprofile: ${1: single|machine(shot_profiles)|default}"
+		,"\tswitch: ${2: list|machine(switches)|None}"
+		,"\tswitches: ${3: list|machine(switches)|None}"
+		,"\tstart_enabled: ${4|true,false|}"
+		,"\tdelay_switch: ${5: dict|machine(switches):ms|None}"
+		,"\tpersist_enable: ${6|true,false|}"
+		,"\tplayfield: ${7: single|machine(playfields)|playfield}"
+		,"\tmark_playfield_active: ${8|true,false|}"
+		,"\tenable_events: ${9: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${10: event_handler|event_handler:ms|None}"
+		,"\treset_events: ${11: event_handler|event_handler:ms|None}"
+		,"\trestart_events: ${12: event_handler|event_handler:ms|None}"
+		,"\tadvance_events: ${13: event_handler|event_handler:ms|None}"
+		,"\thit_events: ${14: event_handler|event_handler:ms|None}"
+		,"\tshow_tokens: ${15: dict|str:template_str|None}"
+		],
+	"description": "shots"
+},
+"show_config-mpf": {
+	"prefix": ["show_config"],
+	"body": [
+		"show_config:"
+		,"\tshow: ${1: single|str|}"
+		,"\tshow_tokens: ${2: dict|str:str|None}"
+		,"\tmanual_advance: ${3|true,false|}"
+		,"\tsync_ms: ${4: single|int|None}"
+		,"\tloops: ${5: single|int|-1}"
+		,"\tpriority: ${6: single|int|0}"
+		,"\tspeed: ${7: single|float|1}"
+		,"\tstart_step: ${8: single|int|1}"
+		],
+	"description": "show_config"
+},
+"show_player-mpf": {
+	"prefix": ["show_player"],
+	"body": [
+		"show_player:"
+		,"\taction: ${1: single|enum(play,stop,pause,resume,advance,step_back,update,queue)|play}"
+		,"\tshow: ${2: single|str|None}"
+		,"\tpriority: ${3: single|int_or_token|0}"
+		,"\tspeed: ${4: single|float_or_token|1}"
+		,"\tblock_queue: ${5|true,false|}"
+		,"\tstart_step: ${6: single|template_int|1}"
+		,"\tstart_running: ${7: single|template_bool|True}"
+		,"\tloops: ${8: single|int_or_token|-1}"
+		,"\tsync_ms: ${9: single|int_or_token|None}"
+		,"\tmanual_advance: ${10|true,false|}"
+		,"\tshow_queue: ${11: single|machine(show_queues)|None}"
+		,"\tkey: ${12: single|str|None}"
+		,"\tshow_tokens: ${13: dict|str:template_str|None}"
+		,"\tevents_when_played: ${14: list|event_posted|None}"
+		,"\tevents_when_stopped: ${15: list|event_posted|None}"
+		,"\tevents_when_looped: ${16: list|event_posted|None}"
+		,"\tevents_when_paused: ${17: list|event_posted|None}"
+		,"\tevents_when_resumed: ${18: list|event_posted|None}"
+		,"\tevents_when_advanced: ${19: list|event_posted|None}"
+		,"\tevents_when_stepped_back: ${20: list|event_posted|None}"
+		,"\tevents_when_updated: ${21: list|event_posted|None}"
+		,"\tevents_when_completed: ${22: list|event_posted|None}"
+		],
+	"description": "show_player"
+},
+"show_pools-mpf": {
+	"prefix": ["show_pools"],
+	"body": [
+		"show_pools:"
+		,"\tshows: ${1: list|machine(shows)|}"
+		,"\ttype: ${2: single|enum(random,sequence,random_force_next,random_force_all)|sequence}"
+		],
+	"description": "show_pools"
+},
+"show_queues-mpf": {
+	"prefix": ["show_queues"],
+	"body": [
+		],
+	"description": "show_queues"
+},
+"show_step-mpf": {
+	"prefix": ["show_step"],
+	"body": [
+		"show_step:"
+		,"\ttime: ${1: single|str|}"
+		],
+	"description": "show_step"
+},
+"shows-mpf": {
+	"prefix": ["shows"],
+	"body": [
+		],
+	"description": "shows"
+},
+"slide_player-mpf": {
+	"prefix": ["slide_player"],
+	"body": [
+		"slide_player:"
+		,"\ttarget: ${1: single|str|None}"
+		,"\tbackground_color: ${2: single|kivycolor|000000ff}"
+		,"\tpriority: ${3: single|int_or_token|None              }"
+		,"\tshow: ${4|true,false|}"
+		,"\tforce: ${5|true,false|}"
+		,"\ttransition: ${6: ignore}"
+		,"\ttransition_out: ${7: ignore}"
+		,"\twidgets: ${8: ignore}"
+		,"\texpire: ${9: single|secs|None}"
+		,"\tslide: ${10: single|str|None}"
+		,"\ttokens: ${11: dict|str:str|None}"
+		,"\taction: ${12: single|enum(play,remove)|play}"
+		],
+	"description": "slide_player"
+},
+"slides-mpf": {
+	"prefix": ["slides"],
+	"body": [
+		"slides:"
+		,"\tdebug: ${1|true,false|}"
+		,"\texpire: ${2: single|secs|None}"
+		,"\tbackground_color: ${3: single|kivycolor|000000ff}"
+		,"\topacity: ${4: single|float|1.0}"
+		,"\ttransition_out: ${5: ignore}"
+		],
+	"description": "slides"
+},
+"smart_virtual-mpf": {
+	"prefix": ["smart_virtual"],
+	"body": [
+		"smart_virtual:"
+		,"\tsimulate_manual_plunger: ${1|true,false|}"
+		,"\tsimulate_manual_plunger_timeout: ${2: single|ms|10s}"
+		,"\tconsole_log: ${3: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${4: single|enum(none,basic,full)|basic}"
+		],
+	"description": "smart_virtual"
+},
+"smartmatrix-mpf": {
+	"prefix": ["smartmatrix"],
+	"body": [
+		"smartmatrix:"
+		,"\tport: ${1: single|str|}"
+		,"\tbaud: ${2: single|int|}"
+		,"\told_cookie: ${3|true,false|}"
+		,"\tconsole_log: ${4: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${5: single|enum(none,basic,full)|basic}"
+		],
+	"description": "smartmatrix"
+},
+"snux-mpf": {
+	"prefix": ["snux"],
+	"body": [
+		"snux:"
+		,"\tdiag_led_driver: ${1: single|machine(coils)|}"
+		,"\tconsole_log: ${2: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${3: single|enum(none,basic,full)|basic}"
+		],
+	"description": "snux"
+},
+"sound_ducking-mpf": {
+	"prefix": ["sound_ducking"],
+	"body": [
+		"sound_ducking:"
+		,"\ttarget: ${1: list|str|}"
+		,"\tdelay: ${2: single|secs|0}"
+		,"\tattack: ${3: single|secs|10ms}"
+		,"\tattenuation: ${4: single|gain|1.0}"
+		,"\trelease_point: ${5: single|secs|0}"
+		,"\trelease: ${6: single|secs|10ms}"
+		],
+	"description": "sound_ducking"
+},
+"sound_loop_player-mpf": {
+	"prefix": ["sound_loop_player"],
+	"body": [
+		"sound_loop_player:"
+		,"\taction: ${1: single|enum(play,stop,stop_looping,jump_to,play_layer,stop_layer,stop_looping_layer)|play}"
+		],
+	"description": "sound_loop_player"
+},
+"sound_loop_player_actions-mpf": {
+	"prefix": ["sound_loop_player_actions"],
+	"body": [
+		"sound_loop_player_actions:"
+		,"\tplay: ${1:}"
+			,"\taction: ${2: ignore}"
+			,"\tsound_loop_set: ${3: single|str|}"
+			,"\tvolume: ${4: single|gain|None}"
+			,"\tfade_in: ${5: single|secs|None}"
+			,"\tfade_out: ${6: single|secs|None}"
+			,"\tstart_at: ${7: single|secs|0}"
+			,"\ttiming: ${8: single|enum(now,loop_end,next_beat_interval,next_time_interval)|loop_end}"
+			,"\tinterval: ${9: single|float|1}"
+			,"\tsynchronize: ${10|true,false|}"
+			,"\tevents_when_played: ${11: list|event_posted|use_sound_loop_setting}"
+			,"\tevents_when_stopped: ${12: list|event_posted|use_sound_loop_setting}"
+			,"\tevents_when_looping: ${13: list|event_posted|use_sound_loop_setting}"
+			,"\tmode_end_action: ${14: single|enum(stop,stop_looping,use_sound_loop_setting)|use_sound_loop_setting}"
+		,"\tstop: ${15:}"
+			,"\taction: ${16: ignore}"
+			,"\tfade_out: ${17: single|secs|None}"
+		,"\tstop_looping: ${18:}"
+			,"\taction: ${19: ignore}"
+			,"\tnone: ${20: ignore}"
+		,"\tjump_to: ${21:}"
+			,"\taction: ${22: ignore}"
+			,"\ttime: ${23: single|secs|0}"
+		,"\tplay_layer: ${24:}"
+			,"\taction: ${25: ignore}"
+			,"\tlayer: ${26: single|int|}"
+			,"\tvolume: ${27: single|gain|None}"
+			,"\ttiming: ${28: single|enum(now,loop_end)|loop_end}"
+			,"\tfade_in: ${29: single|secs|0}"
+		,"\tstop_layer: ${30:}"
+			,"\taction: ${31: ignore}"
+			,"\tlayer: ${32: single|int|}"
+			,"\tfade_out: ${33: single|secs|0}"
+		,"\tstop_looping_layer: ${34:}"
+			,"\taction: ${35: ignore}"
+			,"\tlayer: ${36: single|int|}"
+		],
+	"description": "sound_loop_player_actions"
+},
+"sound_loop_sets-mpf": {
+	"prefix": ["sound_loop_sets"],
+	"body": [
+		"sound_loop_sets:"
+		,"\tsound: ${1: single|str|}"
+		,"\tvolume: ${2: single|gain|None}"
+		,"\ttempo: ${3: single|float|60.0}"
+		,"\tlayers: ${4:}"
+			,"\tsound: ${5: single|str|}"
+			,"\tvolume: ${6: single|gain|None}"
+			,"\tinitial_state: ${7: single|enum(play,stop)|play}"
+		,"\tevents_when_played: ${8: list|event_posted|None}"
+		,"\tevents_when_stopped: ${9: list|event_posted|None}"
+		,"\tevents_when_looping: ${10: list|event_posted|None}"
+		,"\tfade_in: ${11: single|secs|0}"
+		,"\tfade_out: ${12: single|secs|0}"
+		,"\tmode_end_action: ${13: single|enum(stop,stop_looping)|stop}"
+		],
+	"description": "sound_loop_sets"
+},
+"sound_marker-mpf": {
+	"prefix": ["sound_marker"],
+	"body": [
+		"sound_marker:"
+		,"\ttime: ${1: single|secs|}"
+		,"\tevents: ${2: list|event_posted|}"
+		],
+	"description": "sound_marker"
+},
+"sound_player-mpf": {
+	"prefix": ["sound_player"],
+	"body": [
+		"sound_player:"
+		,"\tblock: ${1|true,false|}"
+		,"\taction: ${2: single|enum(play,stop,stop_looping,load,unload)|play}"
+		,"\tdelay: ${3: single|secs|None}"
+		,"\ttrack: ${4: single|str|None}"
+		,"\tvolume: ${5: single|gain|None}"
+		,"\tpan: ${6: single|float_or_token|None}"
+		,"\tloops: ${7: single|int_or_token|None}"
+		,"\tpriority: ${8: single|int_or_token|None}"
+		,"\tstart_at: ${9: single|secs|None}"
+		,"\tfade_in: ${10: single|secs|None}"
+		,"\tfade_out: ${11: single|secs|None}"
+		,"\tabout_to_finish_time: ${12: single|secs|-1}"
+		,"\tmax_queue_time: ${13: single|secs|-1}"
+		,"\tevents_when_played: ${14: list|event_posted|use_sound_setting}"
+		,"\tevents_when_stopped: ${15: list|event_posted|use_sound_setting}"
+		,"\tevents_when_looping: ${16: list|event_posted|use_sound_setting}"
+		,"\tevents_when_about_to_finish: ${17: list|event_posted|use_sound_setting}"
+		,"\tmode_end_action: ${18: single|enum(stop,stop_looping,use_sound_setting)|use_sound_setting}"
+		,"\tkey: ${19: single|str|use_sound_setting}"
+		],
+	"description": "sound_player"
+},
+"sound_pools-mpf": {
+	"prefix": ["sound_pools"],
+	"body": [
+		],
+	"description": "sound_pools"
+},
+"sound_system-mpf": {
+	"prefix": ["sound_system"],
+	"body": [
+		"sound_system:"
+		,"\tenabled: ${1|true,false|}"
+		,"\tbuffer: ${2: single|int|2048}"
+		,"\tfrequency: ${3: single|int|44100}"
+		,"\tchannels: ${4: single|int|1}"
+		,"\tmaster_volume: ${5: ignore}"
+		,"\ttracks: ${6: dict|str:subconfig(sound_system_tracks)|}"
+		],
+	"description": "sound_system"
+},
+"sound_system_tracks-mpf": {
+	"prefix": ["sound_system_tracks"],
+	"body": [
+		"sound_system_tracks:"
+		,"\ttype: ${1: single|enum(standard,sound_loop,playlist)|standard}"
+		,"\tvolume: ${2: single|gain|0.5}"
+		,"\tevents_when_played: ${3: list|event_posted|None}"
+		,"\tevents_when_stopped: ${4: list|event_posted|None}"
+		,"\tevents_when_paused: ${5: list|event_posted|None}"
+		,"\tevents_when_resumed: ${6: list|event_posted|None}"
+		,"\tducking: ${7: single|subconfig(sound_ducking)|None}"
+		,"\tsimultaneous_sounds: ${8: single|int|8      }"
+		,"\tmax_layers: ${9: single|int|8               }"
+		,"\tcrossfade_time: ${10: single|secs|0          }"
+		],
+	"description": "sound_system_tracks"
+},
+"sounds-mpf": {
+	"prefix": ["sounds"],
+	"body": [
+		"sounds:"
+		,"\tfile: ${1: single|str|None}"
+		,"\ttrack: ${2: single|str|None}"
+		,"\tvolume: ${3: single|gain|0.5}"
+		,"\tpan: ${4: single|float|0}"
+		,"\tstreaming: ${5|true,false|}"
+		,"\tloops: ${6: single|int|0}"
+		,"\tloop_start_at: ${7: single|secs|0}"
+		,"\tloop_end_at: ${8: single|secs|None}"
+		,"\tpriority: ${9: single|int|0}"
+		,"\tstart_at: ${10: single|secs|0}"
+		,"\tfade_in: ${11: single|secs|0}"
+		,"\tfade_out: ${12: single|secs|0}"
+		,"\tabout_to_finish_time: ${13: single|secs|None}"
+		,"\tmax_queue_time: ${14: single|secs|None}"
+		,"\tsimultaneous_limit: ${15: single|int|None}"
+		,"\tstealing_method: ${16: single|enum(skip,oldest,newest)|oldest}"
+		,"\tevents_when_played: ${17: list|event_posted|None}"
+		,"\tevents_when_stopped: ${18: list|event_posted|None}"
+		,"\tevents_when_looping: ${19: list|event_posted|None}"
+		,"\tevents_when_about_to_finish: ${20: list|event_posted|None}"
+		,"\tmode_end_action: ${21: single|enum(stop,stop_looping)|stop_looping}"
+		,"\tkey: ${22: single|str|None}"
+		,"\tmarkers: ${23: list|subconfig(sound_marker)|None}"
+		,"\tducking: ${24: single|subconfig(sound_ducking)|None}"
+		],
+	"description": "sounds"
+},
+"spi_bit_bang-mpf": {
+	"prefix": ["spi_bit_bang"],
+	"body": [
+		"spi_bit_bang:"
+		,"\tdebug: ${1|true,false|}"
+		,"\tmiso_pin: ${2: single|machine(switches)|}"
+		,"\tclock_pin: ${3: single|machine(digital_outputs)|}"
+		,"\tcs_pin: ${4: single|machine(digital_outputs)|}"
+		,"\tbit_time: ${5: single|secs|50ms}"
+		,"\tclock_time: ${6: single|ms|1ms}"
+		,"\tinputs: ${7: single|int|8}"
+		],
+	"description": "spi_bit_bang"
+},
+"spike-mpf": {
+	"prefix": ["spike"],
+	"body": [
+		"spike:"
+		,"\tdebug: ${1|true,false|}"
+		,"\tport: ${2: single|str|}"
+		,"\tbaud: ${3: single|int|}"
+		,"\tbridge_path: ${4: single|str|/bin/bridge}"
+		,"\tbridge_debug: ${5|true,false|}"
+		,"\tbridge_debug_log: ${6: single|str|/mnt/spike.log}"
+		,"\truntime_baud: ${7: single|int|921600}"
+		,"\tflow_control: ${8|true,false|}"
+		,"\tnodes: ${9: list|int|}"
+		,"\tpoll_hz: ${10: single|int|1000}"
+		,"\tuse_send_key: ${11|true,false|}"
+		,"\tconsole_log: ${12: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${13: single|enum(none,basic,full)|basic}"
+		,"\twait_times: ${14: dict|int:int|None}"
+		,"\tspike_version: ${15: single|enum(1,2)|1}"
+		,"\tmax_led_batch_size: ${16: single|int|6}"
+		,"\tresponse_time: ${17: single|int|837}"
+		,"\tverify_checksums_on_readback: ${18|true,false|}"
+		,"\tperiodically_query_nodes: ${19|true,false|}"
+		,"\toc_time: ${20: single|ms|100}"
+		,"\tdefault_debounce_open: ${21: single|ms|4}"
+		,"\tdefault_debounce_close: ${22: single|ms|4}"
+		,"\tnode_config: ${23: dict|int:subconfig(spike_node)|None}"
+		],
+	"description": "spike"
+},
+"spike_node-mpf": {
+	"prefix": ["spike_node"],
+	"body": [
+		"spike_node:"
+		,"\tcoil_priorities: ${1: list|int|None}"
+		,"\tnum_leds: ${2: single|int|None}"
+		,"\tnum_inputs: ${3: single|int|None}"
+		],
+	"description": "spike_node"
+},
+"spike_stepper_settings-mpf": {
+	"prefix": ["spike_stepper_settings"],
+	"body": [
+		"spike_stepper_settings:"
+		,"\thoming_speed: ${1: single|int|10}"
+		,"\tspeed: ${2: single|int|20}"
+		,"\tpoll_ms: ${3: single|ms|100ms}"
+		,"\tlight_number: ${4: single|str|}"
+		],
+	"description": "spike_stepper_settings"
+},
+"spike_switch_overwrites-mpf": {
+	"prefix": ["spike_switch_overwrites"],
+	"body": [
+		"spike_switch_overwrites:"
+		,"\tdebounce_open: ${1: single|ms|None}"
+		,"\tdebounce_close: ${2: single|ms|None}"
+		],
+	"description": "spike_switch_overwrites"
+},
+"spinners-mpf": {
+	"prefix": ["spinners"],
+	"body": [
+		"spinners:"
+		,"\tswitch: ${1: list|machine(switches)|None}"
+		,"\tswitches: ${2: list|machine(switches)|None}"
+		,"\tlabels: ${3: list|str|None}"
+		,"\tactive_ms: ${4: single|ms|1000ms}"
+		,"\tidle_ms: ${5: single|ms|None}"
+		,"\tplayfield: ${6: single|machine(playfields)|playfield}"
+		,"\treset_when_inactive: ${7|true,false|}"
+		,"\tenable_events: ${8: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${9: event_handler|event_handler:ms|None}"
+		],
+	"description": "spinners"
+},
+"state_machine_states-mpf": {
+	"prefix": ["state_machine_states"],
+	"body": [
+		"state_machine_states:"
+		,"\tlabel: ${1: single|str|None}"
+		,"\tshow_when_active: ${2: single|subconfig(show_config)|None}"
+		,"\tevents_when_started: ${3: list|event_posted|None}"
+		,"\tevents_when_stopped: ${4: list|event_posted|None}"
+		],
+	"description": "state_machine_states"
+},
+"state_machine_transitions-mpf": {
+	"prefix": ["state_machine_transitions"],
+	"body": [
+		"state_machine_transitions:"
+		,"\tsource: ${1: list|str|}"
+		,"\ttarget: ${2: single|str|}"
+		,"\tevents: ${3: list|event_handler|}"
+		,"\tevents_when_transitioning: ${4: list|event_posted|None}"
+		],
+	"description": "state_machine_transitions"
+},
+"state_machines-mpf": {
+	"prefix": ["state_machines"],
+	"body": [
+		"state_machines:"
+		,"\tstates: ${1: dict|str:subconfig(state_machine_states)|}"
+		,"\ttransitions: ${2: list|subconfig(state_machine_transitions)|}"
+		,"\tpersist_state: ${3|true,false|}"
+		,"\tstarting_state: ${4: single|str|start}"
+		],
+	"description": "state_machines"
+},
+"step_stick_stepper_settings-mpf": {
+	"prefix": ["step_stick_stepper_settings"],
+	"body": [
+		"step_stick_stepper_settings:"
+		,"\tlow_time: ${1: single|secs|20ms}"
+		,"\thigh_time: ${2: single|secs|20ms}"
+		],
+	"description": "step_stick_stepper_settings"
+},
+"steppers-mpf": {
+	"prefix": ["steppers"],
+	"body": [
+		"steppers:"
+		,"\tnamed_positions: ${1: dict|float:str|None}"
+		,"\thoming_mode: ${2: single|enum(hardware,switch)|hardware}"
+		,"\thoming_switch: ${3: single|machine(switches)|None}"
+		,"\thoming_direction: ${4: single|enum(clockwise,counterclockwise)|clockwise}"
+		,"\tpos_min: ${5: single|int|0}"
+		,"\tpos_max: ${6: single|int|1000}"
+		,"\tball_search_min: ${7: single|int|0}"
+		,"\tball_search_max: ${8: single|int|1}"
+		,"\tball_search_wait: ${9: single|ms|5s}"
+		,"\tinclude_in_ball_search: ${10|true,false|}"
+		,"\treset_position: ${11: single|int|0}"
+		,"\treset_events: ${12: event_handler|event_handler:ms|machine_reset_phase_3, ball_starting, ball_will_end, service_mode_entered}"
+		,"\tnumber: ${13: single|str|}"
+		,"\tplatform: ${14: single|str|None}"
+		,"\tplatform_settings: ${15: single|dict|None}"
+		],
+	"description": "steppers"
+},
+"steprocker_stepper_settings-mpf": {
+	"prefix": ["steprocker_stepper_settings"],
+	"body": [
+		"steprocker_stepper_settings:"
+		,"\thoming_speed: ${1: single|float|1.0}"
+		,"\tfullstep_per_userunit: ${2: single|float|1.0}"
+		,"\tmove_current: ${3: single|int|20}"
+		,"\thold_current: ${4: single|int|0}"
+		,"\tpoll_ms: ${5: single|ms|100ms}"
+		,"\tmicrostep_per_fullstep: ${6: single|int|16}"
+		,"\tvelocity_limit: ${7: single|float|1.0}"
+		,"\tacceleration_limit: ${8: single|float|1.0}"
+		],
+	"description": "steprocker_stepper_settings"
+},
+"switch_player-mpf": {
+	"prefix": ["switch_player"],
+	"body": [
+		"switch_player:"
+		,"\tstart_event: ${1: single|event_handler|machine_reset_phase_3}"
+		,"\tsteps: ${2: ignore}"
+		],
+	"description": "switch_player"
+},
+"switches-mpf": {
+	"prefix": ["switches"],
+	"body": [
+		"switches:"
+		,"\tnumber: ${1: single|str|}"
+		,"\ttype: ${2: single|enum(NC,NO)|NO}"
+		,"\tdebounce: ${3: single|enum(auto,quick,normal)|auto}"
+		,"\tignore_window_ms: ${4: single|ms|0}"
+		,"\tevents_when_activated: ${5: list|event_posted|None}"
+		,"\tevents_when_deactivated: ${6: list|event_posted|None}"
+		,"\tplatform: ${7: single|str|None}"
+		,"\tplatform_settings: ${8: single|dict|None}"
+		,"\tx: ${9: single|float|None}"
+		,"\ty: ${10: single|float|None}"
+		,"\tz: ${11: single|float|None}"
+		],
+	"description": "switches"
+},
+"system11-mpf": {
+	"prefix": ["system11"],
+	"body": [
+		"system11:"
+		,"\tac_relay_delay_ms: ${1: single|ms|75ms}"
+		,"\tac_relay_driver: ${2: single|machine(coils)|}"
+		,"\tprefer_a_side_event: ${3: single|event_handler|game_ended}"
+		,"\tprefer_c_side_event: ${4: single|event_handler|game_will_start}"
+		,"\tplatform: ${5: single|str|None}"
+		,"\tconsole_log: ${6: single|enum(none,basic,full)|none}"
+		,"\tfile_log: ${7: single|enum(none,basic,full)|basic}"
+		],
+	"description": "system11"
+},
+"text_strings-mpf": {
+	"prefix": ["text_strings"],
+	"body": [
+		],
+	"description": "text_strings"
+},
+"text_ui-mpf": {
+	"prefix": ["text_ui"],
+	"body": [
+		"text_ui:"
+		,"\tplayer_vars: ${1: list|str|None}"
+		,"\tmachine_vars: ${2: list|str|None}"
+		],
+	"description": "text_ui"
+},
+"tic_stepper_settings-mpf": {
+	"prefix": ["tic_stepper_settings"],
+	"body": [
+		"tic_stepper_settings:"
+		,"\tmax_speed: ${1: single|int|2000000}"
+		,"\tstarting_speed: ${2: single|int|0}"
+		,"\tmax_acceleration: ${3: single|int|40000}"
+		,"\tmax_deceleration: ${4: single|int|40000}"
+		,"\tstep_mode: ${5: single|int|1}"
+		,"\tpoll_ms: ${6: single|ms|100ms}"
+		,"\tcurrent_limit: ${7: single|int|192}"
+		],
+	"description": "tic_stepper_settings"
+},
+"tilt-mpf": {
+	"prefix": ["tilt"],
+	"body": [
+		"tilt:"
+		,"\ttilt_slam_tilt_events: ${1: event_handler|event_handler:ms|None}"
+		,"\ttilt_warning_events: ${2: event_handler|event_handler:ms|None}"
+		,"\ttilt_events: ${3: event_handler|event_handler:ms|None}"
+		,"\ttilt_warning_switch_tag: ${4: single|str|tilt_warning}"
+		,"\ttilt_switch_tag: ${5: single|str|tilt}"
+		,"\tslam_tilt_switch_tag: ${6: single|str|slam_tilt}"
+		,"\twarnings_to_tilt: ${7: single|template_int|3}"
+		,"\treset_warnings_events: ${8: event_handler|event_handler:ms|ball_will_end}"
+		,"\tmultiple_hit_window: ${9: single|template_ms|300ms}"
+		,"\tsettle_time: ${10: single|template_ms|5s}"
+		,"\ttilt_warnings_player_var: ${11: single|str|tilt_warnings}"
+		],
+	"description": "tilt"
+},
+"timed_switches-mpf": {
+	"prefix": ["timed_switches"],
+	"body": [
+		"timed_switches:"
+		,"\tswitches: ${1: list|machine(switches)|None}"
+		,"\tswitch_tags: ${2: list|str|None}"
+		,"\ttime: ${3: single|ms|}"
+		,"\tstate: ${4: single|enum(active,inactive)|active}"
+		,"\tevents_when_active: ${5: list|event_posted|None}"
+		,"\tevents_when_released: ${6: list|event_posted|None}"
+		],
+	"description": "timed_switches"
+},
+"timer_control_events:  # subconfig for mode timer-mpf": {
+	"prefix": ["timer_control_events:  # subconfig for mode timer"],
+	"body": [
+		"timer_control_events:  # subconfig for mode timer:"
+		,"\taction: ${1: single|enum(add,subtract,jump,start,stop,reset,restart,pause,set_tick_interval,change_tick_interval,reset_tick_interval)|}"
+		,"\tevent: ${2: single|event_handler|}"
+		,"\tvalue: ${3: single|template_float|None }"
+		],
+	"description": "timer_control_events:  # subconfig for mode timer"
+},
+"timers-mpf": {
+	"prefix": ["timers"],
+	"body": [
+		"timers:"
+		,"\tstart_value: ${1: single|template_int|0}"
+		,"\tend_value: ${2: single|template_int|None}"
+		,"\tdirection: ${3: single|enum(up,down)|up}"
+		,"\tmax_value: ${4: single|int|None}"
+		,"\ttick_interval: ${5: single|template_secs|1s}"
+		,"\tstart_running: ${6|true,false|}"
+		,"\tcontrol_events: ${7: list|subconfig(timer_control_events)|None}"
+		,"\trestart_on_complete: ${8|true,false|}"
+		,"\tbcp: ${9|true,false|}"
+		],
+	"description": "timers"
+},
+"track_player-mpf": {
+	"prefix": ["track_player"],
+	"body": [
+		"track_player:"
+		,"\taction: ${1: single|enum(play,stop,pause,set_volume,stop_all_sounds)|}"
+		,"\tvolume: ${2: single|gain|None}"
+		,"\tfade: ${3: single|secs|0.1sec}"
+		],
+	"description": "track_player"
+},
+"transitions-mpf": {
+	"prefix": ["transitions"],
+	"body": [
+		"transitions:"
+		,"\tpush: ${1:}"
+			,"\ttype: ${2: single|str|}"
+			,"\tdirection: ${3: single|str|left}"
+			,"\teasing: ${4: single|str|out_quad}"
+			,"\tduration: ${5: single|secs|1}"
+		,"\tmove_in: ${6:}"
+			,"\ttype: ${7: single|str|}"
+			,"\tdirection: ${8: single|str|left}"
+			,"\teasing: ${9: single|str|out_quad}"
+			,"\tduration: ${10: single|secs|1}"
+		,"\tmove_out: ${11:}"
+			,"\ttype: ${12: single|str|}"
+			,"\tdirection: ${13: single|str|left}"
+			,"\teasing: ${14: single|str|out_quad}"
+			,"\tduration: ${15: single|secs|1}"
+		,"\tfade: ${16:}"
+			,"\ttype: ${17: single|str|}"
+			,"\tduration: ${18: single|secs|1}"
+		,"\tswap: ${19:}"
+			,"\ttype: ${20: single|str|}"
+			,"\tduration: ${21: single|secs|2}"
+		,"\tcard: ${22:}"
+			,"\ttype: ${23: single|str|}"
+			,"\tmode: ${24: single|enum(push,pop)|push}"
+		,"\twipe: ${25:}"
+			,"\ttype: ${26: single|str|}"
+			,"\tduration: ${27: single|secs|1}"
+		,"\tfade_back: ${28:}"
+			,"\ttype: ${29: single|str|}"
+			,"\tduration: ${30: single|secs|2}"
+		,"\trise_in: ${31:}"
+			,"\ttype: ${32: single|str|}"
+			,"\tduration: ${33: single|secs|2}"
+		,"\tnone: ${34:}"
+			,"\ttype: ${35: ignore}"
+		],
+	"description": "transitions"
+},
+"trinamics_steprocker-mpf": {
+	"prefix": ["trinamics_steprocker"],
+	"body": [
+		"trinamics_steprocker:"
+		,"\tport: ${1: single|str|}"
+		],
+	"description": "trinamics_steprocker"
+},
+"twitch_client-mpf": {
+	"prefix": ["twitch_client"],
+	"body": [
+		"twitch_client:"
+		,"\tuser: ${1: single|str|None}"
+		,"\tpassword: ${2: single|str|None}"
+		,"\tchannel: ${3: single|str|None}"
+		,"\tuser_var: ${4: single|str|None}"
+		,"\tpassword_var: ${5: single|str|None}"
+		,"\tchannel_var: ${6: single|str|None}"
+		],
+	"description": "twitch_client"
+},
+"variable_player-mpf": {
+	"prefix": ["variable_player"],
+	"body": [
+		"variable_player:"
+		,"\tint: ${1: single|template_int|None}"
+		,"\tfloat: ${2: single|template_float|None}"
+		,"\tstring: ${3: single|template_str|None}"
+		,"\tblock: ${4|true,false|}"
+		,"\taction: ${5: single|enum(add,set,add_machine,set_machine)|add}"
+		,"\tplayer: ${6: single|int|None}"
+		],
+	"description": "variable_player"
+},
+"video_control_events-mpf": {
+	"prefix": ["video_control_events"],
+	"body": [
+		"video_control_events:"
+		,"\taction: ${1: single|enum(play,pause,stop,seek,volume,position)|}"
+		,"\tevent: ${2: single|event_handler|}"
+		,"\tvalue: ${3: single|float|None}"
+		],
+	"description": "video_control_events"
+},
+"video_pools-mpf": {
+	"prefix": ["video_pools"],
+	"body": [
+		],
+	"description": "video_pools"
+},
+"videos:         # not really use-mpf": {
+	"prefix": ["videos:         # not really use"],
+	"body": [
+		"videos:         # not really use:"
+		,"\tload: ${1: single|str|preload}"
+		,"\tfile: ${2: single|str|None}"
+		,"\tpriority: ${3: single|int|0}"
+		,"\twidth: ${4: single|num|None}"
+		,"\theight: ${5: single|num|None}"
+		,"\tevents_when_played: ${6: list|event_posted|None}"
+		,"\tevents_when_stopped: ${7: list|event_posted|None}"
+		],
+	"description": "videos:         # not really use"
+},
+"virtual_platform_start_active_switches-mpf": {
+	"prefix": ["virtual_platform_start_active_switches"],
+	"body": [
+		],
+	"description": "virtual_platform_start_active_switches"
+},
+"virtual_segment_display_connector-mpf": {
+	"prefix": ["virtual_segment_display_connector"],
+	"body": [
+		"virtual_segment_display_connector:"
+		,"\tdebug: ${1|true,false|}"
+		,"\tbcp_connection: ${2: single|str|local_display}"
+		,"\tsegment_displays: ${3: list|machine(segment_displays)|None}"
+		],
+	"description": "virtual_segment_display_connector"
+},
+"vpe-mpf": {
+	"prefix": ["vpe"],
+	"body": [
+		"vpe:"
+		,"\tdebug: ${1|true,false|}"
+		,"\tlisten_port: ${2: single|int|50051}"
+		],
+	"description": "vpe"
+},
+"widget_player-mpf": {
+	"prefix": ["widget_player"],
+	"body": [
+		"widget_player:"
+		,"\tslide: ${1: single|str|None}"
+		,"\taction: ${2: single|enum(add,remove,update)|add}"
+		,"\tkey: ${3: single|str|None}"
+		,"\twidget_settings: ${4: ignore}"
+		,"\ttarget: ${5: single|str|None}"
+		],
+	"description": "widget_player"
+},
+"widget_styles-mpf": {
+	"prefix": ["widget_styles"],
+	"body": [
+		"widget_styles:"
+		,"\tcolor: ${1: single|kivycolor|ffffffff}"
+		],
+	"description": "widget_styles"
+},
+"widgets-mpf": {
+	"prefix": ["widgets"],
+	"body": [
+		"widgets:"
+		,"\tcommon: ${1:}"
+			,"\ttype: ${2: single|str|}"
+			,"\tx: ${3: single|str|None}"
+			,"\ty: ${4: single|str|None}"
+			,"\tanchor_x: ${5: single|str|center}"
+			,"\tanchor_y: ${6: single|str|center}"
+			,"\tround_anchor_x: ${7: single|str|None}"
+			,"\tround_anchor_y: ${8: single|str|None}"
+			,"\topacity: ${9: single|float_or_token|1.0}"
+			,"\tz: ${10: single|int_or_token|0}"
+			,"\tanimations: ${11: ignore}"
+			,"\treset_animations_events: ${12: event_handler|event_handler:ms|None}"
+			,"\tcolor: ${13: single|kivycolor|ffffffff}"
+			,"\tstyle: ${14: list|str|None}"
+			,"\tadjust_top: ${15: single|int_or_token|0}"
+			,"\tadjust_bottom: ${16: single|int_or_token|0}"
+			,"\tadjust_left: ${17: single|int_or_token|0}"
+			,"\tadjust_right: ${18: single|int_or_token|0}"
+			,"\texpire: ${19: single|secs_or_token|None}"
+			,"\tkey: ${20: single|str|None}"
+			,"\twidget: ${21: single|str|None}"
+			,"\tevents_when_added: ${22: list|event_posted|None}"
+			,"\tevents_when_removed: ${23: list|event_posted|None}"
+		,"\tanimations: ${24:}"
+			,"\tproperty: ${25: list|str|}"
+			,"\tvalue: ${26: list|str|}"
+			,"\trelative: ${27: single|bool_or_token|false}"
+			,"\tduration: ${28: single|secs_or_token|1}"
+			,"\ttiming: ${29: single|enum(after_previous,with_previous)|after_previous}"
+			,"\trepeat: ${30: single|bool_or_token|false}"
+			,"\teasing: ${31: single|str|linear}"
+		,"\tbezier: ${32:}"
+			,"\tpoints: ${33: list|num_or_token|}"
+			,"\tthickness: ${34: single|float_or_token|1.0}"
+			,"\tcap: ${35: single|str|round}"
+			,"\tjoint: ${36: single|str|round}"
+			,"\tcap_precision: ${37: single|int_or_token|10}"
+			,"\tjoint_precision: ${38: single|int_or_token|10}"
+			,"\tclose: ${39: single|bool_or_token|false}"
+			,"\tprecision: ${40: single|int_or_token|180}"
+			,"\trotation: ${41: single|float_or_token|0}"
+			,"\tscale: ${42: single|float_or_token|1.0}"
+		,"\tcamera: ${43:}"
+			,"\twidth: ${44: single|num_or_token|}"
+			,"\theight: ${45: single|num_or_token|}"
+			,"\tcamera_index: ${46: single|int_or_token|-1}"
+		,"\tdisplay: ${47:}"
+			,"\twidth: ${48: single|num_or_token|}"
+			,"\theight: ${49: single|num_or_token|}"
+			,"\tsource_display: ${50: single|str|dmd}"
+			,"\teffects: ${51: ignore}"
+		,"\tellipse: ${52:}"
+			,"\twidth: ${53: single|num_or_token|}"
+			,"\theight: ${54: single|num_or_token|}"
+			,"\tsegments: ${55: single|int_or_token|180}"
+			,"\tangle_start: ${56: single|int_or_token|0}"
+			,"\tangle_end: ${57: single|int_or_token|360}"
+			,"\trotation: ${58: single|float_or_token|0}"
+			,"\tscale: ${59: single|float_or_token|1.0}"
+		,"\timage: ${60:}"
+			,"\tfps: ${61: single|int_or_token|10}"
+			,"\tloops: ${62: single|int_or_token|-1}"
+			,"\timage: ${63: single|str|}"
+			,"\tauto_play: ${64: single|bool_or_token|true}"
+			,"\tstart_frame: ${65: single|int_or_token|0}"
+			,"\trotation: ${66: single|int_or_token|0}"
+			,"\tscale: ${67: single|float_or_token|1.0}"
+		,"\tline: ${68:}"
+			,"\tpoints: ${69: list|num_or_token|}"
+			,"\tthickness: ${70: single|float_or_token|1.0}"
+			,"\tcap: ${71: single|str|round}"
+			,"\tjoint: ${72: single|str|round}"
+			,"\tcap_precision: ${73: single|int_or_token|10}"
+			,"\tjoint_precision: ${74: single|int_or_token|10}"
+			,"\tclose: ${75: single|bool_or_token|false}"
+		,"\tpoints: ${76:}"
+			,"\tpoints: ${77: list|num_or_token|}"
+			,"\tpointsize: ${78: single|float_or_token|1.0}"
+			,"\trotation: ${79: single|int_or_token|0}"
+			,"\tscale: ${80: single|float_or_token|1.0}"
+		,"\tquad: ${81:}"
+			,"\tpoints: ${82: list|num_or_token|}"
+			,"\trotation: ${83: single|int_or_token|0}"
+			,"\tscale: ${84: single|float_or_token|1.0}"
+		,"\trectangle: ${85:}"
+			,"\twidth: ${86: single|float_or_token|}"
+			,"\theight: ${87: single|float_or_token|}"
+			,"\tcorner_radius: ${88: single|int_or_token|0}"
+			,"\tcorner_segments: ${89: single|int_or_token|10}"
+			,"\trotation: ${90: single|int_or_token|0}"
+			,"\tscale: ${91: single|float_or_token|1.0}"
+		,"\tsegment_display_emulator: ${92:}"
+			,"\tname: ${93: single|str|None}"
+			,"\ttext: ${94: single|str|}"
+			,"\tflash_mode: ${95: single|enum(off,all,match,mask)|off}"
+			,"\tflash_frequency: ${96: single|float_or_token|1.0}"
+			,"\tflash_mask: ${97: single|str|None}"
+			,"\tdisplay_type: ${98: single|enum(7seg,14seg)|14seg}"
+			,"\tcharacter_count: ${99: single|int_or_token|1}"
+			,"\tcharacter_spacing: ${100: single|int_or_token|10}"
+			,"\tcharacter_slant_angle: ${101: single|float_or_token|0.0}"
+			,"\tpadding: ${102: single|int_or_token|20}"
+			,"\tbackground_color: ${103: single|kivycolor|000000ff}"
+			,"\tsegment_off_color: ${104: single|kivycolor|4b4c4aff}"
+			,"\tsegment_on_color: ${105: list|kivycolor|dd8217ff}"
+			,"\tsegment_width: ${106: single|float_or_token|0.16}"
+			,"\tsegment_interval: ${107: single|float_or_token|0.05}"
+			,"\tbevel_width: ${108: single|float_or_token|0.06}"
+			,"\tside_bevel_enabled: ${109: single|bool_or_token|true}"
+			,"\tdot_enabled: ${110: single|bool_or_token|false}"
+			,"\tcomma_enabled: ${111: single|bool_or_token|false}"
+			,"\tcharacter_map: ${112: dict|int:int|None}"
+			,"\twidth: ${113: single|float_or_token|}"
+			,"\theight: ${114: single|float_or_token|}"
+			,"\trotation: ${115: single|int_or_token|0}"
+			,"\tscale: ${116: single|float_or_token|1.0}"
+		,"\ttext: ${117:}"
+			,"\ttext: ${118: single|str|}"
+			,"\tfont_size: ${119: single|num_or_token|15}"
+			,"\tfont_name: ${120: ignore}"
+			,"\tbitmap_font: ${121: single|bool_or_token|false}"
+			,"\tfont_kerning: ${122: single|bool_or_token|true}"
+			,"\tbold: ${123: single|bool_or_token|false}"
+			,"\titalic: ${124: single|bool_or_token|false}"
+			,"\tnumber_grouping: ${125: single|bool_or_token|false}"
+			,"\tmin_digits: ${126: single|int_or_token|0}"
+			,"\thalign: ${127: single|str|center}"
+			,"\tvalign: ${128: single|str|middle}"
+			,"\trotation: ${129: single|int_or_token|0}"
+			,"\tscale: ${130: single|float_or_token|1.0}"
+			,"\tcasing: ${131: single|str|None}"
+		,"\ttext_input: ${132:}"
+			,"\tkey: ${133: single|str|}"
+			,"\tinitial_char: ${134: single|str|A}"
+			,"\tfont_size: ${135: single|num_or_token|15}"
+			,"\tfont_name: ${136: ignore}"
+			,"\thalign: ${137: single|str|center}"
+			,"\tvalign: ${138: single|str|middle}"
+			,"\tshift_left_event: ${139: single|event_handler|sw_left_flipper}"
+			,"\tshift_right_event: ${140: single|event_handler|sw_right_flipper}"
+			,"\tselect_event: ${141: single|event_handler|sw_start}"
+			,"\tabort_event: ${142: single|event_handler|sw_esc}"
+			,"\tforce_complete_event: ${143: single|event_handler|None}"
+			,"\tblock_events: ${144: list|event_handler|None}"
+			,"\trelease_events: ${145: list|event_handler|None}"
+			,"\tbold: ${146: single|bool_or_token|false}"
+			,"\titalic: ${147: single|bool_or_token|false}"
+			,"\tnumber_grouping: ${148: single|bool_or_token|false}"
+			,"\tmin_digits: ${149: single|int_or_token|0}"
+			,"\tmax_chars: ${150: single|int_or_token|3}"
+			,"\tchar_list: ${151: "single|str|ABCDEFGHIJKLMNOPQRSTUVWXYZ_- "}"
+			,"\tkeep_selected_char: ${152: single|bool_or_token|true}"
+			,"\tdynamic_x: ${153: single|bool_or_token|true}"
+			,"\tdynamic_x_pad: ${154: single|int_or_token|0}"
+		,"\ttriangle: ${155:}"
+			,"\tpoints: ${156: list|num_or_token|}"
+			,"\trotation: ${157: single|int_or_token|0}"
+			,"\tscale: ${158: single|float_or_token|1.0}"
+		,"\tvideo: ${159:}"
+			,"\tvideo: ${160: single|str|}"
+			,"\theight: ${161: single|int_or_token|0}"
+			,"\twidth: ${162: single|int_or_token|0}"
+			,"\tvolume: ${163: single|float_or_token|1.0}"
+			,"\tauto_play: ${164: single|bool_or_token|true}"
+			,"\tend_behavior: ${165: single|enum(loop,pause,stop)|stop}"
+			,"\tcontrol_events: ${166: list|subconfig(video_control_events)|None}"
+		],
+	"description": "widgets"
+}
+}
