@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mpf_snippet_creator", "mpf_snippet_creator\mpf_snippet_creator.csproj", "{C73ABD39-6253-4D35-8B69-E9799ABFB0BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "config_spec", "config_spec\config_spec.csproj", "{CDFF1996-8916-42D9-ACC5-6BC915E7B675}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C73ABD39-6253-4D35-8B69-E9799ABFB0BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C73ABD39-6253-4D35-8B69-E9799ABFB0BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C73ABD39-6253-4D35-8B69-E9799ABFB0BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C73ABD39-6253-4D35-8B69-E9799ABFB0BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDFF1996-8916-42D9-ACC5-6BC915E7B675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFF1996-8916-42D9-ACC5-6BC915E7B675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFF1996-8916-42D9-ACC5-6BC915E7B675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFF1996-8916-42D9-ACC5-6BC915E7B675}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B692BF21-10A3-47B5-8CE3-A0BFD0C41627}
+	EndGlobalSection
+EndGlobal
