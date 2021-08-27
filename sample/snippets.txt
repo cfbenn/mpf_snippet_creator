@@ -240,7 +240,7 @@
 		,"\tentrance_event_timeout: ${18: ignore             }"
 		,"\tidle_missing_ball_timeout: ${19: single|secs|5s}"
 		,"\tjam_switch: ${20: ignore                         }"
-		,"\tconfirm_eject_type: ${21: single|enum(target,switch,event,fake)|target}"
+		,"\tconfirm_eject_type: ${21|target,switch,event,fake|}"
 		,"\tcaptures_from: ${22: single|machine(playfields)|playfield}"
 		,"\teject_targets: ${23: list|machine(ball_devices)|playfield}"
 		,"\teject_timeouts: ${24: list|ms|None}"
@@ -401,7 +401,7 @@
 	"prefix": ["coil_player"],
 	"body": [
 		"coil_player:"
-		,"\taction: ${1: single|enum(pulse,on,off,enable,disable)|pulse}"
+		,"\taction: ${1|pulse,on,off,enable,disable|}"
 		,"\thold_power: ${2: single|float|None}"
 		,"\tpulse_power: ${3: single|float|None}"
 		,"\tpulse_ms: ${4: single|int|None}"
@@ -480,7 +480,7 @@
 	"prefix": ["counter_control_events:  # subconfig for mode counter"],
 	"body": [
 		"counter_control_events:  # subconfig for mode counter:"
-		,"\taction: ${1: single|enum(add,subtract,jump)|}"
+		,"\taction: ${1|add,subtract,jump|}"
 		,"\tevent: ${2: single|event_handler|}"
 		,"\tvalue: ${3: single|template_int|None}"
 		],
@@ -494,7 +494,7 @@
 		,"\tcount_complete_value: ${2: single|template_int|None}"
 		,"\tmultiple_hit_window: ${3: single|ms|0}"
 		,"\tcount_interval: ${4: single|int|1}"
-		,"\tdirection: ${5: single|enum(up,down)|up}"
+		,"\tdirection: ${5|up,down|}"
 		,"\tstarting_count: ${6: single|template_int|0}"
 		,"\tcontrol_events: ${7: list|subconfig(counter_control_events)|None}"
 		],
@@ -565,8 +565,8 @@
 		,"\tlabel: ${1: single|str|%}"
 		,"\ttags: ${2: list|str|None}"
 		,"\tdebug: ${3|true,false|}"
-		,"\tconsole_log: ${4: single|enum(none,basic,full)|basic}"
-		,"\tfile_log: ${5: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${4|none,basic,full|}"
+		,"\tfile_log: ${5|none,basic,full|}"
 		],
 	"description": "device:     # base for all device"
 },
@@ -579,7 +579,7 @@
 		,"\tenable_events: ${3: event_handler|event_handler:ms|None}"
 		,"\tplatform: ${4: single|str|None}"
 		,"\tplatform_settings: ${5: single|dict|None}"
-		,"\ttype: ${6: single|enum(light,driver)|}"
+		,"\ttype: ${6|light,driver|}"
 		,"\tlight_subtype: ${7: single|str|None}"
 		],
 	"description": "digital_outputs"
@@ -608,7 +608,7 @@
 	"prefix": ["display_light_player"],
 	"body": [
 		"display_light_player:"
-		,"\taction: ${1: single|enum(play,stop)|play}"
+		,"\taction: ${1|play,stop|}"
 		,"\tlights: ${2: list|str|None}"
 		,"\tbcp_connection: ${3: single|str|local_display}"
 		,"\tmin_x: ${4: single|int|0}"
@@ -651,7 +651,7 @@
 		,"\treset_events: ${14: event_handler|event_handler:ms|machine_reset_phase_3}"
 		,"\ttargets_when_active: ${15: list|machine(ball_devices)|playfield}"
 		,"\ttargets_when_inactive: ${16: list|machine(ball_devices)|playfield}"
-		,"\ttype: ${17: single|enum(hold,pulse)|hold}"
+		,"\ttype: ${17|hold,pulse|}"
 		,"\tball_search_order: ${18: single|int|100}"
 		,"\tball_search_hold_time: ${19: single|ms|1s}"
 		,"\tplayfield: ${20: single|machine(playfields)|playfield}"
@@ -825,8 +825,8 @@
 		,"\tlinear_cutoff: ${4: single|float|0.0}"
 		,"\tkeyframe_interpolation: ${5|true,false|}"
 		,"\tdithering: ${6|true,false|}"
-		,"\tconsole_log: ${7: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${8: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${7|none,basic,full|}"
+		,"\tfile_log: ${8|none,basic,full|}"
 		],
 	"description": "fadecandy"
 },
@@ -834,7 +834,7 @@
 	"prefix": ["fast"],
 	"body": [
 		"fast:"
-		,"\tdriverboards: ${1: single|enum(fast,wpc,None)|None}"
+		,"\tdriverboards: ${1|fast,wpc,None|}"
 		,"\tports: ${2: list|str|}"
 		,"\tbaud: ${3: list|int|921600}"
 		,"\twatchdog: ${4: single|ms|1000}"
@@ -848,8 +848,8 @@
 		,"\trgb_buffer: ${12: single|int|3}"
 		,"\tdmd_buffer: ${13: single|int|3}"
 		,"\tsegment_buffer: ${14: single|int|4}"
-		,"\tconsole_log: ${15: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${16: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${15|none,basic,full|}"
+		,"\tfile_log: ${16|none,basic,full|}"
 		,"\tfirmware_updates: ${17: list|subconfig(fast_firmware_update)|None}"
 		,"\tignore_rgb_crash: ${18|true,false|}"
 		],
@@ -859,7 +859,7 @@
 	"prefix": ["fast_coils"],
 	"body": [
 		"fast_coils:"
-		,"\tconnection: ${1: single|enum(network,local,auto)|auto}"
+		,"\tconnection: ${1|network,local,auto|}"
 		,"\trecycle_ms: ${2: single|ms|None}"
 		,"\thold_pwm_patter: ${3: single|str|None}"
 		],
@@ -869,7 +869,7 @@
 	"prefix": ["fast_firmware_update"],
 	"body": [
 		"fast_firmware_update:"
-		,"\ttype: ${1: single|enum(net,rgb)|}"
+		,"\ttype: ${1|net,rgb|}"
 		,"\tfile: ${2: single|str|}"
 		,"\tversion: ${3: single|str|}"
 		],
@@ -979,7 +979,7 @@
 	"prefix": ["hardware_sound_player"],
 	"body": [
 		"hardware_sound_player:"
-		,"\taction: ${1: single|enum(play,play_file,text_to_speech,set_volume,increase_volume,decrease_volume,stop)|play}"
+		,"\taction: ${1|play,play_file,text_to_speech,set_volume,increase_volume,decrease_volume,stop|}"
 		,"\ttrack: ${2: single|int|1}"
 		,"\tvalue: ${3: single|str|None}"
 		,"\tplatform_options: ${4: single|dict|None}"
@@ -1136,7 +1136,7 @@
 	"body": [
 		"light_segment_displays_device:"
 		,"\tlights: ${1: list|dict(str:machine(lights))|}"
-		,"\ttype: ${2: single|enum(7segment,bcd,8segment,14segment,16segment)|}"
+		,"\ttype: ${2|7segment,bcd,8segment,14segment,16segment|}"
 		],
 	"description": "light_segment_displays_device"
 },
@@ -1195,9 +1195,9 @@
 		,"\tdebug: ${2|true,false|}"
 		,"\tdisplay_flash_frequency: ${3: single|float|1.0}"
 		,"\tdisable_dtr: ${4|true,false|}"
-		,"\tconnection: ${5: single|enum(network,serial)|network}"
-		,"\tconsole_log: ${6: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${7: single|enum(none,basic,full)|basic}"
+		,"\tconnection: ${5|network,serial|}"
+		,"\tconsole_log: ${6|none,basic,full|}"
+		,"\tfile_log: ${7|none,basic,full|}"
 		,"\tmax_led_batch_size: ${8: single|int|12}"
 		,"\tnetwork_host: ${9: single|str|None}"
 		,"\tnetwork_port: ${10: single|int|None}"
@@ -1245,7 +1245,7 @@
 	"body": [
 		"machine_vars:"
 		,"\tinitial_value: ${1: single|str|}"
-		,"\tvalue_type: ${2: single|enum(str,float,int)|int}"
+		,"\tvalue_type: ${2|str,float,int|}"
 		,"\tpersist: ${3|true,false|}"
 		],
 	"description": "machine_vars"
@@ -1306,8 +1306,8 @@
 		,"\tcode: ${10: single|str|None}"
 		,"\tstop_on_ball_end: ${11|true,false|}"
 		,"\trestart_on_next_ball: ${12|true,false|}"
-		,"\tconsole_log: ${13: single|enum(none,basic,full)|basic}"
-		,"\tfile_log: ${14: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${13|none,basic,full|}"
+		,"\tfile_log: ${14|none,basic,full|}"
 		,"\tasset_paths: ${15: list|str|None}"
 		,"\tpath: ${16: single|str|None}"
 		],
@@ -1360,7 +1360,7 @@
 		,"\tplugins: ${15: ignore}"
 		,"\tplatforms: ${16: ignore}"
 		,"\tpaths: ${17: ignore}"
-		,"\treport_crashes: ${18: single|enum(ask,never,always)|ask}"
+		,"\treport_crashes: ${18|ask,never,always|}"
 		],
 	"description": "mpf"
 },
@@ -1381,7 +1381,7 @@
 		,"\tsource_playfield: ${5: single|machine(ball_devices)|playfield}"
 		,"\tenable_events: ${6: event_handler|event_handler:ms|None}"
 		,"\tdisable_events: ${7: event_handler|event_handler:ms|None}"
-		,"\tlocked_ball_counting_strategy: ${8: single|enum(virtual_only,min_virtual_physical,physical_only,no_virtual)|virtual_only}"
+		,"\tlocked_ball_counting_strategy: ${8|virtual_only,min_virtual_physical,physical_only,no_virtual|}"
 		,"\tpriority: ${9: single|int|1}"
 		,"\treset_all_counts_events: ${10: event_handler|event_handler:ms|None}"
 		,"\treset_count_for_current_player_events: ${11: event_handler|event_handler:ms|None}"
@@ -1393,7 +1393,7 @@
 	"body": [
 		"multiballs:"
 		,"\tball_count: ${1: single|template_int|}"
-		,"\tball_count_type: ${2: single|enum(add,total)|total}"
+		,"\tball_count_type: ${2|add,total|}"
 		,"\treplace_balls_in_play: ${3|true,false|}"
 		,"\tsource_playfield: ${4: single|machine(ball_devices)|playfield}"
 		,"\tshoot_again: ${5: single|template_ms|10s}"
@@ -1431,8 +1431,8 @@
 		,"\thost: ${1: single|str|localhost}"
 		,"\tport: ${2: single|int|7890}"
 		,"\tdebug: ${3|true,false|}"
-		,"\tconsole_log: ${4: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${5: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${4|none,basic,full|}"
+		,"\tfile_log: ${5|none,basic,full|}"
 		],
 	"description": "open_pixel_control"
 },
@@ -1440,13 +1440,13 @@
 	"prefix": ["opp"],
 	"body": [
 		"opp:"
-		,"\tdriverboards: ${1: single|enum(gen2)|gen2}"
+		,"\tdriverboards: ${1|gen2|}"
 		,"\tports: ${2: list|str|}"
 		,"\tbaud: ${3: single|int|115200}"
 		,"\tdebug: ${4|true,false|}"
 		,"\tchains: ${5: dict|str:str|None}"
-		,"\tconsole_log: ${6: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${7: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${6|none,basic,full|}"
+		,"\tfile_log: ${7|none,basic,full|}"
 		,"\tpoll_hz: ${8: single|int|100}"
 		,"\tincand_update_hz: ${9: single|int|25}"
 		],
@@ -1476,7 +1476,7 @@
 	"prefix": ["p_roc"],
 	"body": [
 		"p_roc:"
-		,"\tdriverboards: ${1: single|enum(wpc,wpcAlphanumeric,wpc95,sternSAM,sternWhitestar,pdb,custom,None)|None}"
+		,"\tdriverboards: ${1|wpc,wpcAlphanumeric,wpc95,sternSAM,sternWhitestar,pdb,custom,None|}"
 		,"\tlamp_matrix_strobe_time: ${2: single|ms|100ms}"
 		,"\twatchdog_time: ${3: single|ms|1s}"
 		,"\tuse_watchdog: ${4|true,false|}"
@@ -1484,8 +1484,8 @@
 		,"\tdmd_update_interval: ${6: single|ms|33ms}"
 		,"\tdisplay_flash_frequency: ${7: single|float|1.0}"
 		,"\tdebug: ${8|true,false|}"
-		,"\tconsole_log: ${9: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${10: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${9|none,basic,full|}"
+		,"\tfile_log: ${10|none,basic,full|}"
 		,"\tpd_led_boards: ${11: dict|int:subconfig(pd_led_boards)|none}"
 		,"\tuse_separate_thread: ${12|true,false|}"
 		,"\ttrace_bus: ${13|true,false|}"
@@ -1504,13 +1504,13 @@
 	"prefix": ["p3_roc"],
 	"body": [
 		"p3_roc:"
-		,"\tdriverboards: ${1: single|enum(pdb,custom,None)|None}"
+		,"\tdriverboards: ${1|pdb,custom,None|}"
 		,"\tlamp_matrix_strobe_time: ${2: single|ms|100ms}"
 		,"\twatchdog_time: ${3: single|ms|1s}"
 		,"\tuse_watchdog: ${4|true,false|}"
 		,"\tdebug: ${5|true,false|}"
-		,"\tconsole_log: ${6: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${7: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${6|none,basic,full|}"
+		,"\tfile_log: ${7|none,basic,full|}"
 		,"\tburst_us_per_half_pulse: ${8: single|int(0,63)|12}"
 		,"\tburst_number_of_pulses_to_drive_output: ${9: single|int(0,31)|5}"
 		,"\tburst_number_of_idle_pulses_before_next: ${10: single|int(0,63)|8}"
@@ -1575,10 +1575,10 @@
 	"body": [
 		"pin2dmd:"
 		,"\tdebug: ${1|true,false|}"
-		,"\tconsole_log: ${2: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${3: single|enum(none,basic,full)|basic}"
-		,"\tresolution: ${4: single|enum(128x32,192x64)|128x32}"
-		,"\tpanel: ${5: single|enum(rgb,rbg)|rgb}"
+		,"\tconsole_log: ${2|none,basic,full|}"
+		,"\tfile_log: ${3|none,basic,full|}"
+		,"\tresolution: ${4|128x32,192x64|}"
+		,"\tpanel: ${5|rgb,rbg|}"
 		],
 	"description": "pin2dmd"
 },
@@ -1590,8 +1590,8 @@
 		,"\tbaud: ${2: single|int|115200}"
 		,"\twatchdog: ${3: single|ms|1000}"
 		,"\tdebug: ${4|true,false|}"
-		,"\tconsole_log: ${5: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${6: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${5|none,basic,full|}"
+		,"\tfile_log: ${6|none,basic,full|}"
 		],
 	"description": "pkone"
 },
@@ -1608,7 +1608,7 @@
 	"body": [
 		"player_vars:"
 		,"\tinitial_value: ${1: single|str|}"
-		,"\tvalue_type: ${2: single|enum(str,float,int)|int}"
+		,"\tvalue_type: ${2|str,float,int|}"
 		],
 	"description": "player_vars"
 },
@@ -1647,7 +1647,7 @@
 	"prefix": ["playlist_player"],
 	"body": [
 		"playlist_player:"
-		,"\taction: ${1: single|enum(play,stop,advance,set_repeat)|play}"
+		,"\taction: ${1|play,stop,advance,set_repeat|}"
 		],
 	"description": "playlist_player"
 },
@@ -1659,11 +1659,11 @@
 			,"\taction: ${2: ignore}"
 			,"\tplaylist: ${3: single|str|}"
 			,"\tvolume: ${4: single|gain|None}"
-			,"\tcrossfade_mode: ${5: single|enum(use_track_setting,override,use_playlist_setting)|use_playlist_setting}"
+			,"\tcrossfade_mode: ${5|use_track_setting,override,use_playlist_setting|}"
 			,"\tcrossfade_time: ${6: single|secs|None}"
 			,"\tshuffle: ${7|true,false|}"
 			,"\trepeat: ${8|true,false|}"
-			,"\tscope: ${9: single|enum(machine,player,use_playlist_setting)|use_playlist_setting}"
+			,"\tscope: ${9|machine,player,use_playlist_setting|}"
 			,"\tevents_when_played: ${10: list|event_posted|use_playlist_setting}"
 			,"\tevents_when_stopped: ${11: list|event_posted|use_playlist_setting}"
 			,"\tevents_when_looping: ${12: list|event_posted|use_playlist_setting}"
@@ -1685,11 +1685,11 @@
 	"prefix": ["playlists"],
 	"body": [
 		"playlists:"
-		,"\tcrossfade_mode: ${1: single|enum(use_track_setting,override)|use_track_setting}"
+		,"\tcrossfade_mode: ${1|use_track_setting,override|}"
 		,"\tcrossfade_time: ${2: single|secs|0}"
 		,"\tshuffle: ${3|true,false|}"
 		,"\trepeat: ${4|true,false|}"
-		,"\tscope: ${5: single|enum(machine,player)|machine}"
+		,"\tscope: ${5|machine,player|}"
 		,"\tsounds: ${6: list|str|}"
 		,"\tevents_when_played: ${7: list|event_posted|None}"
 		,"\tevents_when_stopped: ${8: list|event_posted|None}"
@@ -1712,8 +1712,8 @@
 		,"\tport: ${1: single|str|}"
 		,"\tservo_min: ${2: single|int|3000}"
 		,"\tservo_max: ${3: single|int|9000}"
-		,"\tconsole_log: ${4: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${5: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${4|none,basic,full|}"
+		,"\tfile_log: ${5|none,basic,full|}"
 		,"\tdebug: ${6|true,false|}"
 		],
 	"description": "pololu_maestro"
@@ -1723,8 +1723,8 @@
 	"body": [
 		"pololu_tic:"
 		,"\tdebug: ${1|true,false|}"
-		,"\tconsole_log: ${2: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${3: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${2|none,basic,full|}"
+		,"\tfile_log: ${3|none,basic,full|}"
 		],
 	"description": "pololu_tic"
 },
@@ -1768,7 +1768,7 @@
 		,"\tforce_different: ${3|true,false|}"
 		,"\tforce_all: ${4|true,false|}"
 		,"\tdisable_random: ${5|true,false|}"
-		,"\tscope: ${6: single|enum(player,machine)|player}"
+		,"\tscope: ${6|player,machine|}"
 		],
 	"description": "random_event_player"
 },
@@ -1779,8 +1779,8 @@
 		,"\tip: ${1: single|str|}"
 		,"\tport: ${2: single|int|8888}"
 		,"\tdebug: ${3|true,false|}"
-		,"\tconsole_log: ${4: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${5: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${4|none,basic,full|}"
+		,"\tfile_log: ${5|none,basic,full|}"
 		],
 	"description": "raspberry_pi"
 },
@@ -1803,7 +1803,7 @@
 	"prefix": ["rpi_dmd"],
 	"body": [
 		"rpi_dmd:"
-		,"\thardware_mapping: ${1:   single|enum(regular,adafruit-hat,adafruit-hat-pwm)|regular}"
+		,"\thardware_mapping: ${1|regular,adafruit-hat,adafruit-hat-pwm|}"
 		,"\trows: ${2:               single|int|32}"
 		,"\tcols: ${3:               single|int|32}"
 		,"\tchain_length: ${4:       single|int|1}"
@@ -1890,10 +1890,10 @@
 		,"\tpriority: ${1: single|int_or_token|0}"
 		,"\ttext: ${2: single|str|None}"
 		,"\tcolor: ${3: list|color|None}"
-		,"\taction: ${4: single|enum(add,remove,flash,no_flash,flash_match,flash_mask,set_color)|add}"
+		,"\taction: ${4|add,remove,flash,no_flash,flash_match,flash_mask,set_color|}"
 		,"\ttransition: ${5: ignore}"
 		,"\ttransition_out: ${6: ignore}"
-		,"\tflashing: ${7: single|enum(off,all,match,mask,not_set)|not_set}"
+		,"\tflashing: ${7|off,all,match,mask,not_set|}"
 		,"\tflash_mask: ${8: single|str|None}"
 		,"\tkey: ${9: single|str|None}"
 		,"\texpire: ${10: single|ms_or_token|None}"
@@ -1908,28 +1908,28 @@
 			,"\ttype: ${2: single|str|}"
 		,"\tpush: ${3:}"
 			,"\ttype: ${4: single|str|}"
-			,"\tdirection: ${5: single|enum(right,left)|right}"
+			,"\tdirection: ${5|right,left|}"
 			,"\ttext: ${6: single|str|None}"
 			,"\ttext_color: ${7: list|color|None}"
 		,"\tcover: ${8:}"
 			,"\ttype: ${9: single|str|}"
-			,"\tdirection: ${10: single|enum(right,left)|right}"
+			,"\tdirection: ${10|right,left|}"
 			,"\ttext: ${11: single|str|None}"
 			,"\ttext_color: ${12: list|color|None}"
 		,"\tuncover: ${13:}"
 			,"\ttype: ${14: single|str|}"
-			,"\tdirection: ${15: single|enum(right,left)|right}"
+			,"\tdirection: ${15|right,left|}"
 			,"\ttext: ${16: single|str|None}"
 			,"\ttext_color: ${17: list|color|None}"
 		,"\twipe: ${18:}"
 			,"\ttype: ${19: single|str|}"
-			,"\tdirection: ${20: single|enum(right,left)|right}"
+			,"\tdirection: ${20|right,left|}"
 			,"\ttext: ${21: single|str|None}"
 			,"\ttext_color: ${22: list|color|None}"
 		,"\tsplit: ${23:}"
 			,"\ttype: ${24: single|str|}"
-			,"\tmode: ${25: single|enum(push,wipe)|push}"
-			,"\tdirection: ${26: single|enum(in,out)|out}"
+			,"\tmode: ${25|push,wipe|}"
+			,"\tdirection: ${26|in,out|}"
 		],
 	"description": "segment_display_transitions"
 },
@@ -1979,8 +1979,8 @@
 		,"\tservo_min: ${2: single|int|150}"
 		,"\tservo_max: ${3: single|int|600}"
 		,"\tdebug: ${4|true,false|}"
-		,"\tconsole_log: ${5: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${6: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${5|none,basic,full|}"
+		,"\tfile_log: ${6|none,basic,full|}"
 		],
 	"description": "servo_controllers"
 },
@@ -2013,7 +2013,7 @@
 		,"\tlabel: ${1: single|str|}"
 		,"\tsort: ${2: single|int|}"
 		,"\tvalues: ${3: dict|str:str|}"
-		,"\tkey_type: ${4: single|enum(str,float,int)|str}"
+		,"\tkey_type: ${4|str,float,int|}"
 		,"\tdefault: ${5: single|str|}"
 		,"\tmachine_var: ${6: single|str|None}"
 		,"\tsettingType: ${7: single|str|standard}"
@@ -2109,7 +2109,7 @@
 	"prefix": ["show_player"],
 	"body": [
 		"show_player:"
-		,"\taction: ${1: single|enum(play,stop,pause,resume,advance,step_back,update,queue)|play}"
+		,"\taction: ${1|play,stop,pause,resume,advance,step_back,update,queue|}"
 		,"\tshow: ${2: single|str|None}"
 		,"\tpriority: ${3: single|int_or_token|0}"
 		,"\tspeed: ${4: single|float_or_token|1}"
@@ -2139,7 +2139,7 @@
 	"body": [
 		"show_pools:"
 		,"\tshows: ${1: list|machine(shows)|}"
-		,"\ttype: ${2: single|enum(random,sequence,random_force_next,random_force_all)|sequence}"
+		,"\ttype: ${2|random,sequence,random_force_next,random_force_all|}"
 		],
 	"description": "show_pools"
 },
@@ -2178,7 +2178,7 @@
 		,"\texpire: ${9: single|secs|None}"
 		,"\tslide: ${10: single|str|None}"
 		,"\ttokens: ${11: dict|str:str|None}"
-		,"\taction: ${12: single|enum(play,remove)|play}"
+		,"\taction: ${12|play,remove|}"
 		],
 	"description": "slide_player"
 },
@@ -2200,8 +2200,8 @@
 		"smart_virtual:"
 		,"\tsimulate_manual_plunger: ${1|true,false|}"
 		,"\tsimulate_manual_plunger_timeout: ${2: single|ms|10s}"
-		,"\tconsole_log: ${3: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${4: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${3|none,basic,full|}"
+		,"\tfile_log: ${4|none,basic,full|}"
 		],
 	"description": "smart_virtual"
 },
@@ -2212,8 +2212,8 @@
 		,"\tport: ${1: single|str|}"
 		,"\tbaud: ${2: single|int|}"
 		,"\told_cookie: ${3|true,false|}"
-		,"\tconsole_log: ${4: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${5: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${4|none,basic,full|}"
+		,"\tfile_log: ${5|none,basic,full|}"
 		],
 	"description": "smartmatrix"
 },
@@ -2222,8 +2222,8 @@
 	"body": [
 		"snux:"
 		,"\tdiag_led_driver: ${1: single|machine(coils)|}"
-		,"\tconsole_log: ${2: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${3: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${2|none,basic,full|}"
+		,"\tfile_log: ${3|none,basic,full|}"
 		],
 	"description": "snux"
 },
@@ -2244,7 +2244,7 @@
 	"prefix": ["sound_loop_player"],
 	"body": [
 		"sound_loop_player:"
-		,"\taction: ${1: single|enum(play,stop,stop_looping,jump_to,play_layer,stop_layer,stop_looping_layer)|play}"
+		,"\taction: ${1|play,stop,stop_looping,jump_to,play_layer,stop_layer,stop_looping_layer|}"
 		],
 	"description": "sound_loop_player"
 },
@@ -2259,13 +2259,13 @@
 			,"\tfade_in: ${5: single|secs|None}"
 			,"\tfade_out: ${6: single|secs|None}"
 			,"\tstart_at: ${7: single|secs|0}"
-			,"\ttiming: ${8: single|enum(now,loop_end,next_beat_interval,next_time_interval)|loop_end}"
+			,"\ttiming: ${8|now,loop_end,next_beat_interval,next_time_interval|}"
 			,"\tinterval: ${9: single|float|1}"
 			,"\tsynchronize: ${10|true,false|}"
 			,"\tevents_when_played: ${11: list|event_posted|use_sound_loop_setting}"
 			,"\tevents_when_stopped: ${12: list|event_posted|use_sound_loop_setting}"
 			,"\tevents_when_looping: ${13: list|event_posted|use_sound_loop_setting}"
-			,"\tmode_end_action: ${14: single|enum(stop,stop_looping,use_sound_loop_setting)|use_sound_loop_setting}"
+			,"\tmode_end_action: ${14|stop,stop_looping,use_sound_loop_setting|}"
 		,"\tstop: ${15:}"
 			,"\taction: ${16: ignore}"
 			,"\tfade_out: ${17: single|secs|None}"
@@ -2279,7 +2279,7 @@
 			,"\taction: ${25: ignore}"
 			,"\tlayer: ${26: single|int|}"
 			,"\tvolume: ${27: single|gain|None}"
-			,"\ttiming: ${28: single|enum(now,loop_end)|loop_end}"
+			,"\ttiming: ${28|now,loop_end|}"
 			,"\tfade_in: ${29: single|secs|0}"
 		,"\tstop_layer: ${30:}"
 			,"\taction: ${31: ignore}"
@@ -2301,13 +2301,13 @@
 		,"\tlayers: ${4:}"
 			,"\tsound: ${5: single|str|}"
 			,"\tvolume: ${6: single|gain|None}"
-			,"\tinitial_state: ${7: single|enum(play,stop)|play}"
+			,"\tinitial_state: ${7|play,stop|}"
 		,"\tevents_when_played: ${8: list|event_posted|None}"
 		,"\tevents_when_stopped: ${9: list|event_posted|None}"
 		,"\tevents_when_looping: ${10: list|event_posted|None}"
 		,"\tfade_in: ${11: single|secs|0}"
 		,"\tfade_out: ${12: single|secs|0}"
-		,"\tmode_end_action: ${13: single|enum(stop,stop_looping)|stop}"
+		,"\tmode_end_action: ${13|stop,stop_looping|}"
 		],
 	"description": "sound_loop_sets"
 },
@@ -2325,7 +2325,7 @@
 	"body": [
 		"sound_player:"
 		,"\tblock: ${1|true,false|}"
-		,"\taction: ${2: single|enum(play,stop,stop_looping,load,unload)|play}"
+		,"\taction: ${2|play,stop,stop_looping,load,unload|}"
 		,"\tdelay: ${3: single|secs|None}"
 		,"\ttrack: ${4: single|str|None}"
 		,"\tvolume: ${5: single|gain|None}"
@@ -2341,7 +2341,7 @@
 		,"\tevents_when_stopped: ${15: list|event_posted|use_sound_setting}"
 		,"\tevents_when_looping: ${16: list|event_posted|use_sound_setting}"
 		,"\tevents_when_about_to_finish: ${17: list|event_posted|use_sound_setting}"
-		,"\tmode_end_action: ${18: single|enum(stop,stop_looping,use_sound_setting)|use_sound_setting}"
+		,"\tmode_end_action: ${18|stop,stop_looping,use_sound_setting|}"
 		,"\tkey: ${19: single|str|use_sound_setting}"
 		],
 	"description": "sound_player"
@@ -2369,7 +2369,7 @@
 	"prefix": ["sound_system_tracks"],
 	"body": [
 		"sound_system_tracks:"
-		,"\ttype: ${1: single|enum(standard,sound_loop,playlist)|standard}"
+		,"\ttype: ${1|standard,sound_loop,playlist|}"
 		,"\tvolume: ${2: single|gain|0.5}"
 		,"\tevents_when_played: ${3: list|event_posted|None}"
 		,"\tevents_when_stopped: ${4: list|event_posted|None}"
@@ -2401,12 +2401,12 @@
 		,"\tabout_to_finish_time: ${13: single|secs|None}"
 		,"\tmax_queue_time: ${14: single|secs|None}"
 		,"\tsimultaneous_limit: ${15: single|int|None}"
-		,"\tstealing_method: ${16: single|enum(skip,oldest,newest)|oldest}"
+		,"\tstealing_method: ${16|skip,oldest,newest|}"
 		,"\tevents_when_played: ${17: list|event_posted|None}"
 		,"\tevents_when_stopped: ${18: list|event_posted|None}"
 		,"\tevents_when_looping: ${19: list|event_posted|None}"
 		,"\tevents_when_about_to_finish: ${20: list|event_posted|None}"
-		,"\tmode_end_action: ${21: single|enum(stop,stop_looping)|stop_looping}"
+		,"\tmode_end_action: ${21|stop,stop_looping|}"
 		,"\tkey: ${22: single|str|None}"
 		,"\tmarkers: ${23: list|subconfig(sound_marker)|None}"
 		,"\tducking: ${24: single|subconfig(sound_ducking)|None}"
@@ -2442,10 +2442,10 @@
 		,"\tnodes: ${9: list|int|}"
 		,"\tpoll_hz: ${10: single|int|1000}"
 		,"\tuse_send_key: ${11|true,false|}"
-		,"\tconsole_log: ${12: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${13: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${12|none,basic,full|}"
+		,"\tfile_log: ${13|none,basic,full|}"
 		,"\twait_times: ${14: dict|int:int|None}"
-		,"\tspike_version: ${15: single|enum(1,2)|1}"
+		,"\tspike_version: ${15|1,2|}"
 		,"\tmax_led_batch_size: ${16: single|int|6}"
 		,"\tresponse_time: ${17: single|int|837}"
 		,"\tverify_checksums_on_readback: ${18|true,false|}"
@@ -2550,9 +2550,9 @@
 	"body": [
 		"steppers:"
 		,"\tnamed_positions: ${1: dict|float:str|None}"
-		,"\thoming_mode: ${2: single|enum(hardware,switch)|hardware}"
+		,"\thoming_mode: ${2|hardware,switch|}"
 		,"\thoming_switch: ${3: single|machine(switches)|None}"
-		,"\thoming_direction: ${4: single|enum(clockwise,counterclockwise)|clockwise}"
+		,"\thoming_direction: ${4|clockwise,counterclockwise|}"
 		,"\tpos_min: ${5: single|int|0}"
 		,"\tpos_max: ${6: single|int|1000}"
 		,"\tball_search_min: ${7: single|int|0}"
@@ -2596,8 +2596,8 @@
 	"body": [
 		"switches:"
 		,"\tnumber: ${1: single|str|}"
-		,"\ttype: ${2: single|enum(NC,NO)|NO}"
-		,"\tdebounce: ${3: single|enum(auto,quick,normal)|auto}"
+		,"\ttype: ${2|NC,NO|}"
+		,"\tdebounce: ${3|auto,quick,normal|}"
 		,"\tignore_window_ms: ${4: single|ms|0}"
 		,"\tevents_when_activated: ${5: list|event_posted|None}"
 		,"\tevents_when_deactivated: ${6: list|event_posted|None}"
@@ -2618,8 +2618,8 @@
 		,"\tprefer_a_side_event: ${3: single|event_handler|game_ended}"
 		,"\tprefer_c_side_event: ${4: single|event_handler|game_will_start}"
 		,"\tplatform: ${5: single|str|None}"
-		,"\tconsole_log: ${6: single|enum(none,basic,full)|none}"
-		,"\tfile_log: ${7: single|enum(none,basic,full)|basic}"
+		,"\tconsole_log: ${6|none,basic,full|}"
+		,"\tfile_log: ${7|none,basic,full|}"
 		],
 	"description": "system11"
 },
@@ -2677,7 +2677,7 @@
 		,"\tswitches: ${1: list|machine(switches)|None}"
 		,"\tswitch_tags: ${2: list|str|None}"
 		,"\ttime: ${3: single|ms|}"
-		,"\tstate: ${4: single|enum(active,inactive)|active}"
+		,"\tstate: ${4|active,inactive|}"
 		,"\tevents_when_active: ${5: list|event_posted|None}"
 		,"\tevents_when_released: ${6: list|event_posted|None}"
 		],
@@ -2687,7 +2687,7 @@
 	"prefix": ["timer_control_events:  # subconfig for mode timer"],
 	"body": [
 		"timer_control_events:  # subconfig for mode timer:"
-		,"\taction: ${1: single|enum(add,subtract,jump,start,stop,reset,restart,pause,set_tick_interval,change_tick_interval,reset_tick_interval)|}"
+		,"\taction: ${1|add,subtract,jump,start,stop,reset,restart,pause,set_tick_interval,change_tick_interval,reset_tick_interval|}"
 		,"\tevent: ${2: single|event_handler|}"
 		,"\tvalue: ${3: single|template_float|None }"
 		],
@@ -2699,7 +2699,7 @@
 		"timers:"
 		,"\tstart_value: ${1: single|template_int|0}"
 		,"\tend_value: ${2: single|template_int|None}"
-		,"\tdirection: ${3: single|enum(up,down)|up}"
+		,"\tdirection: ${3|up,down|}"
 		,"\tmax_value: ${4: single|int|None}"
 		,"\ttick_interval: ${5: single|template_secs|1s}"
 		,"\tstart_running: ${6|true,false|}"
@@ -2713,7 +2713,7 @@
 	"prefix": ["track_player"],
 	"body": [
 		"track_player:"
-		,"\taction: ${1: single|enum(play,stop,pause,set_volume,stop_all_sounds)|}"
+		,"\taction: ${1|play,stop,pause,set_volume,stop_all_sounds|}"
 		,"\tvolume: ${2: single|gain|None}"
 		,"\tfade: ${3: single|secs|0.1sec}"
 		],
@@ -2746,7 +2746,7 @@
 			,"\tduration: ${21: single|secs|2}"
 		,"\tcard: ${22:}"
 			,"\ttype: ${23: single|str|}"
-			,"\tmode: ${24: single|enum(push,pop)|push}"
+			,"\tmode: ${24|push,pop|}"
 		,"\twipe: ${25:}"
 			,"\ttype: ${26: single|str|}"
 			,"\tduration: ${27: single|secs|1}"
@@ -2790,7 +2790,7 @@
 		,"\tfloat: ${2: single|template_float|None}"
 		,"\tstring: ${3: single|template_str|None}"
 		,"\tblock: ${4|true,false|}"
-		,"\taction: ${5: single|enum(add,set,add_machine,set_machine)|add}"
+		,"\taction: ${5|add,set,add_machine,set_machine|}"
 		,"\tplayer: ${6: single|int|None}"
 		],
 	"description": "variable_player"
@@ -2799,7 +2799,7 @@
 	"prefix": ["video_control_events"],
 	"body": [
 		"video_control_events:"
-		,"\taction: ${1: single|enum(play,pause,stop,seek,volume,position)|}"
+		,"\taction: ${1|play,pause,stop,seek,volume,position|}"
 		,"\tevent: ${2: single|event_handler|}"
 		,"\tvalue: ${3: single|float|None}"
 		],
@@ -2855,7 +2855,7 @@
 	"body": [
 		"widget_player:"
 		,"\tslide: ${1: single|str|None}"
-		,"\taction: ${2: single|enum(add,remove,update)|add}"
+		,"\taction: ${2|add,remove,update|}"
 		,"\tkey: ${3: single|str|None}"
 		,"\twidget_settings: ${4: ignore}"
 		,"\ttarget: ${5: single|str|None}"
@@ -2900,10 +2900,10 @@
 		,"\tanimations: ${24:}"
 			,"\tproperty: ${25: list|str|}"
 			,"\tvalue: ${26: list|str|}"
-			,"\trelative: ${27: single|bool_or_token|false}"
+			,"\trelative: ${27|true,false,[token]|}"
 			,"\tduration: ${28: single|secs_or_token|1}"
-			,"\ttiming: ${29: single|enum(after_previous,with_previous)|after_previous}"
-			,"\trepeat: ${30: single|bool_or_token|false}"
+			,"\ttiming: ${29|after_previous,with_previous|}"
+			,"\trepeat: ${30|true,false,[token]|}"
 			,"\teasing: ${31: single|str|linear}"
 		,"\tbezier: ${32:}"
 			,"\tpoints: ${33: list|num_or_token|}"
@@ -2912,7 +2912,7 @@
 			,"\tjoint: ${36: single|str|round}"
 			,"\tcap_precision: ${37: single|int_or_token|10}"
 			,"\tjoint_precision: ${38: single|int_or_token|10}"
-			,"\tclose: ${39: single|bool_or_token|false}"
+			,"\tclose: ${39|true,false,[token]|}"
 			,"\tprecision: ${40: single|int_or_token|180}"
 			,"\trotation: ${41: single|float_or_token|0}"
 			,"\tscale: ${42: single|float_or_token|1.0}"
@@ -2937,7 +2937,7 @@
 			,"\tfps: ${61: single|int_or_token|10}"
 			,"\tloops: ${62: single|int_or_token|-1}"
 			,"\timage: ${63: single|str|}"
-			,"\tauto_play: ${64: single|bool_or_token|true}"
+			,"\tauto_play: ${64|true,false,[token]|}"
 			,"\tstart_frame: ${65: single|int_or_token|0}"
 			,"\trotation: ${66: single|int_or_token|0}"
 			,"\tscale: ${67: single|float_or_token|1.0}"
@@ -2948,7 +2948,7 @@
 			,"\tjoint: ${72: single|str|round}"
 			,"\tcap_precision: ${73: single|int_or_token|10}"
 			,"\tjoint_precision: ${74: single|int_or_token|10}"
-			,"\tclose: ${75: single|bool_or_token|false}"
+			,"\tclose: ${75|true,false,[token]|}"
 		,"\tpoints: ${76:}"
 			,"\tpoints: ${77: list|num_or_token|}"
 			,"\tpointsize: ${78: single|float_or_token|1.0}"
@@ -2968,10 +2968,10 @@
 		,"\tsegment_display_emulator: ${92:}"
 			,"\tname: ${93: single|str|None}"
 			,"\ttext: ${94: single|str|}"
-			,"\tflash_mode: ${95: single|enum(off,all,match,mask)|off}"
+			,"\tflash_mode: ${95|off,all,match,mask|}"
 			,"\tflash_frequency: ${96: single|float_or_token|1.0}"
 			,"\tflash_mask: ${97: single|str|None}"
-			,"\tdisplay_type: ${98: single|enum(7seg,14seg)|14seg}"
+			,"\tdisplay_type: ${98|7seg,14seg|}"
 			,"\tcharacter_count: ${99: single|int_or_token|1}"
 			,"\tcharacter_spacing: ${100: single|int_or_token|10}"
 			,"\tcharacter_slant_angle: ${101: single|float_or_token|0.0}"
@@ -2982,9 +2982,9 @@
 			,"\tsegment_width: ${106: single|float_or_token|0.16}"
 			,"\tsegment_interval: ${107: single|float_or_token|0.05}"
 			,"\tbevel_width: ${108: single|float_or_token|0.06}"
-			,"\tside_bevel_enabled: ${109: single|bool_or_token|true}"
-			,"\tdot_enabled: ${110: single|bool_or_token|false}"
-			,"\tcomma_enabled: ${111: single|bool_or_token|false}"
+			,"\tside_bevel_enabled: ${109|true,false,[token]|}"
+			,"\tdot_enabled: ${110|true,false,[token]|}"
+			,"\tcomma_enabled: ${111|true,false,[token]|}"
 			,"\tcharacter_map: ${112: dict|int:int|None}"
 			,"\twidth: ${113: single|float_or_token|}"
 			,"\theight: ${114: single|float_or_token|}"
@@ -2994,11 +2994,11 @@
 			,"\ttext: ${118: single|str|}"
 			,"\tfont_size: ${119: single|num_or_token|15}"
 			,"\tfont_name: ${120: ignore}"
-			,"\tbitmap_font: ${121: single|bool_or_token|false}"
-			,"\tfont_kerning: ${122: single|bool_or_token|true}"
-			,"\tbold: ${123: single|bool_or_token|false}"
-			,"\titalic: ${124: single|bool_or_token|false}"
-			,"\tnumber_grouping: ${125: single|bool_or_token|false}"
+			,"\tbitmap_font: ${121|true,false,[token]|}"
+			,"\tfont_kerning: ${122|true,false,[token]|}"
+			,"\tbold: ${123|true,false,[token]|}"
+			,"\titalic: ${124|true,false,[token]|}"
+			,"\tnumber_grouping: ${125|true,false,[token]|}"
 			,"\tmin_digits: ${126: single|int_or_token|0}"
 			,"\thalign: ${127: single|str|center}"
 			,"\tvalign: ${128: single|str|middle}"
@@ -3019,14 +3019,14 @@
 			,"\tforce_complete_event: ${143: single|event_handler|None}"
 			,"\tblock_events: ${144: list|event_handler|None}"
 			,"\trelease_events: ${145: list|event_handler|None}"
-			,"\tbold: ${146: single|bool_or_token|false}"
-			,"\titalic: ${147: single|bool_or_token|false}"
-			,"\tnumber_grouping: ${148: single|bool_or_token|false}"
+			,"\tbold: ${146|true,false,[token]|}"
+			,"\titalic: ${147|true,false,[token]|}"
+			,"\tnumber_grouping: ${148|true,false,[token]|}"
 			,"\tmin_digits: ${149: single|int_or_token|0}"
 			,"\tmax_chars: ${150: single|int_or_token|3}"
 			,"\tchar_list: ${151: "single|str|ABCDEFGHIJKLMNOPQRSTUVWXYZ_- "}"
-			,"\tkeep_selected_char: ${152: single|bool_or_token|true}"
-			,"\tdynamic_x: ${153: single|bool_or_token|true}"
+			,"\tkeep_selected_char: ${152|true,false,[token]|}"
+			,"\tdynamic_x: ${153|true,false,[token]|}"
 			,"\tdynamic_x_pad: ${154: single|int_or_token|0}"
 		,"\ttriangle: ${155:}"
 			,"\tpoints: ${156: list|num_or_token|}"
@@ -3037,8 +3037,8 @@
 			,"\theight: ${161: single|int_or_token|0}"
 			,"\twidth: ${162: single|int_or_token|0}"
 			,"\tvolume: ${163: single|float_or_token|1.0}"
-			,"\tauto_play: ${164: single|bool_or_token|true}"
-			,"\tend_behavior: ${165: single|enum(loop,pause,stop)|stop}"
+			,"\tauto_play: ${164|true,false,[token]|}"
+			,"\tend_behavior: ${165|loop,pause,stop|}"
 			,"\tcontrol_events: ${166: list|subconfig(video_control_events)|None}"
 		],
 	"description": "widgets"

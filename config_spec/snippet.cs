@@ -3,8 +3,6 @@ using System.Linq;
 
 namespace mpfConfig
 {
-
-
     public class Snippet
     {
         const string quote = "\"";
@@ -16,7 +14,9 @@ namespace mpfConfig
         enum MpfValueType : int
         {
             unknown = 0,
-            boolean = 1
+            boolean = 1,
+            enumeration = 2,
+            boolean_or_token = 3
         }
 
         /// <summary>
@@ -73,7 +73,6 @@ namespace mpfConfig
         public void AddBody(string key, string value)
         {
             bool validKey = true;
-            int valueType = (int)MpfValueType.unknown;
             try
             {
                 int indentlevel = key.TakeWhile(Char.IsWhiteSpace).Count();
@@ -91,19 +90,12 @@ namespace mpfConfig
                 if (commentPosition > 1)
                     value = value.Substring(0, commentPosition - 1); // Strip off comment line
 
-                if (value.IndexOf('|') != -1)
-                {
-                    string[] values = value.Split('|');
-                    if (values[1] == "bool")
-                        valueType = (int)MpfValueType.boolean;
-                        
-                }
-
-
+                
                 if (validKey)
                 {
                     indentlevel /= 4;
                     string tabs = new String('\t', indentlevel + 1);
+
                     bodyCount++;
                     _body += Environment.NewLine + tabs;
                     if (bodyCount == 1)
@@ -111,22 +103,13 @@ namespace mpfConfig
                         _body += string.Format("{0}{1}:{0}", quote, _name);
                         _body += Environment.NewLine + tabs;
                     }
-
-                    if (valueType==(int)MpfValueType.boolean)
-                    {
-                        value = string.Format("{0}|true,false|", bodyCount); // True and false choice
-                    }
-                    else
-                    {
-                        value = string.Format("{0}:{1}",bodyCount,value); // No processing
-                    }
-                    _body += string.Format(",{0}\\t{1}: ${{{2}}}{0}", quote, key, value);
+                    _body += string.Format(",{0}\\t{1}: ${{{2}}}{0}", quote, key, GetValue(bodyCount, value));
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine("Exception: " + e.Message);
-                //System.Diagnostics.Debugger.Break();
+                System.Diagnostics.Debugger.Break();
                 throw;
             }
         }
@@ -207,6 +190,61 @@ namespace mpfConfig
         }
 
         #endregion
+
+
+        private string GetValue(int bodyCount, string value)
+        {
+            int valueType = (int)MpfValueType.unknown;
+            string v = string.Format("{0}:?", bodyCount);
+
+            try
+            {
+                string[] values = value.Split('|');
+                if (value.IndexOf('|') != -1) // Determine if it is a special type
+                {
+                    if (values[1] == "bool")
+                        valueType = (int)MpfValueType.boolean;
+                    else if (values[1] == "bool_or_token")
+                        valueType = (int)MpfValueType.boolean_or_token;
+                    else if (values[1].Length > 4)
+                        if (values[1].Substring(0, 4) == "enum")
+                            valueType = (int)MpfValueType.enumeration;
+                }
+
+                if (valueType == (int)MpfValueType.boolean)
+                {
+                    v = string.Format("{0}|true,false|", bodyCount); // True and false choice
+                }
+                else if (valueType == (int)MpfValueType.boolean_or_token)
+                {
+                    v = string.Format("{0}|true,false,[token]|", bodyCount); // True and false choice
+                }
+                else if (valueType == (int)MpfValueType.enumeration)
+                {
+                    v = string.Format("{0}|{1}|", bodyCount, parseEnum(values[1]));
+                }
+                else
+                {
+                    v = string.Format("{0}:{1}", bodyCount, value); // No processing
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);  // Bad form 
+                System.Diagnostics.Debugger.Break();
+                throw;
+            }
+            return v;
+
+
+        }
+
+        private string parseEnum(string enumValue)
+        {
+            string v;
+            v = enumValue.Substring(5, enumValue.Length - 6);
+            return v;
+        }
 
     }
 }
