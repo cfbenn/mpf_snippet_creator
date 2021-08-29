@@ -80,12 +80,6 @@
 		],
 	"description": "achievement_group"
 },
-"animation()": {
-	"prefix": ["animation"],
-	"body": [
-		],
-	"description": "animation"
-},
 "asset(config)": {
 	"prefix": ["asset"],
 	"body": [
@@ -354,12 +348,6 @@
 		],
 	"description": "bitmap_font"
 },
-"blockin(config_player)": {
-	"prefix": ["blockin"],
-	"body": [
-		],
-	"description": "blockin"
-},
 "bonus_entrie()": {
 	"prefix": ["bonus_entrie"],
 	"body": [
@@ -462,12 +450,6 @@
 		],
 	"description": "combo_switche"
 },
-"confi(list)": {
-	"prefix": ["confi"],
-	"body": [
-		],
-	"description": "confi"
-},
 "config_player_commo()": {
 	"prefix": ["config_player_commo"],
 	"body": [
@@ -551,12 +533,6 @@
 		,"\tlabel: ${4: single|str|None}"
 		],
 	"description": "credits_switche"
-},
-"custom_cod(list)": {
-	"prefix": ["custom_cod"],
-	"body": [
-		],
-	"description": "custom_cod"
 },
 "devic()": {
 	"prefix": ["devic"],
@@ -782,12 +758,6 @@
 		],
 	"description": "effect"
 },
-"event_playe(config_player)": {
-	"prefix": ["event_playe"],
-	"body": [
-		],
-	"description": "event_playe"
-},
 "extra_ball(device)": {
 	"prefix": ["extra_ball"],
 	"body": [
@@ -883,12 +853,6 @@
 		,"\tdebounce_close: ${2: single|str|None}"
 		],
 	"description": "fast_switche"
-},
-"file_show(config_dict)": {
-	"prefix": ["file_show"],
-	"body": [
-		],
-	"description": "file_show"
 },
 "flasher_playe(config_player)": {
 	"prefix": ["flasher_playe"],
@@ -1019,12 +983,6 @@
 		],
 	"description": "image"
 },
-"image_pool(config_dict)": {
-	"prefix": ["image_pool"],
-	"body": [
-		],
-	"description": "image_pool"
-},
 "image_template()": {
 	"prefix": ["image_template"],
 	"body": [
@@ -1041,12 +999,6 @@
 		,"\tto: ${2: single|int|None}"
 		],
 	"description": "images_frame_skip"
-},
-"info_light(config)": {
-	"prefix": ["info_light"],
-	"body": [
-		],
-	"description": "info_light"
 },
 "keyboar(config_dict)": {
 	"prefix": ["keyboar"],
@@ -1081,12 +1033,6 @@
 		,"\tcoil_pulse_delay: ${13: single|ms|0}"
 		],
 	"description": "kickback"
-},
-"kivy_confi(config)": {
-	"prefix": ["kivy_confi"],
-	"body": [
-		],
-	"description": "kivy_confi"
 },
 "light(device)": {
 	"prefix": ["light"],
@@ -1209,12 +1155,6 @@
 		],
 	"description": "lis"
 },
-"loggin(config)": {
-	"prefix": ["loggin"],
-	"body": [
-		],
-	"description": "loggin"
-},
 "logic_blocks_commo()": {
 	"prefix": ["logic_blocks_commo"],
 	"body": [
@@ -1272,18 +1212,6 @@
 		],
 	"description": "magnet"
 },
-"mc_custom_cod(list)": {
-	"prefix": ["mc_custom_cod"],
-	"body": [
-		],
-	"description": "mc_custom_cod"
-},
-"mc_scriptlet(list)": {
-	"prefix": ["mc_scriptlet"],
-	"body": [
-		],
-	"description": "mc_scriptlet"
-},
 "mma8451_acceleromete()": {
 	"prefix": ["mma8451_acceleromete"],
 	"body": [
@@ -1314,18 +1242,6 @@
 		,"\tpath: ${16: single|str|None}"
 		],
 	"description": "mod"
-},
-"mode(list)": {
-	"prefix": ["mode"],
-	"body": [
-		],
-	"description": "mode"
-},
-"mode_setting(config)": {
-	"prefix": ["mode_setting"],
-	"body": [
-		],
-	"description": "mode_setting"
 },
 "motor(device)": {
 	"prefix": ["motor"],
@@ -1365,12 +1281,6 @@
 		,"\treport_crashes: ${18|ask,never,always|}"
 		],
 	"description": "mp"
-},
-"mpf-m(config)": {
-	"prefix": ["mpf-m"],
-	"body": [
-		],
-	"description": "mpf-m"
 },
 "multiball(device)": {
 	"prefix": ["multiball"],
@@ -1419,12 +1329,6 @@
 		,"\tdebug: ${3|true,false|}"
 		],
 	"description": "mypinball"
-},
-"named_color(list)": {
-	"prefix": ["named_color"],
-	"body": [
-		],
-	"description": "named_color"
 },
 "op(config)": {
 	"prefix": ["op"],
@@ -1701,12 +1605,6 @@
 		],
 	"description": "playlist_player_action"
 },
-"plugin(list)": {
-	"prefix": ["plugin"],
-	"body": [
-		],
-	"description": "plugin"
-},
 "pololu_maestr(config)": {
 	"prefix": ["pololu_maestr"],
 	"body": [
@@ -1878,12 +1776,6 @@
 		,"\tlights_tag: ${3: single|str|None}"
 		],
 	"description": "score_reel_group"
-},
-"scriptlet(list)": {
-	"prefix": ["scriptlet"],
-	"body": [
-		],
-	"description": "scriptlet"
 },
 "segment_display(device)": {
 	"prefix": ["segment_display"],
@@ -2092,12 +1984,6 @@
 		],
 	"description": "shot_profile_state"
 },
-"show(named_lists)": {
-	"prefix": ["show"],
-	"body": [
-		],
-	"description": "show"
-},
 "show_confi()": {
 	"prefix": ["show_confi"],
 	"body": [
@@ -2150,12 +2036,6 @@
 		,"\ttype: ${2|random,sequence,random_force_next,random_force_all|}"
 		],
 	"description": "show_pool"
-},
-"show_queue()": {
-	"prefix": ["show_queue"],
-	"body": [
-		],
-	"description": "show_queue"
 },
 "show_ste()": {
 	"prefix": ["show_ste"],
@@ -2378,12 +2258,6 @@
 		,"\tkey: ${19: single|str|use_sound_setting}"
 		],
 	"description": "sound_playe"
-},
-"sound_pool(config_dict)": {
-	"prefix": ["sound_pool"],
-	"body": [
-		],
-	"description": "sound_pool"
 },
 "sound_syste(config)": {
 	"prefix": ["sound_syste"],
@@ -2625,12 +2499,6 @@
 		],
 	"description": "system1"
 },
-"text_string(config_dict)": {
-	"prefix": ["text_string"],
-	"body": [
-		],
-	"description": "text_string"
-},
 "text_u(config)": {
 	"prefix": ["text_u"],
 	"body": [
@@ -2820,18 +2688,6 @@
 		,"\tvalue: ${3: single|float|None}"
 		],
 	"description": "video_control_event"
-},
-"video_pool(config_dict)": {
-	"prefix": ["video_pool"],
-	"body": [
-		],
-	"description": "video_pool"
-},
-"virtual_platform_start_active_switche(list)": {
-	"prefix": ["virtual_platform_start_active_switche"],
-	"body": [
-		],
-	"description": "virtual_platform_start_active_switche"
 },
 "virtual_segment_display_connecto(config)": {
 	"prefix": ["virtual_segment_display_connecto"],
