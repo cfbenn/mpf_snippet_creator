@@ -1,8 +1,8 @@
 {
-"accelerometers-mpf": {
-	"prefix": ["accelerometers"],
+"accelerometer(device)": {
+	"prefix": ["accelerometer"],
 	"body": [
-		"accelerometers:"
+		"accelerometer:"
 		,"\tnumber: ${1: single|str|}"
 		,"\tplatform: ${2: single|str|None}"
 		,"\thit_limits: ${3: dict|float:str|None}"
@@ -13,44 +13,21 @@
 		,"\talpha: ${8: single|float|0.8}"
 		,"\tplatform_settings: ${9: dict|str:str|None}"
 		],
-	"description": "accelerometers"
+	"description": "accelerometer"
 },
-"accruals-mpf": {
-	"prefix": ["accruals"],
+"accrual(device)": {
+	"prefix": ["accrual"],
 	"body": [
-		"accruals:"
+		"accrual:"
 		,"\tevents: ${1: list|event_handler|}"
 		,"\tadvance_random_events: ${2: event_handler|event_handler:ms|None}"
 		],
-	"description": "accruals"
+	"description": "accrual"
 },
-"achievement_groups-mpf": {
-	"prefix": ["achievement_groups"],
+"achievement(device)": {
+	"prefix": ["achievement"],
 	"body": [
-		"achievement_groups:"
-		,"\tachievements: ${1: list|machine(achievements)|}"
-		,"\tenable_events: ${2: event_handler|event_handler:ms|None}"
-		,"\tdisable_events: ${3: event_handler|event_handler:ms|None}"
-		,"\tstart_selected_events: ${4: event_handler|event_handler:ms|None}"
-		,"\tselect_random_achievement_events: ${5: event_handler|event_handler:ms|None}"
-		,"\tallow_selection_change_while_disabled: ${6|true,false|}"
-		,"\tauto_select: ${7|true,false|}"
-		,"\tdisable_while_achievement_started: ${8|true,false|}"
-		,"\tenable_while_no_achievement_started: ${9|true,false|}"
-		,"\trotate_right_events: ${10: event_handler|event_handler:ms|None}"
-		,"\trotate_left_events: ${11: event_handler|event_handler:ms|None}"
-		,"\tevents_when_all_completed: ${12: list|event_posted|None}"
-		,"\tevents_when_no_more_enabled: ${13: list|event_posted|None}"
-		,"\tevents_when_enabled: ${14: list|event_posted|None}"
-		,"\tshow_tokens: ${15: dict|str:str|None}"
-		,"\tshow_when_enabled: ${16: single|machine(shows)|None}"
-		],
-	"description": "achievement_groups"
-},
-"achievements-mpf": {
-	"prefix": ["achievements"],
-	"body": [
-		"achievements:"
+		"achievement:"
 		,"\tshow_tokens: ${1: dict|str:str|None}"
 		,"\trestart_after_stop_possible: ${2|true,false|}"
 		,"\trestart_on_next_ball_when_started: ${3|true,false|}"
@@ -78,18 +55,41 @@
 		,"\tshow_when_selected: ${25: single|machine(shows)|None}"
 		,"\tsync_ms: ${26: single|int|None}"
 		],
-	"description": "achievements"
+	"description": "achievement"
 },
-"animations-mpf": {
-	"prefix": ["animations"],
+"achievement_group(device)": {
+	"prefix": ["achievement_group"],
+	"body": [
+		"achievement_group:"
+		,"\tachievements: ${1: list|machine(achievements)|}"
+		,"\tenable_events: ${2: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${3: event_handler|event_handler:ms|None}"
+		,"\tstart_selected_events: ${4: event_handler|event_handler:ms|None}"
+		,"\tselect_random_achievement_events: ${5: event_handler|event_handler:ms|None}"
+		,"\tallow_selection_change_while_disabled: ${6|true,false|}"
+		,"\tauto_select: ${7|true,false|}"
+		,"\tdisable_while_achievement_started: ${8|true,false|}"
+		,"\tenable_while_no_achievement_started: ${9|true,false|}"
+		,"\trotate_right_events: ${10: event_handler|event_handler:ms|None}"
+		,"\trotate_left_events: ${11: event_handler|event_handler:ms|None}"
+		,"\tevents_when_all_completed: ${12: list|event_posted|None}"
+		,"\tevents_when_no_more_enabled: ${13: list|event_posted|None}"
+		,"\tevents_when_enabled: ${14: list|event_posted|None}"
+		,"\tshow_tokens: ${15: dict|str:str|None}"
+		,"\tshow_when_enabled: ${16: single|machine(shows)|None}"
+		],
+	"description": "achievement_group"
+},
+"animation()": {
+	"prefix": ["animation"],
 	"body": [
 		],
-	"description": "animations"
+	"description": "animation"
 },
-"assets-mpf": {
-	"prefix": ["assets"],
+"asset(config)": {
+	"prefix": ["asset"],
 	"body": [
-		"assets:"
+		"asset:"
 		,"\tcommon: ${1:}"
 			,"\tload: ${2: single|str|preload}"
 			,"\tfile: ${3: single|str|None}"
@@ -106,12 +106,12 @@
 			,"\tevents_when_played: ${14: list|event_posted|None}"
 			,"\tevents_when_stopped: ${15: list|event_posted|None}"
 		],
-	"description": "assets"
+	"description": "asset"
 },
-"auditor-mpf": {
-	"prefix": ["auditor"],
+"audito(config)": {
+	"prefix": ["audito"],
 	"body": [
-		"auditor:"
+		"audito:"
 		,"\tsave_events: ${1: event_handler|event_handler:ms|ball_ended}"
 		,"\taudit: ${2: list|str|None}"
 		,"\tevents: ${3: list|event_handler|None}"
@@ -119,12 +119,12 @@
 		,"\tnum_player_top_records: ${5: single|int|1}"
 		,"\treset_audit_events: ${6: list|event_handler|auditor_reset,factory_reset}"
 		],
-	"description": "auditor"
+	"description": "audito"
 },
-"autofire_coils-mpf": {
-	"prefix": ["autofire_coils"],
+"autofire_coil(device)": {
+	"prefix": ["autofire_coil"],
 	"body": [
-		"autofire_coils:"
+		"autofire_coil:"
 		,"\tcoil: ${1: single|machine(coils)|}"
 		,"\tswitch: ${2: single|machine(switches)|}"
 		,"\treverse_switch: ${3|true,false|}"
@@ -139,87 +139,12 @@
 		,"\ttimeout_disable_time: ${12: single|ms|0}"
 		,"\tcoil_pulse_delay: ${13: single|ms|0}"
 		],
-	"description": "autofire_coils"
+	"description": "autofire_coil"
 },
-"ball_device_counter_ball_switches-mpf": {
-	"prefix": ["ball_device_counter_ball_switches"],
+"ball_device(device)": {
+	"prefix": ["ball_device"],
 	"body": [
-		"ball_device_counter_ball_switches:"
-		,"\tclass: ${1: ignore}"
-		,"\tentrance_event_timeout: ${2: single|secs|5s}"
-		,"\texit_count_delay: ${3: single|ms|500ms}"
-		,"\tentrance_count_delay: ${4: single|ms|500ms}"
-		,"\tjam_switch: ${5: single|machine(switches)|None}"
-		,"\tball_switches: ${6: list|machine(switches)|None}"
-		],
-	"description": "ball_device_counter_ball_switches"
-},
-"ball_device_counter_entrance_switches-mpf": {
-	"prefix": ["ball_device_counter_entrance_switches"],
-	"body": [
-		"ball_device_counter_entrance_switches:"
-		,"\tclass: ${1: ignore}"
-		,"\tentrance_switch: ${2: list|machine(switches)|None}"
-		,"\tentrance_switch_ignore_window_ms: ${3: single|ms|0}"
-		,"\tentrance_switch_full_timeout: ${4: single|ms|0}"
-		,"\tsettle_time_ms: ${5: single|ms|2000}"
-		,"\tball_capacity: ${6: single|int|None}"
-		],
-	"description": "ball_device_counter_entrance_switches"
-},
-"ball_device_ejector_enable-mpf": {
-	"prefix": ["ball_device_ejector_enable"],
-	"body": [
-		"ball_device_ejector_enable:"
-		,"\tclass: ${1: ignore}"
-		,"\teject_coil: ${2: single|machine(coils)|None}"
-		,"\teject_coil_enable_time: ${3: list|ms|None}"
-		,"\teject_coil_max_wait_ms: ${4: single|ms|200ms}"
-		],
-	"description": "ball_device_ejector_enable"
-},
-"ball_device_ejector_event-mpf": {
-	"prefix": ["ball_device_ejector_event"],
-	"body": [
-		"ball_device_ejector_event:"
-		,"\tclass: ${1: ignore}"
-		,"\tevents_when_eject_try: ${2: list|event_posted|None}"
-		,"\tevents_when_reoder_balls: ${3: list|event_posted|None}"
-		,"\tevents_when_ball_search: ${4: list|event_posted|None}"
-		],
-	"description": "ball_device_ejector_event"
-},
-"ball_device_ejector_hold-mpf": {
-	"prefix": ["ball_device_ejector_hold"],
-	"body": [
-		"ball_device_ejector_hold:"
-		,"\tclass: ${1: ignore}"
-		,"\thold_coil: ${2: single|machine(coils)|None}"
-		,"\thold_coil_release_time: ${3: single|ms|1s}"
-		,"\thold_events: ${4: event_handler|event_handler:ms|None}"
-		,"\thold_switches: ${5: list|machine(switches)|None}"
-		],
-	"description": "ball_device_ejector_hold"
-},
-"ball_device_ejector_pulse-mpf": {
-	"prefix": ["ball_device_ejector_pulse"],
-	"body": [
-		"ball_device_ejector_pulse:"
-		,"\tclass: ${1: ignore}"
-		,"\teject_coil: ${2: single|machine(coils)|}"
-		,"\teject_times: ${3: list|ms|None}"
-		,"\teject_coil_jam_pulse: ${4: list|ms|None}"
-		,"\teject_coil_retry_pulse: ${5: list|ms|None}"
-		,"\teject_coil_reorder_pulse: ${6: single|ms|None}"
-		,"\teject_coil_max_wait_ms: ${7: single|ms|200ms}"
-		,"\tretries_before_increasing_pulse: ${8: single|int|4}"
-		],
-	"description": "ball_device_ejector_pulse"
-},
-"ball_devices-mpf": {
-	"prefix": ["ball_devices"],
-	"body": [
-		"ball_devices:"
+		"ball_device:"
 		,"\texit_count_delay: ${1: ignore                   }"
 		,"\tentrance_count_delay: ${2: ignore               }"
 		,"\teject_coil: ${3: ignore                         }"
@@ -262,12 +187,87 @@
 		,"\tejector: ${40: ignore}"
 		,"\tcounter: ${41: ignore}"
 		],
-	"description": "ball_devices"
+	"description": "ball_device"
 },
-"ball_holds-mpf": {
-	"prefix": ["ball_holds"],
+"ball_device_counter_ball_switche()": {
+	"prefix": ["ball_device_counter_ball_switche"],
 	"body": [
-		"ball_holds:"
+		"ball_device_counter_ball_switche:"
+		,"\tclass: ${1: ignore}"
+		,"\tentrance_event_timeout: ${2: single|secs|5s}"
+		,"\texit_count_delay: ${3: single|ms|500ms}"
+		,"\tentrance_count_delay: ${4: single|ms|500ms}"
+		,"\tjam_switch: ${5: single|machine(switches)|None}"
+		,"\tball_switches: ${6: list|machine(switches)|None}"
+		],
+	"description": "ball_device_counter_ball_switche"
+},
+"ball_device_counter_entrance_switche()": {
+	"prefix": ["ball_device_counter_entrance_switche"],
+	"body": [
+		"ball_device_counter_entrance_switche:"
+		,"\tclass: ${1: ignore}"
+		,"\tentrance_switch: ${2: list|machine(switches)|None}"
+		,"\tentrance_switch_ignore_window_ms: ${3: single|ms|0}"
+		,"\tentrance_switch_full_timeout: ${4: single|ms|0}"
+		,"\tsettle_time_ms: ${5: single|ms|2000}"
+		,"\tball_capacity: ${6: single|int|None}"
+		],
+	"description": "ball_device_counter_entrance_switche"
+},
+"ball_device_ejector_enabl()": {
+	"prefix": ["ball_device_ejector_enabl"],
+	"body": [
+		"ball_device_ejector_enabl:"
+		,"\tclass: ${1: ignore}"
+		,"\teject_coil: ${2: single|machine(coils)|None}"
+		,"\teject_coil_enable_time: ${3: list|ms|None}"
+		,"\teject_coil_max_wait_ms: ${4: single|ms|200ms}"
+		],
+	"description": "ball_device_ejector_enabl"
+},
+"ball_device_ejector_even()": {
+	"prefix": ["ball_device_ejector_even"],
+	"body": [
+		"ball_device_ejector_even:"
+		,"\tclass: ${1: ignore}"
+		,"\tevents_when_eject_try: ${2: list|event_posted|None}"
+		,"\tevents_when_reoder_balls: ${3: list|event_posted|None}"
+		,"\tevents_when_ball_search: ${4: list|event_posted|None}"
+		],
+	"description": "ball_device_ejector_even"
+},
+"ball_device_ejector_hol()": {
+	"prefix": ["ball_device_ejector_hol"],
+	"body": [
+		"ball_device_ejector_hol:"
+		,"\tclass: ${1: ignore}"
+		,"\thold_coil: ${2: single|machine(coils)|None}"
+		,"\thold_coil_release_time: ${3: single|ms|1s}"
+		,"\thold_events: ${4: event_handler|event_handler:ms|None}"
+		,"\thold_switches: ${5: list|machine(switches)|None}"
+		],
+	"description": "ball_device_ejector_hol"
+},
+"ball_device_ejector_puls()": {
+	"prefix": ["ball_device_ejector_puls"],
+	"body": [
+		"ball_device_ejector_puls:"
+		,"\tclass: ${1: ignore}"
+		,"\teject_coil: ${2: single|machine(coils)|}"
+		,"\teject_times: ${3: list|ms|None}"
+		,"\teject_coil_jam_pulse: ${4: list|ms|None}"
+		,"\teject_coil_retry_pulse: ${5: list|ms|None}"
+		,"\teject_coil_reorder_pulse: ${6: single|ms|None}"
+		,"\teject_coil_max_wait_ms: ${7: single|ms|200ms}"
+		,"\tretries_before_increasing_pulse: ${8: single|int|4}"
+		],
+	"description": "ball_device_ejector_puls"
+},
+"ball_hold(device)": {
+	"prefix": ["ball_hold"],
+	"body": [
+		"ball_hold:"
 		,"\tballs_to_hold: ${1: single|int|None}"
 		,"\thold_devices: ${2: list|machine(ball_devices)|}"
 		,"\tsource_playfield: ${3: single|machine(ball_devices)|playfield}"
@@ -279,23 +279,23 @@
 		,"\trelease_all_events: ${9: event_handler|event_handler:ms|None}"
 		,"\trelease_one_if_full_events: ${10: event_handler|event_handler:ms|None}"
 		],
-	"description": "ball_holds"
+	"description": "ball_hold"
 },
-"ball_routings-mpf": {
-	"prefix": ["ball_routings"],
+"ball_routing(device)": {
+	"prefix": ["ball_routing"],
 	"body": [
-		"ball_routings:"
+		"ball_routing:"
 		,"\tsource_devices: ${1: list|machine(ball_devices)|}"
 		,"\ttarget_device: ${2: single|machine(ball_devices)|}"
 		,"\tenable_events: ${3: event_handler|event_handler:ms|None}"
 		,"\tdisable_events: ${4: event_handler|event_handler:ms|None}"
 		],
-	"description": "ball_routings"
+	"description": "ball_routing"
 },
-"ball_saves-mpf": {
-	"prefix": ["ball_saves"],
+"ball_save(device)": {
+	"prefix": ["ball_save"],
 	"body": [
-		"ball_saves:"
+		"ball_save:"
 		,"\tsource_playfield: ${1: single|machine(ball_devices)|playfield}"
 		,"\tactive_time: ${2: single|template_secs|0}"
 		,"\teject_delay: ${3: single|ms|0}"
@@ -310,60 +310,60 @@
 		,"\tdisable_events: ${12: event_handler|event_handler:ms|ball_will_end, service_mode_entered}"
 		,"\ttimer_start_events: ${13: event_handler|event_handler:ms|None}"
 		],
-	"description": "ball_saves"
+	"description": "ball_save"
 },
-"bcp-mpf": {
-	"prefix": ["bcp"],
+"bc(config)": {
+	"prefix": ["bc"],
 	"body": [
-		"bcp:"
+		"bc:"
 		,"\tdebug: ${1|true,false|}"
 		,"\tconnections: ${2: list|subconfig(bcp_connection)|None}"
 		,"\tservers: ${3: list|subconfig(bcp_server)|None}"
 		],
-	"description": "bcp"
+	"description": "bc"
 },
-"bcp_connection-mpf": {
-	"prefix": ["bcp_connection"],
+"bcp_connectio()": {
+	"prefix": ["bcp_connectio"],
 	"body": [
-		"bcp_connection:"
+		"bcp_connectio:"
 		,"\thost: ${1: single|str|None}"
 		,"\tport: ${2: single|int|5050}"
 		,"\ttype: ${3: single|str|}"
 		,"\trequired: ${4|true,false|}"
 		,"\texit_on_close: ${5|true,false|}"
 		],
-	"description": "bcp_connection"
+	"description": "bcp_connectio"
 },
-"bcp_server-mpf": {
-	"prefix": ["bcp_server"],
+"bcp_serve()": {
+	"prefix": ["bcp_serve"],
 	"body": [
-		"bcp_server:"
+		"bcp_serve:"
 		,"\tip: ${1: single|str|None}"
 		,"\tport: ${2: single|int|5050}"
 		,"\ttype: ${3: single|str|}"
 		],
-	"description": "bcp_server"
+	"description": "bcp_serve"
 },
-"bitmap_fonts-mpf": {
-	"prefix": ["bitmap_fonts"],
+"bitmap_font(config_dict)": {
+	"prefix": ["bitmap_font"],
 	"body": [
-		"bitmap_fonts:"
+		"bitmap_font:"
 		,"\tfile: ${1: single|str|None}"
 		,"\tload: ${2: single|str|None}"
 		,"\tdescriptor: ${3: ignore}"
 		],
-	"description": "bitmap_fonts"
+	"description": "bitmap_font"
 },
-"blocking-mpf": {
-	"prefix": ["blocking"],
+"blockin(config_player)": {
+	"prefix": ["blockin"],
 	"body": [
 		],
-	"description": "blocking"
+	"description": "blockin"
 },
-"bonus_entries-mpf": {
-	"prefix": ["bonus_entries"],
+"bonus_entrie()": {
+	"prefix": ["bonus_entrie"],
 	"body": [
-		"bonus_entries:"
+		"bonus_entrie:"
 		,"\tevent: ${1: single|event_posted|}"
 		,"\tscore: ${2: single|template_int|}"
 		,"\treset_player_score_entry: ${3|true,false|}"
@@ -371,12 +371,12 @@
 		,"\tskip_if_zero: ${5|true,false|}"
 		,"\tskip_if_negative: ${6|true,false|}"
 		],
-	"description": "bonus_entries"
+	"description": "bonus_entrie"
 },
-"bonus_mode_settings-mpf": {
-	"prefix": ["bonus_mode_settings"],
+"bonus_mode_setting()": {
+	"prefix": ["bonus_mode_setting"],
 	"body": [
-		"bonus_mode_settings:"
+		"bonus_mode_setting:"
 		,"\tdisplay_delay_ms: ${1: single|ms|2000}"
 		,"\thurry_up_delay_ms: ${2: single|ms|500}"
 		,"\thurry_up_event: ${3: single|event_handler|flipper_cancel}"
@@ -384,35 +384,12 @@
 		,"\tkeep_multiplier: ${5: single|template_bool|False}"
 		,"\tbonus_entries: ${6: list|subconfig(bonus_entries)|}"
 		],
-	"description": "bonus_mode_settings"
+	"description": "bonus_mode_setting"
 },
-"coil_overwrites-mpf": {
-	"prefix": ["coil_overwrites"],
+"coil(device)": {
+	"prefix": ["coil"],
 	"body": [
-		"coil_overwrites:"
-		,"\trecycle: ${1|true,false|}"
-		,"\tpulse_ms: ${2: single|ms|None}"
-		,"\tpulse_power: ${3: single|float(0,1)|None}"
-		,"\thold_power: ${4: single|float(0,1)|None}"
-		],
-	"description": "coil_overwrites"
-},
-"coil_player-mpf": {
-	"prefix": ["coil_player"],
-	"body": [
-		"coil_player:"
-		,"\taction: ${1|pulse,on,off,enable,disable|}"
-		,"\thold_power: ${2: single|float|None}"
-		,"\tpulse_power: ${3: single|float|None}"
-		,"\tpulse_ms: ${4: single|int|None}"
-		,"\tmax_wait_ms: ${5: single|int|None}"
-		],
-	"description": "coil_player"
-},
-"coils-mpf": {
-	"prefix": ["coils"],
-	"body": [
-		"coils:"
+		"coil:"
 		,"\tallow_enable: ${1|true,false|}"
 		,"\tnumber: ${2: single|str|}"
 		,"\tdefault_recycle: ${3|true,false|}"
@@ -430,23 +407,46 @@
 		,"\tpsu: ${15: single|machine(psus)|default}"
 		,"\tplatform: ${16: single|str|None}"
 		],
-	"description": "coils"
+	"description": "coil"
 },
-"color_correction_profile-mpf": {
-	"prefix": ["color_correction_profile"],
+"coil_overwrite()": {
+	"prefix": ["coil_overwrite"],
 	"body": [
-		"color_correction_profile:"
+		"coil_overwrite:"
+		,"\trecycle: ${1|true,false|}"
+		,"\tpulse_ms: ${2: single|ms|None}"
+		,"\tpulse_power: ${3: single|float(0,1)|None}"
+		,"\thold_power: ${4: single|float(0,1)|None}"
+		],
+	"description": "coil_overwrite"
+},
+"coil_playe(config_player)": {
+	"prefix": ["coil_playe"],
+	"body": [
+		"coil_playe:"
+		,"\taction: ${1|pulse,on,off,enable,disable|}"
+		,"\thold_power: ${2: single|float|None}"
+		,"\tpulse_power: ${3: single|float|None}"
+		,"\tpulse_ms: ${4: single|int|None}"
+		,"\tmax_wait_ms: ${5: single|int|None}"
+		],
+	"description": "coil_playe"
+},
+"color_correction_profil()": {
+	"prefix": ["color_correction_profil"],
+	"body": [
+		"color_correction_profil:"
 		,"\tgamma: ${1: single|float|2.5}"
 		,"\twhitepoint: ${2: list|float|1.0, 1.0, 1.0}"
 		,"\tlinear_slope: ${3: single|float|1.0}"
 		,"\tlinear_cutoff: ${4: single|float|0.0}"
 		],
-	"description": "color_correction_profile"
+	"description": "color_correction_profil"
 },
-"combo_switches-mpf": {
-	"prefix": ["combo_switches"],
+"combo_switche(device)": {
+	"prefix": ["combo_switche"],
 	"body": [
-		"combo_switches:"
+		"combo_switche:"
 		,"\ttag_1: ${1: list|str|None}"
 		,"\ttag_2: ${2: list|str|None}"
 		,"\tswitches_1: ${3: set|machine(switches)|None}"
@@ -460,36 +460,26 @@
 		,"\tevents_when_switches_1: ${11: list|event_posted|None}"
 		,"\tevents_when_switches_2: ${12: list|event_posted|None}"
 		],
-	"description": "combo_switches"
+	"description": "combo_switche"
 },
-"config-mpf": {
-	"prefix": ["config"],
+"confi(list)": {
+	"prefix": ["confi"],
 	"body": [
 		],
-	"description": "config"
+	"description": "confi"
 },
-"config_player_common-mpf": {
-	"prefix": ["config_player_common"],
+"config_player_commo()": {
+	"prefix": ["config_player_commo"],
 	"body": [
-		"config_player_common:"
+		"config_player_commo:"
 		,"\tpriority: ${1: single|int|0}"
 		],
-	"description": "config_player_common"
+	"description": "config_player_commo"
 },
-"counter_control_events:  # subconfig for mode counter-mpf": {
-	"prefix": ["counter_control_events:  # subconfig for mode counter"],
+"counter(device)": {
+	"prefix": ["counter"],
 	"body": [
-		"counter_control_events:  # subconfig for mode counter:"
-		,"\taction: ${1|add,subtract,jump|}"
-		,"\tevent: ${2: single|event_handler|}"
-		,"\tvalue: ${3: single|template_int|None}"
-		],
-	"description": "counter_control_events:  # subconfig for mode counter"
-},
-"counters-mpf": {
-	"prefix": ["counters"],
-	"body": [
-		"counters:"
+		"counter:"
 		,"\tcount_events: ${1: event_handler|event_handler:ms|}"
 		,"\tcount_complete_value: ${2: single|template_int|None}"
 		,"\tmultiple_hit_window: ${3: single|ms|0}"
@@ -498,12 +488,22 @@
 		,"\tstarting_count: ${6: single|template_int|0}"
 		,"\tcontrol_events: ${7: list|subconfig(counter_control_events)|None}"
 		],
-	"description": "counters"
+	"description": "counter"
 },
-"credits-mpf": {
-	"prefix": ["credits"],
+"counter_control_event()": {
+	"prefix": ["counter_control_event"],
 	"body": [
-		"credits:"
+		"counter_control_event:"
+		,"\taction: ${1|add,subtract,jump|}"
+		,"\tevent: ${2: single|event_handler|}"
+		,"\tvalue: ${3: single|template_int|None}"
+		],
+	"description": "counter_control_event"
+},
+"credit(config)": {
+	"prefix": ["credit"],
+	"body": [
+		"credit:"
 		,"\tmax_credits: ${1: single|template_int|0}"
 		,"\tfree_play: ${2|true,false|}"
 		,"\tcoin_inhibit_disable_output: ${3: single|machine(digital_outputs)|None}"
@@ -520,60 +520,60 @@
 		,"\treset_earnings_events: ${14: list|event_handler|earnings_reset,factory_reset}"
 		,"\treset_credits_events: ${15: list|event_handler|credits_reset,factory_reset}"
 		],
-	"description": "credits"
+	"description": "credit"
 },
-"credits_events-mpf": {
-	"prefix": ["credits_events"],
+"credits_event()": {
+	"prefix": ["credits_event"],
 	"body": [
-		"credits_events:"
+		"credits_event:"
 		,"\tevent: ${1: single|event_handler|None}"
 		,"\tcredits: ${2: single|template_float|0.25}"
 		,"\ttype: ${3: single|str|replay}"
 		],
-	"description": "credits_events"
+	"description": "credits_event"
 },
-"credits_pricing_tiers-mpf": {
-	"prefix": ["credits_pricing_tiers"],
+"credits_pricing_tier()": {
+	"prefix": ["credits_pricing_tier"],
 	"body": [
-		"credits_pricing_tiers:"
+		"credits_pricing_tier:"
 		,"\tprice: ${1: single|template_float|.50}"
 		,"\tcredits: ${2: single|template_int|1}"
 		],
-	"description": "credits_pricing_tiers"
+	"description": "credits_pricing_tier"
 },
-"credits_switches-mpf": {
-	"prefix": ["credits_switches"],
+"credits_switche()": {
+	"prefix": ["credits_switche"],
 	"body": [
-		"credits_switches:"
+		"credits_switche:"
 		,"\tswitch: ${1: single|machine(switches)|None}"
 		,"\tvalue: ${2: single|template_float|0.25}"
 		,"\ttype: ${3: single|str|money}"
 		,"\tlabel: ${4: single|str|None}"
 		],
-	"description": "credits_switches"
+	"description": "credits_switche"
 },
-"custom_code-mpf": {
-	"prefix": ["custom_code"],
+"custom_cod(list)": {
+	"prefix": ["custom_cod"],
 	"body": [
 		],
-	"description": "custom_code"
+	"description": "custom_cod"
 },
-"device:     # base for all device-mpf": {
-	"prefix": ["device:     # base for all device"],
+"devic()": {
+	"prefix": ["devic"],
 	"body": [
-		"device:     # base for all device:"
+		"devic:"
 		,"\tlabel: ${1: single|str|%}"
 		,"\ttags: ${2: list|str|None}"
 		,"\tdebug: ${3|true,false|}"
 		,"\tconsole_log: ${4|none,basic,full|}"
 		,"\tfile_log: ${5|none,basic,full|}"
 		],
-	"description": "device:     # base for all device"
+	"description": "devic"
 },
-"digital_outputs-mpf": {
-	"prefix": ["digital_outputs"],
+"digital_output(device)": {
+	"prefix": ["digital_output"],
 	"body": [
-		"digital_outputs:"
+		"digital_output:"
 		,"\tnumber: ${1: single|str|}"
 		,"\tdisable_events: ${2: event_handler|event_handler:ms|None}"
 		,"\tenable_events: ${3: event_handler|event_handler:ms|None}"
@@ -582,32 +582,45 @@
 		,"\ttype: ${6|light,driver|}"
 		,"\tlight_subtype: ${7: single|str|None}"
 		],
-	"description": "digital_outputs"
+	"description": "digital_output"
 },
-"digital_score_reel_frame-mpf": {
-	"prefix": ["digital_score_reel_frame"],
+"digital_score_reel(device)": {
+	"prefix": ["digital_score_reel"],
 	"body": [
-		"digital_score_reel_frame:"
-		,"\tcharacter: ${1: single|str|None}"
-		,"\tframe: ${2: single|int|None}"
-		],
-	"description": "digital_score_reel_frame"
-},
-"digital_score_reels-mpf": {
-	"prefix": ["digital_score_reels"],
-	"body": [
-		"digital_score_reels:"
+		"digital_score_reel:"
 		,"\treel_count: ${1: single|num|0}"
 		,"\tstart_value: ${2: single|str|0}"
 		,"\tframes: ${3: list|subconfig(digital_score_reel_frame)|None}"
 		,"\tinclude_player_number: ${4|true,false|}"
 		],
-	"description": "digital_score_reels"
+	"description": "digital_score_reel"
 },
-"display_light_player-mpf": {
-	"prefix": ["display_light_player"],
+"digital_score_reel_fram()": {
+	"prefix": ["digital_score_reel_fram"],
 	"body": [
-		"display_light_player:"
+		"digital_score_reel_fram:"
+		,"\tcharacter: ${1: single|str|None}"
+		,"\tframe: ${2: single|int|None}"
+		],
+	"description": "digital_score_reel_fram"
+},
+"display(device)": {
+	"prefix": ["display"],
+	"body": [
+		"display:"
+		,"\twidth: ${1: single|int|800}"
+		,"\theight: ${2: single|int|600}"
+		,"\tdefault: ${3|true,false|}"
+		,"\tround_anchor_x: ${4: single|str|center}"
+		,"\tround_anchor_y: ${5: single|str|middle}"
+		,"\tenabled: ${6|true,false|}"
+		],
+	"description": "display"
+},
+"display_light_playe(config_player)": {
+	"prefix": ["display_light_playe"],
+	"body": [
+		"display_light_playe:"
 		,"\taction: ${1|play,stop|}"
 		,"\tlights: ${2: list|str|None}"
 		,"\tbcp_connection: ${3: single|str|local_display}"
@@ -616,25 +629,12 @@
 		,"\tmin_y: ${6: single|int|0}"
 		,"\tmax_y: ${7: single|int|None}"
 		],
-	"description": "display_light_player"
+	"description": "display_light_playe"
 },
-"displays-mpf": {
-	"prefix": ["displays"],
+"diverter(device)": {
+	"prefix": ["diverter"],
 	"body": [
-		"displays:"
-		,"\twidth: ${1: single|int|800}"
-		,"\theight: ${2: single|int|600}"
-		,"\tdefault: ${3|true,false|}"
-		,"\tround_anchor_x: ${4: single|str|center}"
-		,"\tround_anchor_y: ${5: single|str|middle}"
-		,"\tenabled: ${6|true,false|}"
-		],
-	"description": "displays"
-},
-"diverters-mpf": {
-	"prefix": ["diverters"],
-	"body": [
-		"diverters:"
+		"diverter:"
 		,"\tactivate_events: ${1: event_handler|event_handler:ms|None}"
 		,"\tactivation_coil: ${2: single|machine(coils)|None}"
 		,"\tactivation_time: ${3: single|ms|0}"
@@ -656,12 +656,12 @@
 		,"\tball_search_hold_time: ${19: single|ms|1s}"
 		,"\tplayfield: ${20: single|machine(playfields)|playfield}"
 		],
-	"description": "diverters"
+	"description": "diverter"
 },
-"dmds-mpf": {
-	"prefix": ["dmds"],
+"dmd(device)": {
+	"prefix": ["dmd"],
 	"body": [
-		"dmds:"
+		"dmd:"
 		,"\tplatform: ${1: single|str|None}"
 		,"\tshades: ${2: single|pow2|16}"
 		,"\tfps: ${3: single|int|30}"
@@ -671,26 +671,12 @@
 		,"\tgamma: ${7: single|float|1.0}"
 		,"\tonly_send_changes: ${8|true,false|}"
 		],
-	"description": "dmds"
+	"description": "dmd"
 },
-"drop_target_banks-mpf": {
-	"prefix": ["drop_target_banks"],
+"drop_target(device)": {
+	"prefix": ["drop_target"],
 	"body": [
-		"drop_target_banks:"
-		,"\tdrop_targets: ${1: list|machine(drop_targets)|}"
-		,"\treset_on_complete: ${2: single|ms|None}"
-		,"\treset_coil: ${3: single|machine(coils)|None}"
-		,"\treset_coils: ${4: list|machine(coils)|None}"
-		,"\treset_coil_max_wait_ms: ${5: single|ms|100ms}"
-		,"\treset_events: ${6: event_handler|event_handler:ms|machine_reset_phase_3, ball_starting}"
-		,"\tignore_switch_ms: ${7: single|ms|500ms}"
-		],
-	"description": "drop_target_banks"
-},
-"drop_targets-mpf": {
-	"prefix": ["drop_targets"],
-	"body": [
-		"drop_targets:"
+		"drop_target:"
 		,"\tswitch: ${1: single|machine(switches)|}"
 		,"\treset_coil: ${2: single|machine(coils)|None}"
 		,"\tknockdown_coil: ${3: single|machine(coils)|None}"
@@ -704,22 +690,36 @@
 		,"\tignore_switch_ms: ${11: single|ms|500ms}"
 		,"\tplayfield: ${12: single|machine(playfields)|playfield}"
 		],
-	"description": "drop_targets"
+	"description": "drop_target"
 },
-"dual_wound_coils-mpf": {
-	"prefix": ["dual_wound_coils"],
+"drop_target_bank(device)": {
+	"prefix": ["drop_target_bank"],
 	"body": [
-		"dual_wound_coils:"
+		"drop_target_bank:"
+		,"\tdrop_targets: ${1: list|machine(drop_targets)|}"
+		,"\treset_on_complete: ${2: single|ms|None}"
+		,"\treset_coil: ${3: single|machine(coils)|None}"
+		,"\treset_coils: ${4: list|machine(coils)|None}"
+		,"\treset_coil_max_wait_ms: ${5: single|ms|100ms}"
+		,"\treset_events: ${6: event_handler|event_handler:ms|machine_reset_phase_3, ball_starting}"
+		,"\tignore_switch_ms: ${7: single|ms|500ms}"
+		],
+	"description": "drop_target_bank"
+},
+"dual_wound_coil(device)": {
+	"prefix": ["dual_wound_coil"],
+	"body": [
+		"dual_wound_coil:"
 		,"\tmain_coil: ${1: single|machine(coils)|}"
 		,"\thold_coil: ${2: single|machine(coils)|}"
 		,"\teos_switch: ${3: single|machine(switches)|None}"
 		],
-	"description": "dual_wound_coils"
+	"description": "dual_wound_coil"
 },
-"effects-mpf": {
-	"prefix": ["effects"],
+"effect()": {
+	"prefix": ["effect"],
 	"body": [
-		"effects:"
+		"effect:"
 		,"\tcommon: ${1:}"
 			,"\ttype: ${2: single|str|}"
 		,"\tanti_aliasing: ${3:}"
@@ -780,18 +780,30 @@
 		,"\tvertical_blur: ${58:}"
 			,"\tsize: ${59: single|float|4.0}"
 		],
-	"description": "effects"
+	"description": "effect"
 },
-"event_player-mpf": {
-	"prefix": ["event_player"],
+"event_playe(config_player)": {
+	"prefix": ["event_playe"],
 	"body": [
 		],
-	"description": "event_player"
+	"description": "event_playe"
 },
-"extra_ball_groups-mpf": {
-	"prefix": ["extra_ball_groups"],
+"extra_ball(device)": {
+	"prefix": ["extra_ball"],
 	"body": [
-		"extra_ball_groups:"
+		"extra_ball:"
+		,"\tenabled: ${1|true,false|}"
+		,"\tgroup: ${2: single|machine(extra_ball_groups)|None}"
+		,"\taward_events: ${3: event_handler|event_handler:ms|None}"
+		,"\tlight_events: ${4: event_handler|event_handler:ms|None}"
+		,"\tmax_per_game: ${5: single|int|1}"
+		],
+	"description": "extra_ball"
+},
+"extra_ball_group(device)": {
+	"prefix": ["extra_ball_group"],
+	"body": [
+		"extra_ball_group:"
 		,"\tenabled: ${1|true,false|}"
 		,"\tlight_events: ${2: event_handler|event_handler:ms|None}"
 		,"\taward_events: ${3: event_handler|event_handler:ms|None}"
@@ -801,24 +813,12 @@
 		,"\tmax_lit: ${7: single|int|None}"
 		,"\tlit_memory: ${8|true,false|}"
 		],
-	"description": "extra_ball_groups"
+	"description": "extra_ball_group"
 },
-"extra_balls-mpf": {
-	"prefix": ["extra_balls"],
+"fadecand(config)": {
+	"prefix": ["fadecand"],
 	"body": [
-		"extra_balls:"
-		,"\tenabled: ${1|true,false|}"
-		,"\tgroup: ${2: single|machine(extra_ball_groups)|None}"
-		,"\taward_events: ${3: event_handler|event_handler:ms|None}"
-		,"\tlight_events: ${4: event_handler|event_handler:ms|None}"
-		,"\tmax_per_game: ${5: single|int|1}"
-		],
-	"description": "extra_balls"
-},
-"fadecandy-mpf": {
-	"prefix": ["fadecandy"],
-	"body": [
-		"fadecandy:"
+		"fadecand:"
 		,"\tgamma: ${1: single|float|2.5}"
 		,"\twhitepoint: ${2: list|float|1.0, 1.0, 1.0}"
 		,"\tlinear_slope: ${3: single|float|1.0}"
@@ -828,12 +828,12 @@
 		,"\tconsole_log: ${7|none,basic,full|}"
 		,"\tfile_log: ${8|none,basic,full|}"
 		],
-	"description": "fadecandy"
+	"description": "fadecand"
 },
-"fast-mpf": {
-	"prefix": ["fast"],
+"fas(config)": {
+	"prefix": ["fas"],
 	"body": [
-		"fast:"
+		"fas:"
 		,"\tdriverboards: ${1|fast,wpc,None|}"
 		,"\tports: ${2: list|str|}"
 		,"\tbaud: ${3: list|int|921600}"
@@ -853,56 +853,56 @@
 		,"\tfirmware_updates: ${17: list|subconfig(fast_firmware_update)|None}"
 		,"\tignore_rgb_crash: ${18|true,false|}"
 		],
-	"description": "fast"
+	"description": "fas"
 },
-"fast_coils-mpf": {
-	"prefix": ["fast_coils"],
+"fast_coil()": {
+	"prefix": ["fast_coil"],
 	"body": [
-		"fast_coils:"
+		"fast_coil:"
 		,"\tconnection: ${1|network,local,auto|}"
 		,"\trecycle_ms: ${2: single|ms|None}"
 		,"\thold_pwm_patter: ${3: single|str|None}"
 		],
-	"description": "fast_coils"
+	"description": "fast_coil"
 },
-"fast_firmware_update-mpf": {
-	"prefix": ["fast_firmware_update"],
+"fast_firmware_updat()": {
+	"prefix": ["fast_firmware_updat"],
 	"body": [
-		"fast_firmware_update:"
+		"fast_firmware_updat:"
 		,"\ttype: ${1|net,rgb|}"
 		,"\tfile: ${2: single|str|}"
 		,"\tversion: ${3: single|str|}"
 		],
-	"description": "fast_firmware_update"
+	"description": "fast_firmware_updat"
 },
-"fast_switches-mpf": {
-	"prefix": ["fast_switches"],
+"fast_switche()": {
+	"prefix": ["fast_switche"],
 	"body": [
-		"fast_switches:"
+		"fast_switche:"
 		,"\tdebounce_open: ${1: single|str|None}"
 		,"\tdebounce_close: ${2: single|str|None}"
 		],
-	"description": "fast_switches"
+	"description": "fast_switche"
 },
-"file_shows-mpf": {
-	"prefix": ["file_shows"],
+"file_show(config_dict)": {
+	"prefix": ["file_show"],
 	"body": [
 		],
-	"description": "file_shows"
+	"description": "file_show"
 },
-"flasher_player-mpf": {
-	"prefix": ["flasher_player"],
+"flasher_playe(config_player)": {
+	"prefix": ["flasher_playe"],
 	"body": [
-		"flasher_player:"
+		"flasher_playe:"
 		,"\tms: ${1: single|ms_or_token|100ms}"
 		,"\tcolor: ${2: single|str|on}"
 		],
-	"description": "flasher_player"
+	"description": "flasher_playe"
 },
-"flippers-mpf": {
-	"prefix": ["flippers"],
+"flipper(device)": {
+	"prefix": ["flipper"],
 	"body": [
-		"flippers:"
+		"flipper:"
 		,"\tmain_coil: ${1: single|machine(coils)|}"
 		,"\thold_coil: ${2: single|machine(coils)|None}"
 		,"\tactivation_switch: ${3: single|machine(switches)|None}"
@@ -924,12 +924,12 @@
 		,"\trepulse_on_eos_open: ${19|true,false|}"
 		,"\teos_active_ms_before_repulse: ${20: single|ms|500}"
 		],
-	"description": "flippers"
+	"description": "flipper"
 },
-"game-mpf": {
-	"prefix": ["game"],
+"gam(config)": {
+	"prefix": ["gam"],
 	"body": [
-		"game:"
+		"gam:"
 		,"\tballs_per_game: ${1: single|template_int|3}"
 		,"\tmax_players: ${2: single|template_int|4}"
 		,"\tstart_game_switch_tag: ${3: single|str|start}"
@@ -941,12 +941,12 @@
 		,"\tend_game_event: ${9: single|event_handler|end_game}"
 		,"\tend_ball_event: ${10: single|event_handler|end_ball}"
 		],
-	"description": "game"
+	"description": "gam"
 },
-"hardware-mpf": {
-	"prefix": ["hardware"],
+"hardwar(config)": {
+	"prefix": ["hardwar"],
 	"body": [
-		"hardware:"
+		"hardwar:"
 		,"\tplatform: ${1: list|str|virtual}"
 		,"\tcoils: ${2: list|str|default}"
 		,"\tsegment_displays: ${3: list|str|default}"
@@ -961,44 +961,44 @@
 		,"\tstepper_controllers: ${12: list|str|default}"
 		,"\thardware_sound_system: ${13: list|str|default}"
 		],
-	"description": "hardware"
+	"description": "hardwar"
 },
-"hardware_benchmark-mpf": {
-	"prefix": ["hardware_benchmark"],
+"hardware_benchmar(config)": {
+	"prefix": ["hardware_benchmar"],
 	"body": [
-		"hardware_benchmark:"
+		"hardware_benchmar:"
 		,"\tswitch1: ${1: single|machine(switches)|None}"
 		,"\tswitch2: ${2: single|machine(switches)|None}"
 		,"\tcoil1: ${3: single|machine(coils)|}"
 		,"\tcoil2: ${4: single|machine(coils)|}"
 		,"\tflipper: ${5: single|machine(flippers)|}"
 		],
-	"description": "hardware_benchmark"
+	"description": "hardware_benchmar"
 },
-"hardware_sound_player-mpf": {
-	"prefix": ["hardware_sound_player"],
+"hardware_sound_playe(config_player)": {
+	"prefix": ["hardware_sound_playe"],
 	"body": [
-		"hardware_sound_player:"
+		"hardware_sound_playe:"
 		,"\taction: ${1|play,play_file,text_to_speech,set_volume,increase_volume,decrease_volume,stop|}"
 		,"\ttrack: ${2: single|int|1}"
 		,"\tvalue: ${3: single|str|None}"
 		,"\tplatform_options: ${4: single|dict|None}"
 		,"\tsound_system: ${5: single|machine(hardware_sound_systems)|default}"
 		],
-	"description": "hardware_sound_player"
+	"description": "hardware_sound_playe"
 },
-"hardware_sound_systems-mpf": {
-	"prefix": ["hardware_sound_systems"],
+"hardware_sound_system(device)": {
+	"prefix": ["hardware_sound_system"],
 	"body": [
-		"hardware_sound_systems:"
+		"hardware_sound_system:"
 		,"\tplatform: ${1: single|str|None}"
 		],
-	"description": "hardware_sound_systems"
+	"description": "hardware_sound_system"
 },
-"high_score-mpf": {
-	"prefix": ["high_score"],
+"high_scor(config)": {
+	"prefix": ["high_scor"],
 	"body": [
-		"high_score:"
+		"high_scor:"
 		,"\taward_slide_display_time: ${1: single|ms|4s}"
 		,"\tcategories: ${2: omap|str:list|}"
 		,"\tdefaults: ${3: dict|str:list|None}"
@@ -1006,50 +1006,52 @@
 		,"\treverse_sort: ${5: list|str|None}"
 		,"\treset_high_scores_events: ${6: list|event_handler|high_scores_reset,factory_reset}"
 		],
-	"description": "high_score"
+	"description": "high_scor"
 },
-"image_pools-mpf": {
-	"prefix": ["image_pools"],
+"image(config_dict)": {
+	"prefix": ["image"],
 	"body": [
-		],
-	"description": "image_pools"
-},
-"image_templates-mpf": {
-	"prefix": ["image_templates"],
-	"body": [
-		],
-	"description": "image_templates"
-},
-"images-mpf": {
-	"prefix": ["images"],
-	"body": [
-		"images:"
+		"image:"
 		,"\tfile: ${1: single|str|None}"
 		,"\tframe_skips: ${2: list|subconfig(images_frame_skips)|None}"
 		,"\timage_template: ${3: single|subconfig(images,device)|None}"
 		,"\tload: ${4: single|str|None}"
 		],
-	"description": "images"
+	"description": "image"
 },
-"images_frame_skips-mpf": {
-	"prefix": ["images_frame_skips"],
+"image_pool(config_dict)": {
+	"prefix": ["image_pool"],
 	"body": [
-		"images_frame_skips:"
+		],
+	"description": "image_pool"
+},
+"image_template()": {
+	"prefix": ["image_template"],
+	"body": [
+		"image_template:"
+		,"\t__type: ${1: config}"
+		],
+	"description": "image_template"
+},
+"images_frame_skip(config_dict)": {
+	"prefix": ["images_frame_skip"],
+	"body": [
+		"images_frame_skip:"
 		,"\tfrom: ${1: single|int|None}"
 		,"\tto: ${2: single|int|None}"
 		],
-	"description": "images_frame_skips"
+	"description": "images_frame_skip"
 },
-"info_lights-mpf": {
-	"prefix": ["info_lights"],
+"info_light(config)": {
+	"prefix": ["info_light"],
 	"body": [
 		],
-	"description": "info_lights"
+	"description": "info_light"
 },
-"keyboard-mpf": {
-	"prefix": ["keyboard"],
+"keyboar(config_dict)": {
+	"prefix": ["keyboar"],
 	"body": [
-		"keyboard:"
+		"keyboar:"
 		,"\tswitch: ${1: single|machine(switches)|None}"
 		,"\tevent: ${2: single|event_posted|None}"
 		,"\tmc_event: ${3: single|event_posted|None}"
@@ -1058,12 +1060,12 @@
 		,"\tparams: ${6: dict|str:str|None}"
 		,"\tdebug: ${7|true,false|}"
 		],
-	"description": "keyboard"
+	"description": "keyboar"
 },
-"kickbacks-mpf": {
-	"prefix": ["kickbacks"],
+"kickback(device)": {
+	"prefix": ["kickback"],
 	"body": [
-		"kickbacks:"
+		"kickback:"
 		,"\tcoil: ${1: single|machine(coils)|}"
 		,"\tswitch: ${2: single|machine(switches)|}"
 		,"\treverse_switch: ${3|true,false|}"
@@ -1078,98 +1080,18 @@
 		,"\ttimeout_disable_time: ${12: single|ms|0}"
 		,"\tcoil_pulse_delay: ${13: single|ms|0}"
 		],
-	"description": "kickbacks"
+	"description": "kickback"
 },
-"kivy_config-mpf": {
-	"prefix": ["kivy_config"],
+"kivy_confi(config)": {
+	"prefix": ["kivy_confi"],
 	"body": [
 		],
-	"description": "kivy_config"
+	"description": "kivy_confi"
 },
-"light_channels-mpf": {
-	"prefix": ["light_channels"],
+"light(device)": {
+	"prefix": ["light"],
 	"body": [
-		"light_channels:"
-		,"\tnumber: ${1: single|str|}"
-		,"\tsubtype: ${2: single|str|None}"
-		,"\tplatform: ${3: single|str|None}"
-		,"\tplatform_settings: ${4: single|dict|None}"
-		],
-	"description": "light_channels"
-},
-"light_player-mpf": {
-	"prefix": ["light_player"],
-	"body": [
-		"light_player:"
-		,"\tcolor: ${1: single|str|white}"
-		,"\tfade: ${2: single|ms_or_token|None}"
-		,"\tpriority: ${3: single|int_or_token|0}"
-		],
-	"description": "light_player"
-},
-"light_rings-mpf": {
-	"prefix": ["light_rings"],
-	"body": [
-		"light_rings:"
-		,"\tnumber_start: ${1: single|int|0}"
-		,"\tstart_channel: ${2: single|str|None}"
-		,"\tnumber_template: ${3: single|str|None}"
-		,"\tcenter_x: ${4: single|float|None}"
-		,"\tcenter_y: ${5: single|float|None}"
-		,"\tstart_angle: ${6: single|float|0}"
-		,"\tradius: ${7: single|float|None}"
-		,"\tcount: ${8: single|int|}"
-		,"\tlight_template: ${9: single|subconfig(lights,device)|}"
-		],
-	"description": "light_rings"
-},
-"light_segment_displays-mpf": {
-	"prefix": ["light_segment_displays"],
-	"body": [
-		"light_segment_displays:"
-		,"\tdisplay_flash_frequency: ${1: single|float|1.0}"
-		],
-	"description": "light_segment_displays"
-},
-"light_segment_displays_device-mpf": {
-	"prefix": ["light_segment_displays_device"],
-	"body": [
-		"light_segment_displays_device:"
-		,"\tlights: ${1: list|dict(str:machine(lights))|}"
-		,"\ttype: ${2|7segment,bcd,8segment,14segment,16segment|}"
-		],
-	"description": "light_segment_displays_device"
-},
-"light_settings-mpf": {
-	"prefix": ["light_settings"],
-	"body": [
-		"light_settings:"
-		,"\tcolor_correction_profiles: ${1: dict|str:subconfig(color_correction_profile)|None}"
-		,"\tdefault_color_correction_profile: ${2: single|str|None}"
-		,"\tdefault_fade_ms: ${3: single|int|0}"
-		],
-	"description": "light_settings"
-},
-"light_stripes-mpf": {
-	"prefix": ["light_stripes"],
-	"body": [
-		"light_stripes:"
-		,"\tnumber_start: ${1: single|int|0}"
-		,"\tstart_channel: ${2: single|str|None}"
-		,"\tnumber_template: ${3: single|str|None}"
-		,"\tstart_x: ${4: single|float|None}"
-		,"\tstart_y: ${5: single|float|None}"
-		,"\tdirection: ${6: single|float|None}"
-		,"\tdistance: ${7: single|float|None}"
-		,"\tcount: ${8: single|int|}"
-		,"\tlight_template: ${9: single|subconfig(lights,device)|}"
-		],
-	"description": "light_stripes"
-},
-"lights-mpf": {
-	"prefix": ["lights"],
-	"body": [
-		"lights:"
+		"light:"
 		,"\tnumber: ${1: single|str|None}"
 		,"\tprevious: ${2: single|machine(lights)|None}"
 		,"\tstart_channel: ${3: single|str|None}"
@@ -1185,12 +1107,92 @@
 		,"\ty: ${13: single|float|None}"
 		,"\tz: ${14: single|float|None}"
 		],
-	"description": "lights"
+	"description": "light"
 },
-"lisy-mpf": {
-	"prefix": ["lisy"],
+"light_channel()": {
+	"prefix": ["light_channel"],
 	"body": [
-		"lisy:"
+		"light_channel:"
+		,"\tnumber: ${1: single|str|}"
+		,"\tsubtype: ${2: single|str|None}"
+		,"\tplatform: ${3: single|str|None}"
+		,"\tplatform_settings: ${4: single|dict|None}"
+		],
+	"description": "light_channel"
+},
+"light_playe(config_player)": {
+	"prefix": ["light_playe"],
+	"body": [
+		"light_playe:"
+		,"\tcolor: ${1: single|str|white}"
+		,"\tfade: ${2: single|ms_or_token|None}"
+		,"\tpriority: ${3: single|int_or_token|0}"
+		],
+	"description": "light_playe"
+},
+"light_ring(device)": {
+	"prefix": ["light_ring"],
+	"body": [
+		"light_ring:"
+		,"\tnumber_start: ${1: single|int|0}"
+		,"\tstart_channel: ${2: single|str|None}"
+		,"\tnumber_template: ${3: single|str|None}"
+		,"\tcenter_x: ${4: single|float|None}"
+		,"\tcenter_y: ${5: single|float|None}"
+		,"\tstart_angle: ${6: single|float|0}"
+		,"\tradius: ${7: single|float|None}"
+		,"\tcount: ${8: single|int|}"
+		,"\tlight_template: ${9: single|subconfig(lights,device)|}"
+		],
+	"description": "light_ring"
+},
+"light_segment_display(config)": {
+	"prefix": ["light_segment_display"],
+	"body": [
+		"light_segment_display:"
+		,"\tdisplay_flash_frequency: ${1: single|float|1.0}"
+		],
+	"description": "light_segment_display"
+},
+"light_segment_displays_devic()": {
+	"prefix": ["light_segment_displays_devic"],
+	"body": [
+		"light_segment_displays_devic:"
+		,"\tlights: ${1: list|dict(str:machine(lights))|}"
+		,"\ttype: ${2|7segment,bcd,8segment,14segment,16segment|}"
+		],
+	"description": "light_segment_displays_devic"
+},
+"light_setting(config)": {
+	"prefix": ["light_setting"],
+	"body": [
+		"light_setting:"
+		,"\tcolor_correction_profiles: ${1: dict|str:subconfig(color_correction_profile)|None}"
+		,"\tdefault_color_correction_profile: ${2: single|str|None}"
+		,"\tdefault_fade_ms: ${3: single|int|0}"
+		],
+	"description": "light_setting"
+},
+"light_stripe(device)": {
+	"prefix": ["light_stripe"],
+	"body": [
+		"light_stripe:"
+		,"\tnumber_start: ${1: single|int|0}"
+		,"\tstart_channel: ${2: single|str|None}"
+		,"\tnumber_template: ${3: single|str|None}"
+		,"\tstart_x: ${4: single|float|None}"
+		,"\tstart_y: ${5: single|float|None}"
+		,"\tdirection: ${6: single|float|None}"
+		,"\tdistance: ${7: single|float|None}"
+		,"\tcount: ${8: single|int|}"
+		,"\tlight_template: ${9: single|subconfig(lights,device)|}"
+		],
+	"description": "light_stripe"
+},
+"lis(config)": {
+	"prefix": ["lis"],
+	"body": [
+		"lis:"
 		,"\tbaud: ${1: single|int|None}"
 		,"\tdebug: ${2|true,false|}"
 		,"\tdisplay_flash_frequency: ${3: single|float|1.0}"
@@ -1205,18 +1207,18 @@
 		,"\tport: ${12: single|str|None}"
 		,"\tsend_length_after_command: ${13|true,false|}"
 		],
-	"description": "lisy"
+	"description": "lis"
 },
-"logging-mpf": {
-	"prefix": ["logging"],
+"loggin(config)": {
+	"prefix": ["loggin"],
 	"body": [
 		],
-	"description": "logging"
+	"description": "loggin"
 },
-"logic_blocks_common-mpf": {
-	"prefix": ["logic_blocks_common"],
+"logic_blocks_commo()": {
+	"prefix": ["logic_blocks_commo"],
 	"body": [
-		"logic_blocks_common:"
+		"logic_blocks_commo:"
 		,"\tenable_events: ${1: event_handler|event_handler:ms|None}"
 		,"\tdisable_events: ${2: event_handler|event_handler:ms|None}"
 		,"\treset_events: ${3: event_handler|event_handler:ms|None}"
@@ -1229,31 +1231,31 @@
 		,"\tevents_when_hit: ${10: list|event_posted|None}"
 		,"\tlogic_block_timeout: ${11: single|ms|0}"
 		],
-	"description": "logic_blocks_common"
+	"description": "logic_blocks_commo"
 },
-"machine-mpf": {
-	"prefix": ["machine"],
+"machin(config)": {
+	"prefix": ["machin"],
 	"body": [
-		"machine:"
+		"machin:"
 		,"\tballs_installed: ${1: single|int|1}"
 		,"\tmin_balls: ${2: single|int|1}"
 		],
-	"description": "machine"
+	"description": "machin"
 },
-"machine_vars-mpf": {
-	"prefix": ["machine_vars"],
+"machine_var(config_dict)": {
+	"prefix": ["machine_var"],
 	"body": [
-		"machine_vars:"
+		"machine_var:"
 		,"\tinitial_value: ${1: single|str|}"
 		,"\tvalue_type: ${2|str,float,int|}"
 		,"\tpersist: ${3|true,false|}"
 		],
-	"description": "machine_vars"
+	"description": "machine_var"
 },
-"magnets-mpf": {
-	"prefix": ["magnets"],
+"magnet(device)": {
+	"prefix": ["magnet"],
 	"body": [
-		"magnets:"
+		"magnet:"
 		,"\tmagnet_coil: ${1: single|machine(coils)|}"
 		,"\tgrab_switch: ${2: single|machine(switches)|None}"
 		,"\tgrab_time: ${3: single|ms|1.5s}"
@@ -1268,32 +1270,32 @@
 		,"\trelease_ball_events: ${12: event_handler|event_handler:ms|None}"
 		,"\tfling_ball_events: ${13: event_handler|event_handler:ms|None}"
 		],
-	"description": "magnets"
+	"description": "magnet"
 },
-"mc_custom_code-mpf": {
-	"prefix": ["mc_custom_code"],
+"mc_custom_cod(list)": {
+	"prefix": ["mc_custom_cod"],
 	"body": [
 		],
-	"description": "mc_custom_code"
+	"description": "mc_custom_cod"
 },
-"mc_scriptlets-mpf": {
-	"prefix": ["mc_scriptlets"],
+"mc_scriptlet(list)": {
+	"prefix": ["mc_scriptlet"],
 	"body": [
 		],
-	"description": "mc_scriptlets"
+	"description": "mc_scriptlet"
 },
-"mma8451_accelerometer-mpf": {
-	"prefix": ["mma8451_accelerometer"],
+"mma8451_acceleromete()": {
+	"prefix": ["mma8451_acceleromete"],
 	"body": [
-		"mma8451_accelerometer:"
+		"mma8451_acceleromete:"
 		,"\ti2c_platform: ${1: single|str|None}"
 		],
-	"description": "mma8451_accelerometer"
+	"description": "mma8451_acceleromete"
 },
-"mode-mpf": {
-	"prefix": ["mode"],
+"mod(config)": {
+	"prefix": ["mod"],
 	"body": [
-		"mode:"
+		"mod:"
 		,"\tpriority: ${1: single|int|100}"
 		,"\tstart_events: ${2: event_handler|event_handler:ms|None}"
 		,"\tstop_events: ${3: event_handler|event_handler:ms|None}"
@@ -1311,24 +1313,24 @@
 		,"\tasset_paths: ${15: list|str|None}"
 		,"\tpath: ${16: single|str|None}"
 		],
+	"description": "mod"
+},
+"mode(list)": {
+	"prefix": ["mode"],
+	"body": [
+		],
 	"description": "mode"
 },
-"mode_settings-mpf": {
-	"prefix": ["mode_settings"],
+"mode_setting(config)": {
+	"prefix": ["mode_setting"],
 	"body": [
 		],
-	"description": "mode_settings"
+	"description": "mode_setting"
 },
-"modes-mpf": {
-	"prefix": ["modes"],
+"motor(device)": {
+	"prefix": ["motor"],
 	"body": [
-		],
-	"description": "modes"
-},
-"motors-mpf": {
-	"prefix": ["motors"],
-	"body": [
-		"motors:"
+		"motor:"
 		,"\tposition_switches: ${1: omap|str:machine(switches)|}"
 		,"\treset_position: ${2: single|str|}"
 		,"\treset_events: ${3: event_handler|event_handler:ms|machine_reset_phase_3, ball_starting}"
@@ -1337,12 +1339,12 @@
 		,"\tmotor_right_output: ${6: single|machine(digital_outputs)|None}"
 		,"\tinclude_in_ball_search: ${7|true,false|}"
 		],
-	"description": "motors"
+	"description": "motor"
 },
-"mpf-mpf": {
-	"prefix": ["mpf"],
+"mp(config)": {
+	"prefix": ["mp"],
 	"body": [
-		"mpf:"
+		"mp:"
 		,"\tdefault_pulse_ms: ${1: single|int|10}"
 		,"\tdefault_ball_search: ${2|true,false|}"
 		,"\tdefault_light_hw_update_hz: ${3: single|int|50}"
@@ -1362,36 +1364,18 @@
 		,"\tpaths: ${17: ignore}"
 		,"\treport_crashes: ${18|ask,never,always|}"
 		],
-	"description": "mpf"
+	"description": "mp"
 },
-"mpf-mc-mpf": {
-	"prefix": ["mpf-mc"],
+"mpf-m(config)": {
+	"prefix": ["mpf-m"],
 	"body": [
 		],
-	"description": "mpf-mc"
+	"description": "mpf-m"
 },
-"multiball_locks-mpf": {
-	"prefix": ["multiball_locks"],
+"multiball(device)": {
+	"prefix": ["multiball"],
 	"body": [
-		"multiball_locks:"
-		,"\tballs_to_lock: ${1: single|int|}"
-		,"\tballs_to_replace: ${2: single|int|-1}"
-		,"\tlock_devices: ${3: list|machine(ball_devices)|}"
-		,"\tsource_devices: ${4: list|machine(ball_devices)|None}"
-		,"\tsource_playfield: ${5: single|machine(ball_devices)|playfield}"
-		,"\tenable_events: ${6: event_handler|event_handler:ms|None}"
-		,"\tdisable_events: ${7: event_handler|event_handler:ms|None}"
-		,"\tlocked_ball_counting_strategy: ${8|virtual_only,min_virtual_physical,physical_only,no_virtual|}"
-		,"\tpriority: ${9: single|int|1}"
-		,"\treset_all_counts_events: ${10: event_handler|event_handler:ms|None}"
-		,"\treset_count_for_current_player_events: ${11: event_handler|event_handler:ms|None}"
-		],
-	"description": "multiball_locks"
-},
-"multiballs-mpf": {
-	"prefix": ["multiballs"],
-	"body": [
-		"multiballs:"
+		"multiball:"
 		,"\tball_count: ${1: single|template_int|}"
 		,"\tball_count_type: ${2|add,total|}"
 		,"\treplace_balls_in_play: ${3|true,false|}"
@@ -1406,40 +1390,46 @@
 		,"\tadd_a_ball_events: ${12: event_handler|event_handler:ms|None}"
 		,"\tstart_or_add_a_ball_events: ${13: event_handler|event_handler:ms|None}"
 		],
-	"description": "multiballs"
+	"description": "multiball"
 },
-"mypinballs-mpf": {
-	"prefix": ["mypinballs"],
+"multiball_lock(device)": {
+	"prefix": ["multiball_lock"],
 	"body": [
-		"mypinballs:"
+		"multiball_lock:"
+		,"\tballs_to_lock: ${1: single|int|}"
+		,"\tballs_to_replace: ${2: single|int|-1}"
+		,"\tlock_devices: ${3: list|machine(ball_devices)|}"
+		,"\tsource_devices: ${4: list|machine(ball_devices)|None}"
+		,"\tsource_playfield: ${5: single|machine(ball_devices)|playfield}"
+		,"\tenable_events: ${6: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${7: event_handler|event_handler:ms|None}"
+		,"\tlocked_ball_counting_strategy: ${8|virtual_only,min_virtual_physical,physical_only,no_virtual|}"
+		,"\tpriority: ${9: single|int|1}"
+		,"\treset_all_counts_events: ${10: event_handler|event_handler:ms|None}"
+		,"\treset_count_for_current_player_events: ${11: event_handler|event_handler:ms|None}"
+		],
+	"description": "multiball_lock"
+},
+"mypinball(config)": {
+	"prefix": ["mypinball"],
+	"body": [
+		"mypinball:"
 		,"\tport: ${1: single|str|}"
 		,"\tbaud: ${2: single|int|115200}"
 		,"\tdebug: ${3|true,false|}"
 		],
-	"description": "mypinballs"
+	"description": "mypinball"
 },
-"named_colors-mpf": {
-	"prefix": ["named_colors"],
+"named_color(list)": {
+	"prefix": ["named_color"],
 	"body": [
 		],
-	"description": "named_colors"
+	"description": "named_color"
 },
-"open_pixel_control-mpf": {
-	"prefix": ["open_pixel_control"],
+"op(config)": {
+	"prefix": ["op"],
 	"body": [
-		"open_pixel_control:"
-		,"\thost: ${1: single|str|localhost}"
-		,"\tport: ${2: single|int|7890}"
-		,"\tdebug: ${3|true,false|}"
-		,"\tconsole_log: ${4|none,basic,full|}"
-		,"\tfile_log: ${5|none,basic,full|}"
-		],
-	"description": "open_pixel_control"
-},
-"opp-mpf": {
-	"prefix": ["opp"],
-	"body": [
-		"opp:"
+		"op:"
 		,"\tdriverboards: ${1|gen2|}"
 		,"\tports: ${2: list|str|}"
 		,"\tbaud: ${3: single|int|115200}"
@@ -1450,32 +1440,44 @@
 		,"\tpoll_hz: ${8: single|int|100}"
 		,"\tincand_update_hz: ${9: single|int|25}"
 		],
-	"description": "opp"
+	"description": "op"
 },
-"opp_coils-mpf": {
-	"prefix": ["opp_coils"],
+"open_pixel_contro(config)": {
+	"prefix": ["open_pixel_contro"],
 	"body": [
-		"opp_coils:"
+		"open_pixel_contro:"
+		,"\thost: ${1: single|str|localhost}"
+		,"\tport: ${2: single|int|7890}"
+		,"\tdebug: ${3|true,false|}"
+		,"\tconsole_log: ${4|none,basic,full|}"
+		,"\tfile_log: ${5|none,basic,full|}"
+		],
+	"description": "open_pixel_contro"
+},
+"opp_coil()": {
+	"prefix": ["opp_coil"],
+	"body": [
+		"opp_coil:"
 		,"\trecycle_factor: ${1: single|int|None}"
 		],
-	"description": "opp_coils"
+	"description": "opp_coil"
 },
-"osc-mpf": {
-	"prefix": ["osc"],
+"os(config)": {
+	"prefix": ["os"],
 	"body": [
-		"osc:"
+		"os:"
 		,"\tremote_ip: ${1: single|str|127.0.0.1}"
 		,"\tremote_port: ${2: single|int|8000}"
 		,"\tlisten_ip: ${3: single|str|127.0.0.1}"
 		,"\tlisten_port: ${4: single|int|9000}"
 		,"\tevents_to_send: ${5: list|event_handler|None}"
 		],
-	"description": "osc"
+	"description": "os"
 },
-"p_roc-mpf": {
-	"prefix": ["p_roc"],
+"p_ro(config)": {
+	"prefix": ["p_ro"],
 	"body": [
-		"p_roc:"
+		"p_ro:"
 		,"\tdriverboards: ${1|wpc,wpcAlphanumeric,wpc95,sternSAM,sternWhitestar,pdb,custom,None|}"
 		,"\tlamp_matrix_strobe_time: ${2: single|ms|100ms}"
 		,"\twatchdog_time: ${3: single|ms|1s}"
@@ -1490,20 +1492,20 @@
 		,"\tuse_separate_thread: ${12|true,false|}"
 		,"\ttrace_bus: ${13|true,false|}"
 		],
-	"description": "p_roc"
+	"description": "p_ro"
 },
-"p_roc_coils-mpf": {
-	"prefix": ["p_roc_coils"],
+"p_roc_coil()": {
+	"prefix": ["p_roc_coil"],
 	"body": [
-		"p_roc_coils:"
+		"p_roc_coil:"
 		,"\tpolarity: ${1|true,false|}"
 		],
-	"description": "p_roc_coils"
+	"description": "p_roc_coil"
 },
-"p3_roc-mpf": {
-	"prefix": ["p3_roc"],
+"p3_ro()": {
+	"prefix": ["p3_ro"],
 	"body": [
-		"p3_roc:"
+		"p3_ro:"
 		,"\tdriverboards: ${1|pdb,custom,None|}"
 		,"\tlamp_matrix_strobe_time: ${2: single|ms|100ms}"
 		,"\twatchdog_time: ${3: single|ms|1s}"
@@ -1522,12 +1524,12 @@
 		,"\tgpio_poll_frequency: ${16: single|int|50}"
 		,"\tgpio_map: ${17: dict|int:enum(input,output)|None}"
 		],
-	"description": "p3_roc"
+	"description": "p3_ro"
 },
-"pd_led_boards-mpf": {
-	"prefix": ["pd_led_boards"],
+"pd_led_board()": {
+	"prefix": ["pd_led_board"],
 	"body": [
-		"pd_led_boards:"
+		"pd_led_board:"
 		,"\tuse_ws281x_0: ${1|true,false|}"
 		,"\tuse_ws281x_1: ${2|true,false|}"
 		,"\tuse_ws281x_2: ${3|true,false|}"
@@ -1568,24 +1570,24 @@
 		,"\tuse_stepper_1: ${38|true,false|}"
 		,"\tstepper_speed: ${39: single|int|13524}"
 		],
-	"description": "pd_led_boards"
+	"description": "pd_led_board"
 },
-"pin2dmd-mpf": {
-	"prefix": ["pin2dmd"],
+"pin2dm(config)": {
+	"prefix": ["pin2dm"],
 	"body": [
-		"pin2dmd:"
+		"pin2dm:"
 		,"\tdebug: ${1|true,false|}"
 		,"\tconsole_log: ${2|none,basic,full|}"
 		,"\tfile_log: ${3|none,basic,full|}"
 		,"\tresolution: ${4|128x32,192x64|}"
 		,"\tpanel: ${5|rgb,rbg|}"
 		],
-	"description": "pin2dmd"
+	"description": "pin2dm"
 },
-"pkone-mpf": {
-	"prefix": ["pkone"],
+"pkon(config)": {
+	"prefix": ["pkon"],
 	"body": [
-		"pkone:"
+		"pkon:"
 		,"\tport: ${1: single|str|}"
 		,"\tbaud: ${2: single|int|115200}"
 		,"\twatchdog: ${3: single|ms|1000}"
@@ -1593,40 +1595,29 @@
 		,"\tconsole_log: ${5|none,basic,full|}"
 		,"\tfile_log: ${6|none,basic,full|}"
 		],
-	"description": "pkone"
+	"description": "pkon"
 },
-"pkone_coils-mpf": {
-	"prefix": ["pkone_coils"],
+"pkone_coil()": {
+	"prefix": ["pkone_coil"],
 	"body": [
-		"pkone_coils:"
+		"pkone_coil:"
 		,"\trecycle_ms: ${1: single|ms|None}"
 		],
-	"description": "pkone_coils"
+	"description": "pkone_coil"
 },
-"player_vars-mpf": {
-	"prefix": ["player_vars"],
+"player_var(config_dict)": {
+	"prefix": ["player_var"],
 	"body": [
-		"player_vars:"
+		"player_var:"
 		,"\tinitial_value: ${1: single|str|}"
 		,"\tvalue_type: ${2|str,float,int|}"
 		],
-	"description": "player_vars"
+	"description": "player_var"
 },
-"playfield_transfers-mpf": {
-	"prefix": ["playfield_transfers"],
+"playfield(device)": {
+	"prefix": ["playfield"],
 	"body": [
-		"playfield_transfers:"
-		,"\tball_switch: ${1: single|machine(switches)|None}"
-		,"\ttransfer_events: ${2: event_handler|event_handler:ms|None}"
-		,"\teject_target: ${3: single|machine(ball_devices)|}"
-		,"\tcaptures_from: ${4: single|machine(ball_devices)|}"
-		],
-	"description": "playfield_transfers"
-},
-"playfields-mpf": {
-	"prefix": ["playfields"],
-	"body": [
-		"playfields:"
+		"playfield:"
 		,"\tenable_ball_search: ${1|true,false|}"
 		,"\tball_search_timeout: ${2: single|ms|15s}"
 		,"\tball_search_interval: ${3: single|ms|150ms}"
@@ -1641,20 +1632,49 @@
 		,"\tball_search_disable_events: ${12: event_handler|event_handler:ms|None}"
 		,"\tdefault_source_device: ${13: single|machine(ball_devices)|}"
 		],
-	"description": "playfields"
+	"description": "playfield"
 },
-"playlist_player-mpf": {
-	"prefix": ["playlist_player"],
+"playfield_transfer(device)": {
+	"prefix": ["playfield_transfer"],
 	"body": [
-		"playlist_player:"
+		"playfield_transfer:"
+		,"\tball_switch: ${1: single|machine(switches)|None}"
+		,"\ttransfer_events: ${2: event_handler|event_handler:ms|None}"
+		,"\teject_target: ${3: single|machine(ball_devices)|}"
+		,"\tcaptures_from: ${4: single|machine(ball_devices)|}"
+		],
+	"description": "playfield_transfer"
+},
+"playlist(config_dict)": {
+	"prefix": ["playlist"],
+	"body": [
+		"playlist:"
+		,"\tcrossfade_mode: ${1|use_track_setting,override|}"
+		,"\tcrossfade_time: ${2: single|secs|0}"
+		,"\tshuffle: ${3|true,false|}"
+		,"\trepeat: ${4|true,false|}"
+		,"\tscope: ${5|machine,player|}"
+		,"\tsounds: ${6: list|str|}"
+		,"\tevents_when_played: ${7: list|event_posted|None}"
+		,"\tevents_when_stopped: ${8: list|event_posted|None}"
+		,"\tevents_when_looping: ${9: list|event_posted|None}"
+		,"\tevents_when_sound_changed: ${10: list|event_posted|None}"
+		,"\tevents_when_sound_stopped: ${11: list|event_posted|None}"
+		],
+	"description": "playlist"
+},
+"playlist_playe(config_player)": {
+	"prefix": ["playlist_playe"],
+	"body": [
+		"playlist_playe:"
 		,"\taction: ${1|play,stop,advance,set_repeat|}"
 		],
-	"description": "playlist_player"
+	"description": "playlist_playe"
 },
-"playlist_player_actions-mpf": {
-	"prefix": ["playlist_player_actions"],
+"playlist_player_action()": {
+	"prefix": ["playlist_player_action"],
 	"body": [
-		"playlist_player_actions:"
+		"playlist_player_action:"
 		,"\tplay: ${1:}"
 			,"\taction: ${2: ignore}"
 			,"\tplaylist: ${3: single|str|}"
@@ -1679,36 +1699,18 @@
 			,"\taction: ${22: ignore}"
 			,"\trepeat: ${23|true,false|}"
 		],
-	"description": "playlist_player_actions"
+	"description": "playlist_player_action"
 },
-"playlists-mpf": {
-	"prefix": ["playlists"],
-	"body": [
-		"playlists:"
-		,"\tcrossfade_mode: ${1|use_track_setting,override|}"
-		,"\tcrossfade_time: ${2: single|secs|0}"
-		,"\tshuffle: ${3|true,false|}"
-		,"\trepeat: ${4|true,false|}"
-		,"\tscope: ${5|machine,player|}"
-		,"\tsounds: ${6: list|str|}"
-		,"\tevents_when_played: ${7: list|event_posted|None}"
-		,"\tevents_when_stopped: ${8: list|event_posted|None}"
-		,"\tevents_when_looping: ${9: list|event_posted|None}"
-		,"\tevents_when_sound_changed: ${10: list|event_posted|None}"
-		,"\tevents_when_sound_stopped: ${11: list|event_posted|None}"
-		],
-	"description": "playlists"
-},
-"plugins-mpf": {
-	"prefix": ["plugins"],
+"plugin(list)": {
+	"prefix": ["plugin"],
 	"body": [
 		],
-	"description": "plugins"
+	"description": "plugin"
 },
-"pololu_maestro-mpf": {
-	"prefix": ["pololu_maestro"],
+"pololu_maestr(config)": {
+	"prefix": ["pololu_maestr"],
 	"body": [
-		"pololu_maestro:"
+		"pololu_maestr:"
 		,"\tport: ${1: single|str|}"
 		,"\tservo_min: ${2: single|int|3000}"
 		,"\tservo_max: ${3: single|int|9000}"
@@ -1716,53 +1718,53 @@
 		,"\tfile_log: ${5|none,basic,full|}"
 		,"\tdebug: ${6|true,false|}"
 		],
-	"description": "pololu_maestro"
+	"description": "pololu_maestr"
 },
-"pololu_tic-mpf": {
-	"prefix": ["pololu_tic"],
+"pololu_ti(config)": {
+	"prefix": ["pololu_ti"],
 	"body": [
-		"pololu_tic:"
+		"pololu_ti:"
 		,"\tdebug: ${1|true,false|}"
 		,"\tconsole_log: ${2|none,basic,full|}"
 		,"\tfile_log: ${3|none,basic,full|}"
 		],
-	"description": "pololu_tic"
+	"description": "pololu_ti"
 },
-"psus-mpf": {
-	"prefix": ["psus"],
+"psu(device)": {
+	"prefix": ["psu"],
 	"body": [
-		"psus:"
+		"psu:"
 		,"\tvoltage: ${1: single|int|None}"
 		,"\tmax_amps: ${2: single|int|None}"
 		,"\trelease_wait_ms: ${3: single|ms|10}"
 		],
-	"description": "psus"
+	"description": "psu"
 },
-"queue_event_player-mpf": {
-	"prefix": ["queue_event_player"],
+"queue_event_playe(config_player)": {
+	"prefix": ["queue_event_playe"],
 	"body": [
-		"queue_event_player:"
+		"queue_event_playe:"
 		,"\targs: ${1: dict|str:str|None}"
 		,"\tqueue_event: ${2: single|event_handler|}"
 		,"\tevents_when_finished: ${3: single|event_posted|None}"
 		],
-	"description": "queue_event_player"
+	"description": "queue_event_playe"
 },
-"queue_relay_player-mpf": {
-	"prefix": ["queue_relay_player"],
+"queue_relay_playe(config_player)": {
+	"prefix": ["queue_relay_playe"],
 	"body": [
-		"queue_relay_player:"
+		"queue_relay_playe:"
 		,"\targs: ${1: dict|str:str|None}"
 		,"\tpost: ${2: single|str|}"
 		,"\twait_for: ${3: single|str|}"
 		,"\tpass_args: ${4|true,false|}"
 		],
-	"description": "queue_relay_player"
+	"description": "queue_relay_playe"
 },
-"random_event_player-mpf": {
-	"prefix": ["random_event_player"],
+"random_event_playe(config_player)": {
+	"prefix": ["random_event_playe"],
 	"body": [
-		"random_event_player:"
+		"random_event_playe:"
 		,"\tevents: ${1: ignore}"
 		,"\tfallback_event: ${2: single|str|None}"
 		,"\tforce_different: ${3|true,false|}"
@@ -1770,24 +1772,24 @@
 		,"\tdisable_random: ${5|true,false|}"
 		,"\tscope: ${6|player,machine|}"
 		],
-	"description": "random_event_player"
+	"description": "random_event_playe"
 },
-"raspberry_pi-mpf": {
-	"prefix": ["raspberry_pi"],
+"raspberry_p(config)": {
+	"prefix": ["raspberry_p"],
 	"body": [
-		"raspberry_pi:"
+		"raspberry_p:"
 		,"\tip: ${1: single|str|}"
 		,"\tport: ${2: single|int|8888}"
 		,"\tdebug: ${3|true,false|}"
 		,"\tconsole_log: ${4|none,basic,full|}"
 		,"\tfile_log: ${5|none,basic,full|}"
 		],
-	"description": "raspberry_pi"
+	"description": "raspberry_p"
 },
-"rgb_dmds-mpf": {
-	"prefix": ["rgb_dmds"],
+"rgb_dmd(device)": {
+	"prefix": ["rgb_dmd"],
 	"body": [
-		"rgb_dmds:"
+		"rgb_dmd:"
 		,"\tplatform: ${1: single|str|None}"
 		,"\tfps: ${2: single|int|30}"
 		,"\tsource_display: ${3: single|str|dmd}"
@@ -1797,12 +1799,12 @@
 		,"\tgamma: ${7: single|float|2.2}"
 		,"\thardware_brightness: ${8: single|template_float|1.0}"
 		],
-	"description": "rgb_dmds"
+	"description": "rgb_dmd"
 },
-"rpi_dmd-mpf": {
-	"prefix": ["rpi_dmd"],
+"rpi_dm(config)": {
+	"prefix": ["rpi_dm"],
 	"body": [
-		"rpi_dmd:"
+		"rpi_dm:"
 		,"\thardware_mapping: ${1|regular,adafruit-hat,adafruit-hat-pwm|}"
 		,"\trows: ${2:               single|int|32}"
 		,"\tcols: ${3:               single|int|32}"
@@ -1823,39 +1825,29 @@
 		,"\tdaemon: ${18|true,false|}"
 		,"\tdrop_privileges: ${19|true,false|}"
 		],
-	"description": "rpi_dmd"
+	"description": "rpi_dm"
 },
-"score_queue_player-mpf": {
-	"prefix": ["score_queue_player"],
+"score_queue(device)": {
+	"prefix": ["score_queue"],
 	"body": [
-		"score_queue_player:"
-		,"\tint: ${1: single|template_int|None}"
-		],
-	"description": "score_queue_player"
-},
-"score_queues-mpf": {
-	"prefix": ["score_queues"],
-	"body": [
-		"score_queues:"
+		"score_queue:"
 		,"\tchimes: ${1: list|machine(coils)|}"
 		,"\tdelay: ${2: single|secs|200ms}"
 		],
-	"description": "score_queues"
+	"description": "score_queue"
 },
-"score_reel_groups-mpf": {
-	"prefix": ["score_reel_groups"],
+"score_queue_playe(config_player)": {
+	"prefix": ["score_queue_playe"],
 	"body": [
-		"score_reel_groups:"
-		,"\treels: ${1: list|machine(score_reels)|}"
-		,"\tchimes: ${2: list|machine(coils)|None}"
-		,"\tlights_tag: ${3: single|str|None}"
+		"score_queue_playe:"
+		,"\tint: ${1: single|template_int|None}"
 		],
-	"description": "score_reel_groups"
+	"description": "score_queue_playe"
 },
-"score_reels-mpf": {
-	"prefix": ["score_reels"],
+"score_reel(device)": {
+	"prefix": ["score_reel"],
 	"body": [
-		"score_reels:"
+		"score_reel:"
 		,"\tcoil_inc: ${1: single|machine(coils)|None}"
 		,"\tlimit_lo: ${2: single|int|0}"
 		,"\tlimit_hi: ${3: single|int|9}"
@@ -1875,18 +1867,43 @@
 		,"\tswitch_11: ${17: single|machine(switches)|None}"
 		,"\tswitch_12: ${18: single|machine(switches)|None}"
 		],
-	"description": "score_reels"
+	"description": "score_reel"
 },
-"scriptlets-mpf": {
-	"prefix": ["scriptlets"],
+"score_reel_group(device)": {
+	"prefix": ["score_reel_group"],
+	"body": [
+		"score_reel_group:"
+		,"\treels: ${1: list|machine(score_reels)|}"
+		,"\tchimes: ${2: list|machine(coils)|None}"
+		,"\tlights_tag: ${3: single|str|None}"
+		],
+	"description": "score_reel_group"
+},
+"scriptlet(list)": {
+	"prefix": ["scriptlet"],
 	"body": [
 		],
-	"description": "scriptlets"
+	"description": "scriptlet"
 },
-"segment_display_player-mpf": {
-	"prefix": ["segment_display_player"],
+"segment_display(device)": {
+	"prefix": ["segment_display"],
 	"body": [
-		"segment_display_player:"
+		"segment_display:"
+		,"\tnumber: ${1: single|str|}"
+		,"\tsize: ${2: single|int|7}"
+		,"\tintegrated_dots: ${3|true,false|}"
+		,"\tintegrated_commas: ${4|true,false|}"
+		,"\tdefault_color: ${5: list|color|white}"
+		,"\tdefault_transition_update_hz: ${6: single|float_or_token|30}"
+		,"\tplatform_settings: ${7: single|dict|None}"
+		,"\tplatform: ${8: single|str|None}"
+		],
+	"description": "segment_display"
+},
+"segment_display_playe(config_player)": {
+	"prefix": ["segment_display_playe"],
+	"body": [
+		"segment_display_playe:"
 		,"\tpriority: ${1: single|int_or_token|0}"
 		,"\ttext: ${2: single|str|None}"
 		,"\tcolor: ${3: list|color|None}"
@@ -1898,12 +1915,12 @@
 		,"\tkey: ${9: single|str|None}"
 		,"\texpire: ${10: single|ms_or_token|None}"
 		],
-	"description": "segment_display_player"
+	"description": "segment_display_playe"
 },
-"segment_display_transitions-mpf": {
-	"prefix": ["segment_display_transitions"],
+"segment_display_transition()": {
+	"prefix": ["segment_display_transition"],
 	"body": [
-		"segment_display_transitions:"
+		"segment_display_transition:"
 		,"\tnone: ${1:}"
 			,"\ttype: ${2: single|str|}"
 		,"\tpush: ${3:}"
@@ -1931,27 +1948,20 @@
 			,"\tmode: ${25|push,wipe|}"
 			,"\tdirection: ${26|in,out|}"
 		],
-	"description": "segment_display_transitions"
+	"description": "segment_display_transition"
 },
-"segment_displays-mpf": {
-	"prefix": ["segment_displays"],
+"sequence(device)": {
+	"prefix": ["sequence"],
 	"body": [
-		"segment_displays:"
-		,"\tnumber: ${1: single|str|}"
-		,"\tsize: ${2: single|int|7}"
-		,"\tintegrated_dots: ${3|true,false|}"
-		,"\tintegrated_commas: ${4|true,false|}"
-		,"\tdefault_color: ${5: list|color|white}"
-		,"\tdefault_transition_update_hz: ${6: single|float_or_token|30}"
-		,"\tplatform_settings: ${7: single|dict|None}"
-		,"\tplatform: ${8: single|str|None}"
+		"sequence:"
+		,"\tevents: ${1: list|event_handler|}"
 		],
-	"description": "segment_displays"
+	"description": "sequence"
 },
-"sequence_shots-mpf": {
-	"prefix": ["sequence_shots"],
+"sequence_shot(device)": {
+	"prefix": ["sequence_shot"],
 	"body": [
-		"sequence_shots:"
+		"sequence_shot:"
 		,"\tswitch_sequence: ${1: list|machine(switches)|None}"
 		,"\tevent_sequence: ${2: list|event_handler|None}"
 		,"\tcancel_switches: ${3: list|machine(switches)|None}"
@@ -1961,33 +1971,12 @@
 		,"\tsequence_timeout: ${7: single|ms|0}"
 		,"\tplayfield: ${8: single|machine(playfields)|playfield}"
 		],
-	"description": "sequence_shots"
+	"description": "sequence_shot"
 },
-"sequences-mpf": {
-	"prefix": ["sequences"],
+"servo(device)": {
+	"prefix": ["servo"],
 	"body": [
-		"sequences:"
-		,"\tevents: ${1: list|event_handler|}"
-		],
-	"description": "sequences"
-},
-"servo_controllers-mpf": {
-	"prefix": ["servo_controllers"],
-	"body": [
-		"servo_controllers:"
-		,"\tplatform: ${1: single|str|None}"
-		,"\tservo_min: ${2: single|int|150}"
-		,"\tservo_max: ${3: single|int|600}"
-		,"\tdebug: ${4|true,false|}"
-		,"\tconsole_log: ${5|none,basic,full|}"
-		,"\tfile_log: ${6|none,basic,full|}"
-		],
-	"description": "servo_controllers"
-},
-"servos-mpf": {
-	"prefix": ["servos"],
-	"body": [
-		"servos:"
+		"servo:"
 		,"\tpositions: ${1: dict|float:str|None}"
 		,"\tservo_min: ${2: single|float|0.0}"
 		,"\tservo_max: ${3: single|float|1.0}"
@@ -2004,12 +1993,25 @@
 		,"\tnumber: ${14: single|str|}"
 		,"\tplatform: ${15: single|str|None}"
 		],
-	"description": "servos"
+	"description": "servo"
 },
-"settings-mpf": {
-	"prefix": ["settings"],
+"servo_controller(config)": {
+	"prefix": ["servo_controller"],
 	"body": [
-		"settings:"
+		"servo_controller:"
+		,"\tplatform: ${1: single|str|None}"
+		,"\tservo_min: ${2: single|int|150}"
+		,"\tservo_max: ${3: single|int|600}"
+		,"\tdebug: ${4|true,false|}"
+		,"\tconsole_log: ${5|none,basic,full|}"
+		,"\tfile_log: ${6|none,basic,full|}"
+		],
+	"description": "servo_controller"
+},
+"setting(config_dict)": {
+	"prefix": ["setting"],
+	"body": [
+		"setting:"
 		,"\tlabel: ${1: single|str|}"
 		,"\tsort: ${2: single|int|}"
 		,"\tvalues: ${3: dict|str:str|}"
@@ -2018,60 +2020,12 @@
 		,"\tmachine_var: ${6: single|str|None}"
 		,"\tsettingType: ${7: single|str|standard}"
 		],
-	"description": "settings"
+	"description": "setting"
 },
-"shot_groups-mpf": {
-	"prefix": ["shot_groups"],
+"shot(device)": {
+	"prefix": ["shot"],
 	"body": [
-		"shot_groups:"
-		,"\tshots: ${1: list|machine(shots)|None}"
-		,"\trotate_events: ${2: event_handler|event_handler:ms|None}"
-		,"\trotate_left_events: ${3: event_handler|event_handler:ms|None}"
-		,"\trotate_right_events: ${4: event_handler|event_handler:ms|None}"
-		,"\tenable_events: ${5: event_handler|event_handler:ms|None}"
-		,"\tdisable_events: ${6: event_handler|event_handler:ms|None}"
-		,"\treset_events: ${7: event_handler|event_handler:ms|None}"
-		,"\trestart_events: ${8: event_handler|event_handler:ms|None}"
-		,"\tenable_rotation_events: ${9: event_handler|event_handler:ms|None}"
-		,"\tdisable_rotation_events: ${10: event_handler|event_handler:ms|None}"
-		],
-	"description": "shot_groups"
-},
-"shot_profile_states-mpf": {
-	"prefix": ["shot_profile_states"],
-	"body": [
-		"shot_profile_states:"
-		,"\tshow: ${1: single|str|None}"
-		,"\tname: ${2: single|str|}"
-		,"\tpriority: ${3: single|int|0}"
-		,"\tspeed: ${4: single|float|1}"
-		,"\tstart_step: ${5: single|int|None}"
-		,"\tloops: ${6: single|int|-1}"
-		,"\tsync_ms: ${7: single|int|None}"
-		,"\tmanual_advance: ${8|true,false|}"
-		,"\tshow_tokens: ${9: dict|str:template_str|None}"
-		],
-	"description": "shot_profile_states"
-},
-"shot_profiles-mpf": {
-	"prefix": ["shot_profiles"],
-	"body": [
-		"shot_profiles:"
-		,"\tloop: ${1|true,false|}"
-		,"\tshow: ${2: single|str|None}"
-		,"\tadvance_on_hit: ${3|true,false|}"
-		,"\tstate_names_to_not_rotate: ${4: list|str|None}"
-		,"\trotation_pattern: ${5: list|str|R}"
-		,"\tshow_when_disabled: ${6|true,false|}"
-		,"\tblock: ${7|true,false|}"
-		,"\tstates: ${8: list|subconfig(shot_profile_states)|}"
-		],
-	"description": "shot_profiles"
-},
-"shots-mpf": {
-	"prefix": ["shots"],
-	"body": [
-		"shots:"
+		"shot:"
 		,"\tprofile: ${1: single|machine(shot_profiles)|default}"
 		,"\tswitch: ${2: list|machine(switches)|None}"
 		,"\tswitches: ${3: list|machine(switches)|None}"
@@ -2088,12 +2042,66 @@
 		,"\thit_events: ${14: event_handler|event_handler:ms|None}"
 		,"\tshow_tokens: ${15: dict|str:template_str|None}"
 		],
-	"description": "shots"
+	"description": "shot"
 },
-"show_config-mpf": {
-	"prefix": ["show_config"],
+"shot_group(device)": {
+	"prefix": ["shot_group"],
 	"body": [
-		"show_config:"
+		"shot_group:"
+		,"\tshots: ${1: list|machine(shots)|None}"
+		,"\trotate_events: ${2: event_handler|event_handler:ms|None}"
+		,"\trotate_left_events: ${3: event_handler|event_handler:ms|None}"
+		,"\trotate_right_events: ${4: event_handler|event_handler:ms|None}"
+		,"\tenable_events: ${5: event_handler|event_handler:ms|None}"
+		,"\tdisable_events: ${6: event_handler|event_handler:ms|None}"
+		,"\treset_events: ${7: event_handler|event_handler:ms|None}"
+		,"\trestart_events: ${8: event_handler|event_handler:ms|None}"
+		,"\tenable_rotation_events: ${9: event_handler|event_handler:ms|None}"
+		,"\tdisable_rotation_events: ${10: event_handler|event_handler:ms|None}"
+		],
+	"description": "shot_group"
+},
+"shot_profile(device)": {
+	"prefix": ["shot_profile"],
+	"body": [
+		"shot_profile:"
+		,"\tloop: ${1|true,false|}"
+		,"\tshow: ${2: single|str|None}"
+		,"\tadvance_on_hit: ${3|true,false|}"
+		,"\tstate_names_to_not_rotate: ${4: list|str|None}"
+		,"\trotation_pattern: ${5: list|str|R}"
+		,"\tshow_when_disabled: ${6|true,false|}"
+		,"\tblock: ${7|true,false|}"
+		,"\tstates: ${8: list|subconfig(shot_profile_states)|}"
+		],
+	"description": "shot_profile"
+},
+"shot_profile_state()": {
+	"prefix": ["shot_profile_state"],
+	"body": [
+		"shot_profile_state:"
+		,"\tshow: ${1: single|str|None}"
+		,"\tname: ${2: single|str|}"
+		,"\tpriority: ${3: single|int|0}"
+		,"\tspeed: ${4: single|float|1}"
+		,"\tstart_step: ${5: single|int|None}"
+		,"\tloops: ${6: single|int|-1}"
+		,"\tsync_ms: ${7: single|int|None}"
+		,"\tmanual_advance: ${8|true,false|}"
+		,"\tshow_tokens: ${9: dict|str:template_str|None}"
+		],
+	"description": "shot_profile_state"
+},
+"show(named_lists)": {
+	"prefix": ["show"],
+	"body": [
+		],
+	"description": "show"
+},
+"show_confi()": {
+	"prefix": ["show_confi"],
+	"body": [
+		"show_confi:"
 		,"\tshow: ${1: single|str|}"
 		,"\tshow_tokens: ${2: dict|str:str|None}"
 		,"\tmanual_advance: ${3|true,false|}"
@@ -2103,12 +2111,12 @@
 		,"\tspeed: ${7: single|float|1}"
 		,"\tstart_step: ${8: single|int|1}"
 		],
-	"description": "show_config"
+	"description": "show_confi"
 },
-"show_player-mpf": {
-	"prefix": ["show_player"],
+"show_playe(config_player)": {
+	"prefix": ["show_playe"],
 	"body": [
-		"show_player:"
+		"show_playe:"
 		,"\taction: ${1|play,stop,pause,resume,advance,step_back,update,queue|}"
 		,"\tshow: ${2: single|str|None}"
 		,"\tpriority: ${3: single|int_or_token|0}"
@@ -2132,41 +2140,47 @@
 		,"\tevents_when_updated: ${21: list|event_posted|None}"
 		,"\tevents_when_completed: ${22: list|event_posted|None}"
 		],
-	"description": "show_player"
+	"description": "show_playe"
 },
-"show_pools-mpf": {
-	"prefix": ["show_pools"],
+"show_pool(config_dict)": {
+	"prefix": ["show_pool"],
 	"body": [
-		"show_pools:"
+		"show_pool:"
 		,"\tshows: ${1: list|machine(shows)|}"
 		,"\ttype: ${2|random,sequence,random_force_next,random_force_all|}"
 		],
-	"description": "show_pools"
+	"description": "show_pool"
 },
-"show_queues-mpf": {
-	"prefix": ["show_queues"],
+"show_queue()": {
+	"prefix": ["show_queue"],
 	"body": [
 		],
-	"description": "show_queues"
+	"description": "show_queue"
 },
-"show_step-mpf": {
-	"prefix": ["show_step"],
+"show_ste()": {
+	"prefix": ["show_ste"],
 	"body": [
-		"show_step:"
+		"show_ste:"
 		,"\ttime: ${1: single|str|}"
 		],
-	"description": "show_step"
+	"description": "show_ste"
 },
-"shows-mpf": {
-	"prefix": ["shows"],
+"slide(named_lists)": {
+	"prefix": ["slide"],
 	"body": [
+		"slide:"
+		,"\tdebug: ${1|true,false|}"
+		,"\texpire: ${2: single|secs|None}"
+		,"\tbackground_color: ${3: single|kivycolor|000000ff}"
+		,"\topacity: ${4: single|float|1.0}"
+		,"\ttransition_out: ${5: ignore}"
 		],
-	"description": "shows"
+	"description": "slide"
 },
-"slide_player-mpf": {
-	"prefix": ["slide_player"],
+"slide_playe(config_player)": {
+	"prefix": ["slide_playe"],
 	"body": [
-		"slide_player:"
+		"slide_playe:"
 		,"\ttarget: ${1: single|str|None}"
 		,"\tbackground_color: ${2: single|kivycolor|000000ff}"
 		,"\tpriority: ${3: single|int_or_token|None              }"
@@ -2180,57 +2194,76 @@
 		,"\ttokens: ${11: dict|str:str|None}"
 		,"\taction: ${12|play,remove|}"
 		],
-	"description": "slide_player"
+	"description": "slide_playe"
 },
-"slides-mpf": {
-	"prefix": ["slides"],
+"smart_virtua(config)": {
+	"prefix": ["smart_virtua"],
 	"body": [
-		"slides:"
-		,"\tdebug: ${1|true,false|}"
-		,"\texpire: ${2: single|secs|None}"
-		,"\tbackground_color: ${3: single|kivycolor|000000ff}"
-		,"\topacity: ${4: single|float|1.0}"
-		,"\ttransition_out: ${5: ignore}"
-		],
-	"description": "slides"
-},
-"smart_virtual-mpf": {
-	"prefix": ["smart_virtual"],
-	"body": [
-		"smart_virtual:"
+		"smart_virtua:"
 		,"\tsimulate_manual_plunger: ${1|true,false|}"
 		,"\tsimulate_manual_plunger_timeout: ${2: single|ms|10s}"
 		,"\tconsole_log: ${3|none,basic,full|}"
 		,"\tfile_log: ${4|none,basic,full|}"
 		],
-	"description": "smart_virtual"
+	"description": "smart_virtua"
 },
-"smartmatrix-mpf": {
-	"prefix": ["smartmatrix"],
+"smartmatri(config_dict)": {
+	"prefix": ["smartmatri"],
 	"body": [
-		"smartmatrix:"
+		"smartmatri:"
 		,"\tport: ${1: single|str|}"
 		,"\tbaud: ${2: single|int|}"
 		,"\told_cookie: ${3|true,false|}"
 		,"\tconsole_log: ${4|none,basic,full|}"
 		,"\tfile_log: ${5|none,basic,full|}"
 		],
-	"description": "smartmatrix"
+	"description": "smartmatri"
 },
-"snux-mpf": {
-	"prefix": ["snux"],
+"snu(config)": {
+	"prefix": ["snu"],
 	"body": [
-		"snux:"
+		"snu:"
 		,"\tdiag_led_driver: ${1: single|machine(coils)|}"
 		,"\tconsole_log: ${2|none,basic,full|}"
 		,"\tfile_log: ${3|none,basic,full|}"
 		],
-	"description": "snux"
+	"description": "snu"
 },
-"sound_ducking-mpf": {
-	"prefix": ["sound_ducking"],
+"sound(config_dict)": {
+	"prefix": ["sound"],
 	"body": [
-		"sound_ducking:"
+		"sound:"
+		,"\tfile: ${1: single|str|None}"
+		,"\ttrack: ${2: single|str|None}"
+		,"\tvolume: ${3: single|gain|0.5}"
+		,"\tpan: ${4: single|float|0}"
+		,"\tstreaming: ${5|true,false|}"
+		,"\tloops: ${6: single|int|0}"
+		,"\tloop_start_at: ${7: single|secs|0}"
+		,"\tloop_end_at: ${8: single|secs|None}"
+		,"\tpriority: ${9: single|int|0}"
+		,"\tstart_at: ${10: single|secs|0}"
+		,"\tfade_in: ${11: single|secs|0}"
+		,"\tfade_out: ${12: single|secs|0}"
+		,"\tabout_to_finish_time: ${13: single|secs|None}"
+		,"\tmax_queue_time: ${14: single|secs|None}"
+		,"\tsimultaneous_limit: ${15: single|int|None}"
+		,"\tstealing_method: ${16|skip,oldest,newest|}"
+		,"\tevents_when_played: ${17: list|event_posted|None}"
+		,"\tevents_when_stopped: ${18: list|event_posted|None}"
+		,"\tevents_when_looping: ${19: list|event_posted|None}"
+		,"\tevents_when_about_to_finish: ${20: list|event_posted|None}"
+		,"\tmode_end_action: ${21|stop,stop_looping|}"
+		,"\tkey: ${22: single|str|None}"
+		,"\tmarkers: ${23: list|subconfig(sound_marker)|None}"
+		,"\tducking: ${24: single|subconfig(sound_ducking)|None}"
+		],
+	"description": "sound"
+},
+"sound_duckin()": {
+	"prefix": ["sound_duckin"],
+	"body": [
+		"sound_duckin:"
 		,"\ttarget: ${1: list|str|}"
 		,"\tdelay: ${2: single|secs|0}"
 		,"\tattack: ${3: single|secs|10ms}"
@@ -2238,20 +2271,20 @@
 		,"\trelease_point: ${5: single|secs|0}"
 		,"\trelease: ${6: single|secs|10ms}"
 		],
-	"description": "sound_ducking"
+	"description": "sound_duckin"
 },
-"sound_loop_player-mpf": {
-	"prefix": ["sound_loop_player"],
+"sound_loop_playe(config_player)": {
+	"prefix": ["sound_loop_playe"],
 	"body": [
-		"sound_loop_player:"
+		"sound_loop_playe:"
 		,"\taction: ${1|play,stop,stop_looping,jump_to,play_layer,stop_layer,stop_looping_layer|}"
 		],
-	"description": "sound_loop_player"
+	"description": "sound_loop_playe"
 },
-"sound_loop_player_actions-mpf": {
-	"prefix": ["sound_loop_player_actions"],
+"sound_loop_player_action()": {
+	"prefix": ["sound_loop_player_action"],
 	"body": [
-		"sound_loop_player_actions:"
+		"sound_loop_player_action:"
 		,"\tplay: ${1:}"
 			,"\taction: ${2: ignore}"
 			,"\tsound_loop_set: ${3: single|str|}"
@@ -2289,12 +2322,12 @@
 			,"\taction: ${35: ignore}"
 			,"\tlayer: ${36: single|int|}"
 		],
-	"description": "sound_loop_player_actions"
+	"description": "sound_loop_player_action"
 },
-"sound_loop_sets-mpf": {
-	"prefix": ["sound_loop_sets"],
+"sound_loop_set(config_dict)": {
+	"prefix": ["sound_loop_set"],
 	"body": [
-		"sound_loop_sets:"
+		"sound_loop_set:"
 		,"\tsound: ${1: single|str|}"
 		,"\tvolume: ${2: single|gain|None}"
 		,"\ttempo: ${3: single|float|60.0}"
@@ -2309,21 +2342,21 @@
 		,"\tfade_out: ${12: single|secs|0}"
 		,"\tmode_end_action: ${13|stop,stop_looping|}"
 		],
-	"description": "sound_loop_sets"
+	"description": "sound_loop_set"
 },
-"sound_marker-mpf": {
-	"prefix": ["sound_marker"],
+"sound_marke()": {
+	"prefix": ["sound_marke"],
 	"body": [
-		"sound_marker:"
+		"sound_marke:"
 		,"\ttime: ${1: single|secs|}"
 		,"\tevents: ${2: list|event_posted|}"
 		],
-	"description": "sound_marker"
+	"description": "sound_marke"
 },
-"sound_player-mpf": {
-	"prefix": ["sound_player"],
+"sound_playe(config_player)": {
+	"prefix": ["sound_playe"],
 	"body": [
-		"sound_player:"
+		"sound_playe:"
 		,"\tblock: ${1|true,false|}"
 		,"\taction: ${2|play,stop,stop_looping,load,unload|}"
 		,"\tdelay: ${3: single|secs|None}"
@@ -2344,18 +2377,18 @@
 		,"\tmode_end_action: ${18|stop,stop_looping,use_sound_setting|}"
 		,"\tkey: ${19: single|str|use_sound_setting}"
 		],
-	"description": "sound_player"
+	"description": "sound_playe"
 },
-"sound_pools-mpf": {
-	"prefix": ["sound_pools"],
+"sound_pool(config_dict)": {
+	"prefix": ["sound_pool"],
 	"body": [
 		],
-	"description": "sound_pools"
+	"description": "sound_pool"
 },
-"sound_system-mpf": {
-	"prefix": ["sound_system"],
+"sound_syste(config)": {
+	"prefix": ["sound_syste"],
 	"body": [
-		"sound_system:"
+		"sound_syste:"
 		,"\tenabled: ${1|true,false|}"
 		,"\tbuffer: ${2: single|int|2048}"
 		,"\tfrequency: ${3: single|int|44100}"
@@ -2363,12 +2396,12 @@
 		,"\tmaster_volume: ${5: ignore}"
 		,"\ttracks: ${6: dict|str:subconfig(sound_system_tracks)|}"
 		],
-	"description": "sound_system"
+	"description": "sound_syste"
 },
-"sound_system_tracks-mpf": {
-	"prefix": ["sound_system_tracks"],
+"sound_system_track()": {
+	"prefix": ["sound_system_track"],
 	"body": [
-		"sound_system_tracks:"
+		"sound_system_track:"
 		,"\ttype: ${1|standard,sound_loop,playlist|}"
 		,"\tvolume: ${2: single|gain|0.5}"
 		,"\tevents_when_played: ${3: list|event_posted|None}"
@@ -2380,43 +2413,12 @@
 		,"\tmax_layers: ${9: single|int|8               }"
 		,"\tcrossfade_time: ${10: single|secs|0          }"
 		],
-	"description": "sound_system_tracks"
+	"description": "sound_system_track"
 },
-"sounds-mpf": {
-	"prefix": ["sounds"],
+"spi_bit_ban(config)": {
+	"prefix": ["spi_bit_ban"],
 	"body": [
-		"sounds:"
-		,"\tfile: ${1: single|str|None}"
-		,"\ttrack: ${2: single|str|None}"
-		,"\tvolume: ${3: single|gain|0.5}"
-		,"\tpan: ${4: single|float|0}"
-		,"\tstreaming: ${5|true,false|}"
-		,"\tloops: ${6: single|int|0}"
-		,"\tloop_start_at: ${7: single|secs|0}"
-		,"\tloop_end_at: ${8: single|secs|None}"
-		,"\tpriority: ${9: single|int|0}"
-		,"\tstart_at: ${10: single|secs|0}"
-		,"\tfade_in: ${11: single|secs|0}"
-		,"\tfade_out: ${12: single|secs|0}"
-		,"\tabout_to_finish_time: ${13: single|secs|None}"
-		,"\tmax_queue_time: ${14: single|secs|None}"
-		,"\tsimultaneous_limit: ${15: single|int|None}"
-		,"\tstealing_method: ${16|skip,oldest,newest|}"
-		,"\tevents_when_played: ${17: list|event_posted|None}"
-		,"\tevents_when_stopped: ${18: list|event_posted|None}"
-		,"\tevents_when_looping: ${19: list|event_posted|None}"
-		,"\tevents_when_about_to_finish: ${20: list|event_posted|None}"
-		,"\tmode_end_action: ${21|stop,stop_looping|}"
-		,"\tkey: ${22: single|str|None}"
-		,"\tmarkers: ${23: list|subconfig(sound_marker)|None}"
-		,"\tducking: ${24: single|subconfig(sound_ducking)|None}"
-		],
-	"description": "sounds"
-},
-"spi_bit_bang-mpf": {
-	"prefix": ["spi_bit_bang"],
-	"body": [
-		"spi_bit_bang:"
+		"spi_bit_ban:"
 		,"\tdebug: ${1|true,false|}"
 		,"\tmiso_pin: ${2: single|machine(switches)|}"
 		,"\tclock_pin: ${3: single|machine(digital_outputs)|}"
@@ -2425,12 +2427,12 @@
 		,"\tclock_time: ${6: single|ms|1ms}"
 		,"\tinputs: ${7: single|int|8}"
 		],
-	"description": "spi_bit_bang"
+	"description": "spi_bit_ban"
 },
-"spike-mpf": {
-	"prefix": ["spike"],
+"spik(config)": {
+	"prefix": ["spik"],
 	"body": [
-		"spike:"
+		"spik:"
 		,"\tdebug: ${1|true,false|}"
 		,"\tport: ${2: single|str|}"
 		,"\tbaud: ${3: single|int|}"
@@ -2455,42 +2457,42 @@
 		,"\tdefault_debounce_close: ${22: single|ms|4}"
 		,"\tnode_config: ${23: dict|int:subconfig(spike_node)|None}"
 		],
-	"description": "spike"
+	"description": "spik"
 },
-"spike_node-mpf": {
-	"prefix": ["spike_node"],
+"spike_nod()": {
+	"prefix": ["spike_nod"],
 	"body": [
-		"spike_node:"
+		"spike_nod:"
 		,"\tcoil_priorities: ${1: list|int|None}"
 		,"\tnum_leds: ${2: single|int|None}"
 		,"\tnum_inputs: ${3: single|int|None}"
 		],
-	"description": "spike_node"
+	"description": "spike_nod"
 },
-"spike_stepper_settings-mpf": {
-	"prefix": ["spike_stepper_settings"],
+"spike_stepper_setting()": {
+	"prefix": ["spike_stepper_setting"],
 	"body": [
-		"spike_stepper_settings:"
+		"spike_stepper_setting:"
 		,"\thoming_speed: ${1: single|int|10}"
 		,"\tspeed: ${2: single|int|20}"
 		,"\tpoll_ms: ${3: single|ms|100ms}"
 		,"\tlight_number: ${4: single|str|}"
 		],
-	"description": "spike_stepper_settings"
+	"description": "spike_stepper_setting"
 },
-"spike_switch_overwrites-mpf": {
-	"prefix": ["spike_switch_overwrites"],
+"spike_switch_overwrite()": {
+	"prefix": ["spike_switch_overwrite"],
 	"body": [
-		"spike_switch_overwrites:"
+		"spike_switch_overwrite:"
 		,"\tdebounce_open: ${1: single|ms|None}"
 		,"\tdebounce_close: ${2: single|ms|None}"
 		],
-	"description": "spike_switch_overwrites"
+	"description": "spike_switch_overwrite"
 },
-"spinners-mpf": {
-	"prefix": ["spinners"],
+"spinner(device)": {
+	"prefix": ["spinner"],
 	"body": [
-		"spinners:"
+		"spinner:"
 		,"\tswitch: ${1: list|machine(switches)|None}"
 		,"\tswitches: ${2: list|machine(switches)|None}"
 		,"\tlabels: ${3: list|str|None}"
@@ -2501,54 +2503,54 @@
 		,"\tenable_events: ${8: event_handler|event_handler:ms|None}"
 		,"\tdisable_events: ${9: event_handler|event_handler:ms|None}"
 		],
-	"description": "spinners"
+	"description": "spinner"
 },
-"state_machine_states-mpf": {
-	"prefix": ["state_machine_states"],
+"state_machine(device)": {
+	"prefix": ["state_machine"],
 	"body": [
-		"state_machine_states:"
-		,"\tlabel: ${1: single|str|None}"
-		,"\tshow_when_active: ${2: single|subconfig(show_config)|None}"
-		,"\tevents_when_started: ${3: list|event_posted|None}"
-		,"\tevents_when_stopped: ${4: list|event_posted|None}"
-		],
-	"description": "state_machine_states"
-},
-"state_machine_transitions-mpf": {
-	"prefix": ["state_machine_transitions"],
-	"body": [
-		"state_machine_transitions:"
-		,"\tsource: ${1: list|str|}"
-		,"\ttarget: ${2: single|str|}"
-		,"\tevents: ${3: list|event_handler|}"
-		,"\tevents_when_transitioning: ${4: list|event_posted|None}"
-		],
-	"description": "state_machine_transitions"
-},
-"state_machines-mpf": {
-	"prefix": ["state_machines"],
-	"body": [
-		"state_machines:"
+		"state_machine:"
 		,"\tstates: ${1: dict|str:subconfig(state_machine_states)|}"
 		,"\ttransitions: ${2: list|subconfig(state_machine_transitions)|}"
 		,"\tpersist_state: ${3|true,false|}"
 		,"\tstarting_state: ${4: single|str|start}"
 		],
-	"description": "state_machines"
+	"description": "state_machine"
 },
-"step_stick_stepper_settings-mpf": {
-	"prefix": ["step_stick_stepper_settings"],
+"state_machine_state()": {
+	"prefix": ["state_machine_state"],
 	"body": [
-		"step_stick_stepper_settings:"
+		"state_machine_state:"
+		,"\tlabel: ${1: single|str|None}"
+		,"\tshow_when_active: ${2: single|subconfig(show_config)|None}"
+		,"\tevents_when_started: ${3: list|event_posted|None}"
+		,"\tevents_when_stopped: ${4: list|event_posted|None}"
+		],
+	"description": "state_machine_state"
+},
+"state_machine_transition()": {
+	"prefix": ["state_machine_transition"],
+	"body": [
+		"state_machine_transition:"
+		,"\tsource: ${1: list|str|}"
+		,"\ttarget: ${2: single|str|}"
+		,"\tevents: ${3: list|event_handler|}"
+		,"\tevents_when_transitioning: ${4: list|event_posted|None}"
+		],
+	"description": "state_machine_transition"
+},
+"step_stick_stepper_setting()": {
+	"prefix": ["step_stick_stepper_setting"],
+	"body": [
+		"step_stick_stepper_setting:"
 		,"\tlow_time: ${1: single|secs|20ms}"
 		,"\thigh_time: ${2: single|secs|20ms}"
 		],
-	"description": "step_stick_stepper_settings"
+	"description": "step_stick_stepper_setting"
 },
-"steppers-mpf": {
-	"prefix": ["steppers"],
+"stepper(device)": {
+	"prefix": ["stepper"],
 	"body": [
-		"steppers:"
+		"stepper:"
 		,"\tnamed_positions: ${1: dict|float:str|None}"
 		,"\thoming_mode: ${2|hardware,switch|}"
 		,"\thoming_switch: ${3: single|machine(switches)|None}"
@@ -2565,12 +2567,12 @@
 		,"\tplatform: ${14: single|str|None}"
 		,"\tplatform_settings: ${15: single|dict|None}"
 		],
-	"description": "steppers"
+	"description": "stepper"
 },
-"steprocker_stepper_settings-mpf": {
-	"prefix": ["steprocker_stepper_settings"],
+"steprocker_stepper_setting()": {
+	"prefix": ["steprocker_stepper_setting"],
 	"body": [
-		"steprocker_stepper_settings:"
+		"steprocker_stepper_setting:"
 		,"\thoming_speed: ${1: single|float|1.0}"
 		,"\tfullstep_per_userunit: ${2: single|float|1.0}"
 		,"\tmove_current: ${3: single|int|20}"
@@ -2580,21 +2582,21 @@
 		,"\tvelocity_limit: ${7: single|float|1.0}"
 		,"\tacceleration_limit: ${8: single|float|1.0}"
 		],
-	"description": "steprocker_stepper_settings"
+	"description": "steprocker_stepper_setting"
 },
-"switch_player-mpf": {
-	"prefix": ["switch_player"],
+"switch_playe(config_player)": {
+	"prefix": ["switch_playe"],
 	"body": [
-		"switch_player:"
+		"switch_playe:"
 		,"\tstart_event: ${1: single|event_handler|machine_reset_phase_3}"
 		,"\tsteps: ${2: ignore}"
 		],
-	"description": "switch_player"
+	"description": "switch_playe"
 },
-"switches-mpf": {
-	"prefix": ["switches"],
+"switche(device)": {
+	"prefix": ["switche"],
 	"body": [
-		"switches:"
+		"switche:"
 		,"\tnumber: ${1: single|str|}"
 		,"\ttype: ${2|NC,NO|}"
 		,"\tdebounce: ${3|auto,quick,normal|}"
@@ -2607,12 +2609,12 @@
 		,"\ty: ${10: single|float|None}"
 		,"\tz: ${11: single|float|None}"
 		],
-	"description": "switches"
+	"description": "switche"
 },
-"system11-mpf": {
-	"prefix": ["system11"],
+"system1(config)": {
+	"prefix": ["system1"],
 	"body": [
-		"system11:"
+		"system1:"
 		,"\tac_relay_delay_ms: ${1: single|ms|75ms}"
 		,"\tac_relay_driver: ${2: single|machine(coils)|}"
 		,"\tprefer_a_side_event: ${3: single|event_handler|game_ended}"
@@ -2621,27 +2623,27 @@
 		,"\tconsole_log: ${6|none,basic,full|}"
 		,"\tfile_log: ${7|none,basic,full|}"
 		],
-	"description": "system11"
+	"description": "system1"
 },
-"text_strings-mpf": {
-	"prefix": ["text_strings"],
+"text_string(config_dict)": {
+	"prefix": ["text_string"],
 	"body": [
 		],
-	"description": "text_strings"
+	"description": "text_string"
 },
-"text_ui-mpf": {
-	"prefix": ["text_ui"],
+"text_u(config)": {
+	"prefix": ["text_u"],
 	"body": [
-		"text_ui:"
+		"text_u:"
 		,"\tplayer_vars: ${1: list|str|None}"
 		,"\tmachine_vars: ${2: list|str|None}"
 		],
-	"description": "text_ui"
+	"description": "text_u"
 },
-"tic_stepper_settings-mpf": {
-	"prefix": ["tic_stepper_settings"],
+"tic_stepper_setting()": {
+	"prefix": ["tic_stepper_setting"],
 	"body": [
-		"tic_stepper_settings:"
+		"tic_stepper_setting:"
 		,"\tmax_speed: ${1: single|int|2000000}"
 		,"\tstarting_speed: ${2: single|int|0}"
 		,"\tmax_acceleration: ${3: single|int|40000}"
@@ -2650,12 +2652,12 @@
 		,"\tpoll_ms: ${6: single|ms|100ms}"
 		,"\tcurrent_limit: ${7: single|int|192}"
 		],
-	"description": "tic_stepper_settings"
+	"description": "tic_stepper_setting"
 },
-"tilt-mpf": {
-	"prefix": ["tilt"],
+"til(config)": {
+	"prefix": ["til"],
 	"body": [
-		"tilt:"
+		"til:"
 		,"\ttilt_slam_tilt_events: ${1: event_handler|event_handler:ms|None}"
 		,"\ttilt_warning_events: ${2: event_handler|event_handler:ms|None}"
 		,"\ttilt_events: ${3: event_handler|event_handler:ms|None}"
@@ -2668,12 +2670,12 @@
 		,"\tsettle_time: ${10: single|template_ms|5s}"
 		,"\ttilt_warnings_player_var: ${11: single|str|tilt_warnings}"
 		],
-	"description": "tilt"
+	"description": "til"
 },
-"timed_switches-mpf": {
-	"prefix": ["timed_switches"],
+"timed_switche(device)": {
+	"prefix": ["timed_switche"],
 	"body": [
-		"timed_switches:"
+		"timed_switche:"
 		,"\tswitches: ${1: list|machine(switches)|None}"
 		,"\tswitch_tags: ${2: list|str|None}"
 		,"\ttime: ${3: single|ms|}"
@@ -2681,22 +2683,12 @@
 		,"\tevents_when_active: ${5: list|event_posted|None}"
 		,"\tevents_when_released: ${6: list|event_posted|None}"
 		],
-	"description": "timed_switches"
+	"description": "timed_switche"
 },
-"timer_control_events:  # subconfig for mode timer-mpf": {
-	"prefix": ["timer_control_events:  # subconfig for mode timer"],
+"timer(device)": {
+	"prefix": ["timer"],
 	"body": [
-		"timer_control_events:  # subconfig for mode timer:"
-		,"\taction: ${1|add,subtract,jump,start,stop,reset,restart,pause,set_tick_interval,change_tick_interval,reset_tick_interval|}"
-		,"\tevent: ${2: single|event_handler|}"
-		,"\tvalue: ${3: single|template_float|None }"
-		],
-	"description": "timer_control_events:  # subconfig for mode timer"
-},
-"timers-mpf": {
-	"prefix": ["timers"],
-	"body": [
-		"timers:"
+		"timer:"
 		,"\tstart_value: ${1: single|template_int|0}"
 		,"\tend_value: ${2: single|template_int|None}"
 		,"\tdirection: ${3|up,down|}"
@@ -2707,22 +2699,32 @@
 		,"\trestart_on_complete: ${8|true,false|}"
 		,"\tbcp: ${9|true,false|}"
 		],
-	"description": "timers"
+	"description": "timer"
 },
-"track_player-mpf": {
-	"prefix": ["track_player"],
+"timer_control_event()": {
+	"prefix": ["timer_control_event"],
 	"body": [
-		"track_player:"
+		"timer_control_event:"
+		,"\taction: ${1|add,subtract,jump,start,stop,reset,restart,pause,set_tick_interval,change_tick_interval,reset_tick_interval|}"
+		,"\tevent: ${2: single|event_handler|}"
+		,"\tvalue: ${3: single|template_float|None }"
+		],
+	"description": "timer_control_event"
+},
+"track_playe(config_player)": {
+	"prefix": ["track_playe"],
+	"body": [
+		"track_playe:"
 		,"\taction: ${1|play,stop,pause,set_volume,stop_all_sounds|}"
 		,"\tvolume: ${2: single|gain|None}"
 		,"\tfade: ${3: single|secs|0.1sec}"
 		],
-	"description": "track_player"
+	"description": "track_playe"
 },
-"transitions-mpf": {
-	"prefix": ["transitions"],
+"transition()": {
+	"prefix": ["transition"],
 	"body": [
-		"transitions:"
+		"transition:"
 		,"\tpush: ${1:}"
 			,"\ttype: ${2: single|str|}"
 			,"\tdirection: ${3: single|str|left}"
@@ -2759,20 +2761,20 @@
 		,"\tnone: ${34:}"
 			,"\ttype: ${35: ignore}"
 		],
-	"description": "transitions"
+	"description": "transition"
 },
-"trinamics_steprocker-mpf": {
-	"prefix": ["trinamics_steprocker"],
+"trinamics_steprocke(config)": {
+	"prefix": ["trinamics_steprocke"],
 	"body": [
-		"trinamics_steprocker:"
+		"trinamics_steprocke:"
 		,"\tport: ${1: single|str|}"
 		],
-	"description": "trinamics_steprocker"
+	"description": "trinamics_steprocke"
 },
-"twitch_client-mpf": {
-	"prefix": ["twitch_client"],
+"twitch_clien(config)": {
+	"prefix": ["twitch_clien"],
 	"body": [
-		"twitch_client:"
+		"twitch_clien:"
 		,"\tuser: ${1: single|str|None}"
 		,"\tpassword: ${2: single|str|None}"
 		,"\tchannel: ${3: single|str|None}"
@@ -2780,12 +2782,12 @@
 		,"\tpassword_var: ${5: single|str|None}"
 		,"\tchannel_var: ${6: single|str|None}"
 		],
-	"description": "twitch_client"
+	"description": "twitch_clien"
 },
-"variable_player-mpf": {
-	"prefix": ["variable_player"],
+"variable_playe(config_player)": {
+	"prefix": ["variable_playe"],
 	"body": [
-		"variable_player:"
+		"variable_playe:"
 		,"\tint: ${1: single|template_int|None}"
 		,"\tfloat: ${2: single|template_float|None}"
 		,"\tstring: ${3: single|template_str|None}"
@@ -2793,28 +2795,12 @@
 		,"\taction: ${5|add,set,add_machine,set_machine|}"
 		,"\tplayer: ${6: single|int|None}"
 		],
-	"description": "variable_player"
+	"description": "variable_playe"
 },
-"video_control_events-mpf": {
-	"prefix": ["video_control_events"],
+"video(config_dict)": {
+	"prefix": ["video"],
 	"body": [
-		"video_control_events:"
-		,"\taction: ${1|play,pause,stop,seek,volume,position|}"
-		,"\tevent: ${2: single|event_handler|}"
-		,"\tvalue: ${3: single|float|None}"
-		],
-	"description": "video_control_events"
-},
-"video_pools-mpf": {
-	"prefix": ["video_pools"],
-	"body": [
-		],
-	"description": "video_pools"
-},
-"videos:         # not really use-mpf": {
-	"prefix": ["videos:         # not really use"],
-	"body": [
-		"videos:         # not really use:"
+		"video:"
 		,"\tload: ${1: single|str|preload}"
 		,"\tfile: ${2: single|str|None}"
 		,"\tpriority: ${3: single|int|0}"
@@ -2823,57 +2809,53 @@
 		,"\tevents_when_played: ${6: list|event_posted|None}"
 		,"\tevents_when_stopped: ${7: list|event_posted|None}"
 		],
-	"description": "videos:         # not really use"
+	"description": "video"
 },
-"virtual_platform_start_active_switches-mpf": {
-	"prefix": ["virtual_platform_start_active_switches"],
+"video_control_event()": {
+	"prefix": ["video_control_event"],
+	"body": [
+		"video_control_event:"
+		,"\taction: ${1|play,pause,stop,seek,volume,position|}"
+		,"\tevent: ${2: single|event_handler|}"
+		,"\tvalue: ${3: single|float|None}"
+		],
+	"description": "video_control_event"
+},
+"video_pool(config_dict)": {
+	"prefix": ["video_pool"],
 	"body": [
 		],
-	"description": "virtual_platform_start_active_switches"
+	"description": "video_pool"
 },
-"virtual_segment_display_connector-mpf": {
-	"prefix": ["virtual_segment_display_connector"],
+"virtual_platform_start_active_switche(list)": {
+	"prefix": ["virtual_platform_start_active_switche"],
 	"body": [
-		"virtual_segment_display_connector:"
+		],
+	"description": "virtual_platform_start_active_switche"
+},
+"virtual_segment_display_connecto(config)": {
+	"prefix": ["virtual_segment_display_connecto"],
+	"body": [
+		"virtual_segment_display_connecto:"
 		,"\tdebug: ${1|true,false|}"
 		,"\tbcp_connection: ${2: single|str|local_display}"
 		,"\tsegment_displays: ${3: list|machine(segment_displays)|None}"
 		],
-	"description": "virtual_segment_display_connector"
+	"description": "virtual_segment_display_connecto"
 },
-"vpe-mpf": {
-	"prefix": ["vpe"],
+"vp(config)": {
+	"prefix": ["vp"],
 	"body": [
-		"vpe:"
+		"vp:"
 		,"\tdebug: ${1|true,false|}"
 		,"\tlisten_port: ${2: single|int|50051}"
 		],
-	"description": "vpe"
+	"description": "vp"
 },
-"widget_player-mpf": {
-	"prefix": ["widget_player"],
+"widget(named_lists)": {
+	"prefix": ["widget"],
 	"body": [
-		"widget_player:"
-		,"\tslide: ${1: single|str|None}"
-		,"\taction: ${2|add,remove,update|}"
-		,"\tkey: ${3: single|str|None}"
-		,"\twidget_settings: ${4: ignore}"
-		,"\ttarget: ${5: single|str|None}"
-		],
-	"description": "widget_player"
-},
-"widget_styles-mpf": {
-	"prefix": ["widget_styles"],
-	"body": [
-		"widget_styles:"
-		,"\tcolor: ${1: single|kivycolor|ffffffff}"
-		],
-	"description": "widget_styles"
-},
-"widgets-mpf": {
-	"prefix": ["widgets"],
-	"body": [
-		"widgets:"
+		"widget:"
 		,"\tcommon: ${1:}"
 			,"\ttype: ${2: single|str|}"
 			,"\tx: ${3: single|str|None}"
@@ -3041,6 +3023,26 @@
 			,"\tend_behavior: ${165|loop,pause,stop|}"
 			,"\tcontrol_events: ${166: list|subconfig(video_control_events)|None}"
 		],
-	"description": "widgets"
+	"description": "widget"
+},
+"widget_playe(config_player)": {
+	"prefix": ["widget_playe"],
+	"body": [
+		"widget_playe:"
+		,"\tslide: ${1: single|str|None}"
+		,"\taction: ${2|add,remove,update|}"
+		,"\tkey: ${3: single|str|None}"
+		,"\twidget_settings: ${4: ignore}"
+		,"\ttarget: ${5: single|str|None}"
+		],
+	"description": "widget_playe"
+},
+"widget_style(config_dict)": {
+	"prefix": ["widget_style"],
+	"body": [
+		"widget_style:"
+		,"\tcolor: ${1: single|kivycolor|ffffffff}"
+		],
+	"description": "widget_style"
 }
 }
