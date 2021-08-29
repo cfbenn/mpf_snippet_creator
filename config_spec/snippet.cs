@@ -8,7 +8,6 @@ namespace mpfConfig
         const string quote = "\"";
         const string tab = "\t";
 
-        private string _name;
         private string _body;
 
         enum MpfValueType : int
@@ -19,6 +18,13 @@ namespace mpfConfig
             boolean_or_token = 3
         }
 
+        enum lineType: int
+        {
+            invalid = 0,
+            meta = 1,
+            user = 2
+        }
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -26,8 +32,8 @@ namespace mpfConfig
         /// <param name="description">Snippet description</param>
         public Snippet(string name, string description)
         {
-            Name = name;
-            Description = description;
+            Name = StripComments(name);
+            Description = StripComments(description);
         }
 
         #region properties
@@ -39,7 +45,8 @@ namespace mpfConfig
             set { _isDirty = value; }
         }
 
-       public string Name
+        private string _name;
+        public string Name
             {
                 get { return _name; }
                 set 
@@ -60,6 +67,18 @@ namespace mpfConfig
                 }
             }
 
+
+        private string _type = string.Empty;
+        private string Type
+        {
+            get { return _type; }
+            set
+            {
+                _type = value;
+                _isDirty = true;
+            }
+        }
+
         #endregion
 
         #region Helper Functions
@@ -72,26 +91,21 @@ namespace mpfConfig
         /// <param name="value">Right side value(s)</param>
         public void AddBody(string key, string value)
         {
-            bool validKey = true;
+            lineType keyType = lineType.user;
             try
             {
                 int indentlevel = key.TakeWhile(Char.IsWhiteSpace).Count();
                 key = key[indentlevel..];
 
-                // Ignore invalid lines
-                if (key.Length > 1)
+                keyType = parseLine(key);
+
+                value = StripComments(value);
+
+                if (keyType == lineType.meta)
                 {
-                    validKey = (key.Substring(0, 2) != "__");  //underscore definitions are to be ignored
-                    validKey = validKey && (key.Substring(0,1) != "#"); //Remove if line is a pure comment
+                    Type = StripComments(value.Trim());
                 }
-
-                // Strip comments off end of lines
-                int commentPosition = value.IndexOf("#");
-                if (commentPosition > 1)
-                    value = value.Substring(0, commentPosition - 1); // Strip off comment line
-
-                
-                if (validKey)
+                else if (keyType == lineType.user) // User parameter
                 {
                     indentlevel /= 4;
                     string tabs = new String('\t', indentlevel + 1);
@@ -114,6 +128,16 @@ namespace mpfConfig
             }
         }
 
+        private static string StripComments(string value)
+        {
+            // Strip comments off end of lines
+            int commentPosition = value.IndexOf("#");
+            if (commentPosition > 1)
+                value = value.Substring(0, commentPosition - 1); // Strip off comment line
+            return value;
+        }
+
+
         /// <summary>
         /// Creates the snippet portion before the 'body' tag.
         /// 
@@ -125,8 +149,8 @@ namespace mpfConfig
         /// <returns>string</returns>
         private string CreateHeader()
         {
-            string head = string.Format("{0}{1}-mpf{0}: {{", quote, _name) + Environment.NewLine;
-            head += string.Format("{0}{1}prefix{1}: [{1}{2}{1}],", tab, quote, _name);
+            string head = string.Format("{0}{1}({2}){0}: {{", quote, this.Name, this.Type) + Environment.NewLine;
+            head += string.Format("{0}{1}prefix{1}: [{1}{2}{1}],", tab, quote, this.Name);
             return head;
         }
 
@@ -190,6 +214,44 @@ namespace mpfConfig
         }
 
         #endregion
+
+
+        /// <summary>
+        /// Validates input line to make sure it has a key/value pair format.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        private lineType parseLine(string key)
+        {
+
+            string[] invalidLines = { "__valid_in__", "__allow_others__", "__parent__" };
+            string[] metaLines = { "__type__" };
+
+            foreach (string x in invalidLines)
+            {
+                if (key.Contains(x))
+                {
+                    return lineType.invalid;
+                }
+            }
+
+            // parse special line
+            foreach (string x in metaLines)
+            {
+                if (key.Contains(x))
+                {
+                    return lineType.meta;
+                }
+            }
+
+            if (key.StartsWith("#"))
+            {
+                //Remove if line is a pure comment
+                return lineType.invalid;
+            }
+
+            return lineType.user;
+        }
 
 
         private string GetValue(int bodyCount, string value)

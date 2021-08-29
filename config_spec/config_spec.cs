@@ -38,7 +38,11 @@ namespace mpfConfig
                     {
                         _snippets[currentSection] = _currentSnippet;
                     }
-                    currentSection = line.Remove(line.Length - 1);
+
+                    // Remove anything to the right of the colon
+                    if (line.Contains(":"))
+                        currentSection = line.Remove(line.IndexOf(":") - 1);
+                    
                     if (_snippets.TryGetValue(currentSection, out _currentSnippet))
                     {
                         // todo ????  Reload an existing snippet...but this should never happen?
