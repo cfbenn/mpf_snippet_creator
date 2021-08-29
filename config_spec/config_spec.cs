@@ -69,12 +69,14 @@ namespace mpfConfig
             {
                 foreach (Snippet s in _snippets.Values)
                 {
-//                    fulllConfig += s.ToString() + Environment.NewLine;
-                    if (fulllConfig != string.Empty)
+                    if (s.Body != null) //There are some user options for this entry, otherwise ignore
                     {
-                        fulllConfig += "," + Environment.NewLine;
+                        if (fulllConfig != string.Empty)
+                        {
+                            fulllConfig += "," + Environment.NewLine;
+                        }
+                        fulllConfig += s.ToString();
                     }
-                    fulllConfig += s.ToString();
                 }
                 fulllConfig = "{" + Environment.NewLine + fulllConfig + Environment.NewLine + "}";
             }

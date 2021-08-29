@@ -8,8 +8,6 @@ namespace mpfConfig
         const string quote = "\"";
         const string tab = "\t";
 
-        private string _body;
-
         enum MpfValueType : int
         {
             unknown = 0,
@@ -55,6 +53,17 @@ namespace mpfConfig
                     _isDirty = true;
                 }
             }
+
+        private string _body;
+        public string Body
+        {
+            get { return _body; }
+            set
+            {
+                _body = value;
+                _isDirty = true;
+            }
+        }
 
         private string _description;
         public string Description
@@ -190,7 +199,7 @@ namespace mpfConfig
         {
             string body;
             body = Environment.NewLine + string.Format("{0}{1}body{1}: [", tab, quote);
-            body += _body; 
+            body += this.Body; 
             body += Environment.NewLine + tab + "\t],";
             return body;
         }
